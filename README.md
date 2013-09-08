@@ -1,4 +1,4 @@
-# CS4710 (Senior Design), Fall 2013
+# CS4791 (Senior Design), Fall 2013
 
 ## Introduction
 ---------------
@@ -46,4 +46,3 @@ be followed (subject to change at meetings):
     change any code.  
 
 2.  (To be discussed at next meeting)  
-
