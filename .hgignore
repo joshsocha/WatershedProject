@@ -1,0 +1,10 @@
+syntax: glob
+.idea/workspace.xml
+.idea/.name
+.idea/encodings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/scopes/scope_settings.xml
+.idea/vcs.xml
+.idea/watershed.iml
+application/logs/log-2013-09-11.php

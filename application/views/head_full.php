@@ -3,11 +3,9 @@
 <head>
 	<title><?php echo isset($title)? $title : "NOTITLE" ?></title>
 
-	<?php /* CSS */ ?>
-	<link rel="stylesheet" type="text/css" href="/application/assets/css/bootstrap.min.css" />
-	<?php /* TODO: Load CSS files from $data['extra_css'] */ ?>
 
-	<?php /* NOTE: Javascript is loaded at the end of the body, in tail_full.php */ ?>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/application/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/application/assets/css/app.css" />
 </head>
 <body>
 
@@ -26,7 +24,7 @@
 
 				foreach($links as $link) {
 					echo '<li' . ($active == $link['title']? ' class="active"' : '') . '>'
-					   . '<a href="' . $link['url'] . '" title="' . $link['title'] . '">' . $link['text'] . '</a>'
+					   . '<a class="navbar-link" href="' . $link['url'] . '" title="' . $link['title'] . '">' . $link['text'] . '</a>'
 					   . '</li>';
 				}
 			?>
