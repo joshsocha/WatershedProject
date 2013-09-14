@@ -8,3 +8,9 @@ syntax: glob
 .idea/vcs.xml
 .idea/watershed.iml
 application/logs/log-2013-09-11.php
+application/application.phpproj
+application/application/config/config.php
+application/application/views/welcome_message.php
+application/application/controllers/welcome.php
+application/logs/
+system/system.phpproj
