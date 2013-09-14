@@ -18,10 +18,11 @@
 		<a class="brand">Watershed App</a>
 		<ul class="nav">
 			<?php
+                //basurl = echo base_url();
 				if(!isset($active)) $active = "home";
 				$links = array(
 					array("url" => "/", "text" => "Home", "title" => "home"),
-                    array("url" => "/organizations", "text" => "Organizations", "title" => "organizations"),
+                    array("url" =>  base_url()."organizations", "text" => "Organizations", "title" => "organizations"),
 					array("url" => "/about", "text" => "About", "title" => "about")
 				);
 

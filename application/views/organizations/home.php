@@ -9,7 +9,7 @@
 		<p>Stuff for the left column</p>
 	</div>
 	<div class="span4">
-		<h3>Organization 2</h2>
+		<h3>Organization 2</h3>
 		<p>This is the center column. It should wrap with a bit of meaningless text. Or maybe not.</p>
 	</div>
 	<div class="span4">
@@ -40,7 +40,7 @@
 		<p>Stuff for the left column</p>
 	</div>
 	<div class="span4">
-		<h3>Organization 2</h2>
+		<h3>Organization 2</h3>
 		<p>This is the center column. It should wrap with a bit of meaningless text. Or maybe not.</p>
 	</div>
 	<div class="span4">
