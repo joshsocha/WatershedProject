@@ -8,3 +8,6 @@ syntax: glob
 .idea/vcs.xml
 .idea/watershed.iml
 application/logs/log-2013-09-11.php
+application/application.phpproj
+application/logs/
+system/system.phpproj

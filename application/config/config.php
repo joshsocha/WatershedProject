@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost:8080/watershed';
+$config['base_url']	= 'http://dev.skuldafn.us';
 
 /*
 |--------------------------------------------------------------------------
@@ -224,7 +224,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'Ab9DgC8k4iO6Ze5Oke6Lq8dL7ke463i3';
 
 /*
 |--------------------------------------------------------------------------
