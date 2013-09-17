@@ -1,6 +1,5 @@
-<div class="hero-unit">
-	<h1>About Us</h1>
-</div>
+<h1 class="muted">About Us</h1>
+<hr />
 
 <div class="row">
 	<div class="span12">

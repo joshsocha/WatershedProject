@@ -1,8 +1,30 @@
 /*Shared Styles*/
+
+/* These colors are bad and you should feel bad :) */
+/*
 body{
     background-color:#007A00;
 }
 .row
 {
     color:#ffffff;
+}
+*/
+
+/* As seen on the organizations page */
+.row.promotional {
+	margin-top: 2em;
+}
+.row.promotional>div {
+	text-align: center;
+	background-color: #EFEFEF;
+	border-radius: 5px;
+}
+
+.row.promotional>div:hover {
+	background-color: #DDD;
+}
+
+.row.promotional div p {
+	padding: 0 1em 1em 1em;
 }

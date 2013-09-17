@@ -11,19 +11,18 @@
 </head>
 <body>
 
-<div class="container">
+<div class="container" style="margin-bottom: 5em;">
 
 <div class="navbar" style="margin-top:1em;">
 	<div class="navbar-inner">
 		<a class="brand">Watershed App</a>
 		<ul class="nav">
 			<?php
-                //basurl = echo base_url();
 				if(!isset($active)) $active = "home";
 				$links = array(
-					array("url" => "/", "text" => "Home", "title" => "home"),
+					array("url" => base_url(), "text" => "Home", "title" => "home"),
                     array("url" =>  base_url()."organizations", "text" => "Organizations", "title" => "organizations"),
-					array("url" => "/about", "text" => "About", "title" => "about")
+					array("url" => base_url()."about", "text" => "About", "title" => "about")
 				);
 
 				foreach($links as $link) {

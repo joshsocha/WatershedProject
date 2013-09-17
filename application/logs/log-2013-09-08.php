@@ -319,3 +319,7 @@ ERROR - 2013-09-08 14:35:04 --> 404 Page Not Found --> application
 ERROR - 2013-09-08 14:35:04 --> Severity: Warning  --> chmod(): Operation not permitted /var/www-cs4791/system/libraries/Log.php 106
 ERROR - 2013-09-08 14:35:04 --> 404 Page Not Found --> favicon.ico
 ERROR - 2013-09-08 14:35:04 --> Severity: Warning  --> chmod(): Operation not permitted /var/www-cs4791/system/libraries/Log.php 106
+ERROR - 2013-09-08 16:37:09 --> 404 Page Not Found --> application
+ERROR - 2013-09-08 16:37:09 --> Severity: Warning  --> chmod(): Operation not permitted /var/www-cs4791/system/libraries/Log.php 106
+ERROR - 2013-09-08 16:37:09 --> 404 Page Not Found --> favicon.ico
+ERROR - 2013-09-08 16:37:09 --> Severity: Warning  --> chmod(): Operation not permitted /var/www-cs4791/system/libraries/Log.php 106

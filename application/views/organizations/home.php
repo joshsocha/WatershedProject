@@ -1,10 +1,13 @@
-<div class="hero-unit">
-	<h1>Organizations</h1>
-</div>
+<h1 class="muted">Organizations</h1>
+<hr />
 
-<div class="row">
-    <h2>Organizations did X</h2>
+<h2>
+	Partners
+	<small>Those who regularly support what we do</small>
+</h2>
+<div class="row promotional">
 	<div class="span4">
+		<div class="img"><img src="foo" width="128" height="128" /></div>
 		<h3>Organization 1</h3>
 		<p>Stuff for the left column</p>
 	</div>
@@ -17,7 +20,7 @@
 		<p>No wrapping here.</p>
 	</div>
 </div>
-<div class="row">
+<div class="row promotional">
 	<div class="span4">
 		<h3>Organization 4</h3>
 		<p>Stuff for the left column</p>
@@ -32,9 +35,12 @@
 	</div>
 </div>
 
-
-<div class="row">
-    <h2>Organizations did Y</h2>
+<hr />
+<h2>
+	Donors
+	<small>Organizations who have invested their time, effort, or money in this project</small>
+</h2>
+<div class="row promotional">
 	<div class="span4">
 		<h3>Organization 1</h3>
 		<p>Stuff for the left column</p>
@@ -48,7 +54,7 @@
 		<p>No wrapping here.</p>
 	</div>
 </div>
-<div class="row">
+<div class="row promotional">
 	<div class="span4">
 		<h3>Organization 4</h3>
 		<p>Stuff for the left column</p>
