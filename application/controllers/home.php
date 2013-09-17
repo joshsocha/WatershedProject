@@ -18,7 +18,10 @@ class Home extends CI_Controller
             show_404();
         }*/
 
-        $this->load->view('head_full');
+        $data['title'] = 'Home';
+        $data['active'] = 'home';
+
+        $this->load->view('head_full', $data);
         $this->load->view('home/home');
         $this->load->view('tail_full');
     }

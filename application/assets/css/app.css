@@ -12,19 +12,25 @@ body{
 */
 
 /* As seen on the organizations page */
-.row.promotional {
+.promotional {
 	margin-top: 2em;
 }
-.row.promotional>div {
+.promotional>div {
 	text-align: center;
-	background-color: #EFEFEF;
-	border-radius: 5px;
+	background-color: #F0F0F0;
+	border-radius: 8px;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
 }
 
-.row.promotional>div:hover {
-	background-color: #DDD;
+.promotional>div>.img {
+	margin-top: 1.5em;
 }
 
-.row.promotional div p {
+.promotional>div:hover {
+	background-color: #E0E0E0;
+}
+
+.promotional div p {
 	padding: 0 1em 1em 1em;
 }

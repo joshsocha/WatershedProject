@@ -15,12 +15,13 @@
 
 <div class="navbar" style="margin-top:1em;">
 	<div class="navbar-inner">
-		<a class="brand">Watershed App</a>
+		<a class="brand" href="<?php echo base_url(); ?>">Watershed App</a>
 		<ul class="nav">
 			<?php
 				if(!isset($active)) $active = "home";
 				$links = array(
 					array("url" => base_url(), "text" => "Home", "title" => "home"),
+					array("url" => base_url()."learn", "text" => "Learn", "title" => "learn"),
                     array("url" =>  base_url()."organizations", "text" => "Organizations", "title" => "organizations"),
 					array("url" => base_url()."about", "text" => "About", "title" => "about")
 				);
