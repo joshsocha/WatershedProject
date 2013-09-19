@@ -14,3 +14,4 @@ application/application/views/welcome_message.php
 application/application/controllers/welcome.php
 application/logs/
 system/system.phpproj
+.htaccess.orig
