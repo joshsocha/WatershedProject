@@ -11,7 +11,11 @@ class help extends CI_Controller {
 
     public function index()
     {
-        $data['title'] = 'Organizations';
+        $data['title'] = 'Help';
+        $data['active'] = 'help';
+        $this->load->view('head_full',$data);
+        $this->load->view('home/help');
+        $this->load->view('tail_full');
     }
 
 }

@@ -1,7 +1,9 @@
 <div class="hero-unit">
 	<h1>Hello, World!</h1>
 </div>
+<div class="row">
 
+</div>
 <div class="row">
 	<div class="span4">
 		<h2>Info 1</h2>

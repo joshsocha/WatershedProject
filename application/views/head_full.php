@@ -20,15 +20,15 @@
 			<?php
 				if(!isset($active)) $active = "home";
 				$links = array(
-					array("url" => base_url(), "text" => "Home", "title" => "home"),
-					array("url" => base_url()."learn", "text" => "Learn", "title" => "learn"),
-                    array("url" =>  base_url()."organizations", "text" => "Organizations", "title" => "organizations"),
-					array("url" => base_url()."about", "text" => "About", "title" => "about")
+					array("url" => base_url(), "text" => "Home", "id"=>"JoyrideStop1", "title" => "home"),
+					array("url" => base_url()."learn", "text" => "Learn","id"=>"JoyrideStop2", "title" => "learn"),
+                    array("url" =>  base_url()."organizations", "text" => "Organizations","id"=>"JoyrideStop3", "title" => "organizations"),
+					array("url" => base_url()."about", "text" => "About","id"=>"JoyrideStop4", "title" => "about")
 				);
 
 				foreach($links as $link) {
 					echo '<li' . ($active == $link['title']? ' class="active"' : '') . '>'
-					   . '<a class="navbar-link" href="' . $link['url'] . '" title="' . $link['title'] . '">' . $link['text'] . '</a>'
+					   . '<a id="'.$link['id'].'" class="navbar-link" href="' . $link['url'] . '" title="' . $link['title'] . '">' . $link['text'] . '</a>'
 					   . '</li>';
 				}
 			?>
