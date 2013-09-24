@@ -49,8 +49,8 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'watershed';
-$db['default']['password'] = '_watershed';
+$db['default']['username'] = '';
+$db['default']['password'] = '';
 $db['default']['database'] = 'watershed';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';

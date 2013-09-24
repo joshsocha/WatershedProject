@@ -739,7 +739,9 @@ class Auth extends CI_Controller {
 
 		$this->viewdata = (empty($data)) ? $this->data: $data;
 
-		$view_html = $this->load->view($view, $this->viewdata, $render);
+		$view_html  = $this->load->view("head_full", $this->viewdata);
+		$view_html .= $this->load->view($view, $this->viewdata, $render);
+		$view_html  = $this->load->view("tail_full", $this->viewdata);
 
 		if (!$render) return $view_html;
 	}

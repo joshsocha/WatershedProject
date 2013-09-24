@@ -13,6 +13,6 @@ application/application/config/config.php
 application/application/views/welcome_message.php
 application/application/controllers/welcome.php
 application/logs/
+application/config/database.php
 .htaccess
 system/system.phpproj
-.htaccess.orig

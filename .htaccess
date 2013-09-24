@@ -2,7 +2,7 @@
 
 # Turn on URI rewriting
 RewriteEngine On
-RewriteBase /watershed
+RewriteBase /
 
 # Unless the requested URI identifies a real file or directory, reroute it.
 RewriteCond %{REQUEST_FILENAME} !-f

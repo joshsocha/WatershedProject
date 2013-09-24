@@ -28,8 +28,8 @@ Students: Nick Lanam, Collin Kappauf, Raven Rebb, Greg Antrim, and Joshua Socha
     
 
 4.  Visit the INSTALLATION folder, contained in this root.  
-    * Prepare a new database for this project, if you haven't already.
-    * Run ion_auth.sql on that database.  
+    * Run base.sql.
+    * Run ion_auth.sql.
     
 
 5.  Visit the server you've started. If you're using a basic installation,
