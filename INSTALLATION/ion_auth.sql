@@ -1,5 +1,3 @@
-USE watershed;
-
 DROP TABLE IF EXISTS `groups`;
 
 #

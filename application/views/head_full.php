@@ -32,15 +32,18 @@
 					   . '</li>';
 				}
 			?>
-			<?php /* User links */
-				//$this->load->library("ion_auth");
+		</ul>
+		<ul class="nav pull-right">
+			<li>
+			<?php
 				if($this->ion_auth->logged_in()) {
-					echo '<li><a href="#">Logged in as ' . $this->ion_auth->user()->row()->first_name . '</a></li>';
+					echo '<a href="#">Logged in as ' . $this->ion_auth->user()->row()->first_name . '</a>';
 				}
 				else {
-					echo '<li><a href="' . base_url() . '/auth/login">Not logged in</a></li>';
+					echo '<a href="' . base_url() . 'auth/login">Not logged in</a>';
 				}
 			?>
+			</li>
 		</ul>
 	</div>
 </div>
