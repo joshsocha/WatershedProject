@@ -23,6 +23,7 @@
 					array("url" => base_url(), "text" => "Home", "id"=>"JoyrideStop1", "title" => "home"),
 					array("url" => base_url()."learn", "text" => "Learn","id"=>"JoyrideStop2", "title" => "learn"),
                     array("url" => base_url()."organizations", "text" => "Organizations","id"=>"JoyrideStop3", "title" => "organizations"),
+					array("url" => base_url()."report", "text" => "Report","id"=>"JoyrideStop3", "title" => "report"),
 					array("url" => base_url()."about", "text" => "About","id"=>"JoyrideStop4", "title" => "about")
 				);
 
