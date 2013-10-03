@@ -6,7 +6,7 @@
 
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/application/assets/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/application/assets/css/app.css" />
-    <?php /* TODO: Load CSS files from $data['extra_css'] */ ?>
+    <?php foreach($extra_css as $var) { echo $var; } ?>
     <?php /* NOTE: Javascript is loaded at the end of the body, in tail_full.php */ ?>
 </head>
 <body>
