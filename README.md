@@ -26,11 +26,17 @@ Students: Nick Lanam, Collin Kappauf, Raven Rebb, Greg Antrim, and Joshua Socha
     * mod_mysql.
     * php5.
     
+    
+4.  At the root folder, copy .htaccess.orig to .htaccess, bonfire/application/config/database.php.orig to database.php, and the same with config.php.orig.
+    * In the newly created .htaccess, modify RewriteBase to suit your installation - if you put everything in the root, leave it alone!
+    * bonfire/application/config/config.php should not need to be modified.
+    * bonfire/application/config/database.php should be edited to pertain to your local database setup.
+	
 
 4.  Visit the INSTALLATION folder, contained in this root.  
-    * Run base.sql.
-    * Run ion_auth.sql.
-    
+    * Run base.sql to create the 'watershed' database and user. Alternatively, do this yourself.
+    * Run installation_Oct7.sql on the new watershed database to get Bonfire setup.    
+	
 
 5.  Visit the server you've started. If you're using a basic installation,
     this will probably just be localhost to the browser.  
