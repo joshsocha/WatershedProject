@@ -10,11 +10,24 @@
 		<thead>
 		
 			
-		<th>Description</th>
 		<th>Observation Date</th>
-		<th>Location of Observation</th>
-		<th>Remain Anonymous</th>
-		<th>Deleted</th>
+		<th>Waterbody</th>
+		<th>Watershed</th>
+		<th>Sate and Municipality</th>
+		<th>Longitude</th>
+		<th>Latitude</th>
+		<th>Water Speed</th>
+		<th>Water Movement</th>
+		<th>Fish Presence</th>
+		<th>Reptiles or Fish Present</th>
+		<th>Fish Types</th>
+		<th>Tree Shade</th>
+		<th>Left Bank</th>
+		<th>Right Bank</th>
+		<th>Pipes Present</th>
+		<th>Pipe Secretion</th>
+		<th>Trash</th>
+		<th>Comments</th>
 		<th>Created</th>
 		<th>Modified</th>
 		

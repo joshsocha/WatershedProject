@@ -1,1 +1,1 @@
-$('#observation_obs_date').datepicker({ dateFormat: 'yy-mm-dd'});
+$('#observation_observation_date').datetimepicker({ dateFormat: 'yy-mm-dd', timeFormat: 'hh:mm:ss'});

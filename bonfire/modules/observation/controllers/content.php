@@ -15,6 +15,8 @@ class content extends Admin_Controller {
 		
 			Assets::add_css('flick/jquery-ui-1.8.13.custom.css');
 			Assets::add_js('jquery-ui-1.8.13.min.js');
+			Assets::add_css('jquery-ui-timepicker.css');
+			Assets::add_js('jquery-ui-timepicker-addon.js');
 		Template::set_block('sub_nav', 'content/_sub_nav');
 	}
 
@@ -181,10 +183,24 @@ class content extends Admin_Controller {
 		}
 
 		
-		$this->form_validation->set_rules('observation_description','Description','required|xss_clean|max_length[4096]');
-		$this->form_validation->set_rules('observation_obs_date','Observation Date','required|trim|xss_clean');
-		$this->form_validation->set_rules('observation_obs_location','Location of Observation','required|trim|xss_clean|max_length[150]');
-		$this->form_validation->set_rules('observation_anonymous','Remain Anonymous','max_length[1]');
+		$this->form_validation->set_rules('observation_observation_date','Observation Date','required|trim|xss_clean');
+		$this->form_validation->set_rules('observation_waterbody','Waterbody','required|trim|xss_clean|max_length[50]');
+		$this->form_validation->set_rules('observation_watershed','Watershed','required|trim|xss_clean|max_length[50]');
+		$this->form_validation->set_rules('observation_sate_muni','Sate and Municipality','required|trim|xss_clean|max_length[50]');
+		$this->form_validation->set_rules('observation_location_long','Longitude','required|trim|xss_clean|max_length[50]');
+		$this->form_validation->set_rules('observation_location_lat','Latitude','required|trim|xss_clean|max_length[50]');
+		$this->form_validation->set_rules('observation_water_speed','Water Speed','required|trim|xss_clean|max_length[50]');
+		$this->form_validation->set_rules('observation_water_movement','Water Movement','required|trim|xss_clean|max_length[50]');
+		$this->form_validation->set_rules('observation_fish_presence','Fish Presence','required|trim|xss_clean|max_length[50]');
+		$this->form_validation->set_rules('observation_rep_amph_present','Reptiles or Fish Present','required|trim|xss_clean|max_length[50]');
+		$this->form_validation->set_rules('observation_fish_types','Fish Types','required|trim|xss_clean|max_length[50]');
+		$this->form_validation->set_rules('observation_tree_shade','Tree Shade','required|trim|xss_clean|max_length[50]');
+		$this->form_validation->set_rules('observation_left_bank','Left Bank','required|trim|xss_clean|max_length[50]');
+		$this->form_validation->set_rules('observation_right_bank','Right Bank','required|trim|xss_clean|max_length[50]');
+		$this->form_validation->set_rules('observation_pipes','Pipes Present','required|trim|xss_clean|max_length[50]');
+		$this->form_validation->set_rules('observation_pipe_secretion','Pipe Secretion','required|trim|xss_clean|max_length[50]');
+		$this->form_validation->set_rules('observation_trash','Trash','required|trim|xss_clean|max_length[50]');
+		$this->form_validation->set_rules('observation_comments','Comments','trim|xss_clean|max_length[1000]');
 
 		if ($this->form_validation->run() === FALSE)
 		{
@@ -194,10 +210,24 @@ class content extends Admin_Controller {
 		// make sure we only pass in the fields we want
 		
 		$data = array();
-		$data['observation_description']        = $this->input->post('observation_description');
-		$data['observation_obs_date']        = $this->input->post('observation_obs_date') ? $this->input->post('observation_obs_date') : '0000-00-00';
-		$data['observation_obs_location']        = $this->input->post('observation_obs_location');
-		$data['observation_anonymous']        = $this->input->post('observation_anonymous');
+		$data['observation_observation_date']        = $this->input->post('observation_observation_date') ? $this->input->post('observation_observation_date') : '0000-00-00 00:00:00';
+		$data['observation_waterbody']        = $this->input->post('observation_waterbody');
+		$data['observation_watershed']        = $this->input->post('observation_watershed');
+		$data['observation_sate_muni']        = $this->input->post('observation_sate_muni');
+		$data['observation_location_long']        = $this->input->post('observation_location_long');
+		$data['observation_location_lat']        = $this->input->post('observation_location_lat');
+		$data['observation_water_speed']        = $this->input->post('observation_water_speed');
+		$data['observation_water_movement']        = $this->input->post('observation_water_movement');
+		$data['observation_fish_presence']        = $this->input->post('observation_fish_presence');
+		$data['observation_rep_amph_present']        = $this->input->post('observation_rep_amph_present');
+		$data['observation_fish_types']        = $this->input->post('observation_fish_types');
+		$data['observation_tree_shade']        = $this->input->post('observation_tree_shade');
+		$data['observation_left_bank']        = $this->input->post('observation_left_bank');
+		$data['observation_right_bank']        = $this->input->post('observation_right_bank');
+		$data['observation_pipes']        = $this->input->post('observation_pipes');
+		$data['observation_pipe_secretion']        = $this->input->post('observation_pipe_secretion');
+		$data['observation_trash']        = $this->input->post('observation_trash');
+		$data['observation_comments']        = $this->input->post('observation_comments');
 
 		if ($type == 'insert')
 		{

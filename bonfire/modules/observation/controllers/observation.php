@@ -15,6 +15,8 @@ class observation extends Front_Controller {
 		
 			Assets::add_css('flick/jquery-ui-1.8.13.custom.css');
 			Assets::add_js('jquery-ui-1.8.13.min.js');
+			Assets::add_css('jquery-ui-timepicker.css');
+			Assets::add_js('jquery-ui-timepicker-addon.js');
 	}
 
 	//--------------------------------------------------------------------
