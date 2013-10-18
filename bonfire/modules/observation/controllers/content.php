@@ -11,6 +11,15 @@ class content extends Admin_Controller {
 
 		$this->auth->restrict('Observation.Content.View');
 		$this->load->model('observation_model', null, true);
+		$this->load->model('color_model', null, true);
+		$this->load->model('smell_model', null, true);
+		$this->load->model('composition_model', null, true);
+		$this->load->model('materials_model', null, true);
+		$this->load->model('algae_model', null, true);
+		$this->load->model('algae_color_model', null, true);
+		$this->load->model('land_model', null, true);
+		$this->load->model('stream_model', null, true);
+		$this->load->model('barrier_model', null, true);
 		$this->lang->load('observation');
 		
 			Assets::add_css('flick/jquery-ui-1.8.13.custom.css');
@@ -190,6 +199,7 @@ class content extends Admin_Controller {
 		$this->form_validation->set_rules('observation_location_long','Longitude','required|trim|xss_clean|max_length[50]');
 		$this->form_validation->set_rules('observation_location_lat','Latitude','required|trim|xss_clean|max_length[50]');
 		$this->form_validation->set_rules('observation_water_speed','Water Speed','required|trim|xss_clean|max_length[50]');
+		
 		$this->form_validation->set_rules('observation_water_movement','Water Movement','required|trim|xss_clean|max_length[50]');
 		$this->form_validation->set_rules('observation_fish_presence','Fish Presence','required|trim|xss_clean|max_length[50]');
 		$this->form_validation->set_rules('observation_rep_amph_present','Reptiles or Fish Present','required|trim|xss_clean|max_length[50]');
@@ -228,10 +238,85 @@ class content extends Admin_Controller {
 		$data['observation_pipe_secretion']        = $this->input->post('observation_pipe_secretion');
 		$data['observation_trash']        = $this->input->post('observation_trash');
 		$data['observation_comments']        = $this->input->post('observation_comments');
+		
+		
+		
+		$dataColor = array();
+		$dataColor['color_clear']        = $this->input->post('color_clear');
+		$dataColor['color_oily']        = $this->input->post('color_oily');
+		$dataColor['color_black']        = $this->input->post('color_black');
+		$dataColor['color_foamy']        = $this->input->post('color_foamy');
+		$dataColor['color_green']        = $this->input->post('color_green');
+		$dataColor['color_muddy']        = $this->input->post('color_muddy');
+		$dataColor['color_brown']        = $this->input->post('color_brown');
+		$dataColor['color_other']        = $this->input->post('color_other');
+		
+		$dataSmell = array();
+		$dataSmell['smell_no_odor']        = $this->input->post('smell_no_odor');
+		$dataSmell['smell_rotten_egg']        = $this->input->post('smell_rotten_egg');
+		$dataSmell['smell_gasoline_oil']        = $this->input->post('smell_gasoline_oil');
+		$dataSmell['smell_chemical']        = $this->input->post('smell_chemical');
+		$dataSmell['smell_chlorine']        = $this->input->post('smell_chlorine');
+		$dataSmell['smell_sewage']        = $this->input->post('smell_sewage');
+		$dataSmell['smell_rotting']        = $this->input->post('smell_rotting');
+		$dataSmell['smell_fishy']        = $this->input->post('smell_fishy');
+		
+		$dataComposition = array();
+		$dataComposition['composition_sand']        = $this->input->post('composition_sand');
+		$dataComposition['composition_gravel']        = $this->input->post('composition_gravel');
+		$dataComposition['composition_boulders']        = $this->input->post('composition_boulders');
+		$dataComposition['composition_silt']        = $this->input->post('composition_silt');
+		$dataComposition['composition_other']        = $this->input->post('composition_other');
+		$dataComposition['composition_man_made_cement']        = $this->input->post('composition_man_made_cement');
+	
+		$dataMaterial = array();
+		$dataMaterial['material_sand']        = $this->input->post('material_sand');
+		$dataMaterial['material_gravel']        = $this->input->post('material_gravel');
+		$dataMaterial['material_boulders']        = $this->input->post('material_boulders');
+		$dataMaterial['material_bedrock']        = $this->input->post('material_bedrock');
+		$dataMaterial['material_silt']        = $this->input->post('material_silt');
+		$dataMaterial['material_other']        = $this->input->post('material_other');
+		
+		
+		$dataAlgae = array();
+		$dataAlgae['algae_not_present']        = $this->input->post('algae_not_present');
+		$dataAlgae['algae_present_in_spots']        = $this->input->post('algae_present_in_spots');
+		$dataAlgae['algae_attached_to_rocks']        = $this->input->post('algae_attached_to_rocks');
+		$dataAlgae['algae_everywhere']        = $this->input->post('algae_everywhere');
+		$dataAlgae['algae_floating']        = $this->input->post('algae_floating');
+		$dataAlgae['algae_matted_on_the_streambed']        = $this->input->post('algae_matted_on_the_streambed');
 
+		
+		$dataAlgaeColor = array();
+		$dataAlgaeColor['algae_light_green']        = $this->input->post('algae_light_green');
+		$dataAlgaeColor['algae_dark_green']        = $this->input->post('algae_dark_green');
+		$dataAlgaeColor['algae_brown']        = $this->input->post('algae_brown');
+		$dataAlgaeColor['algae_red']        = $this->input->post('algae_red');
+		$dataAlgaeColor['algae_orange']        = $this->input->post('algae_orange');
+		
+		
+		
 		if ($type == 'insert')
 		{
 			$id = $this->observation_model->insert($data);
+			
+			$dataColor['observation_id'] = $id;
+			$this->color_model->insert($dataColor);
+			
+			$dataSmell['observation_id'] = $id;
+			$this->smell_model->insert($dataSmell);
+			
+			$dataComposition['observation_id'] = $id;
+			$this->composition_model->insert($dataComposition);
+			
+			$dataMaterial['observation_id'] = $id;
+			$this->materials_model->insert($dataMaterial);
+			
+			$dataAlgae['observation_id'] = $id;
+			$this->algae_model->insert($dataAlgae);
+			
+			$dataAlgaeColor['observation_id'] = $id;
+			$this->algae_color_model->insert($dataAlgaeColor);
 
 			if (is_numeric($id))
 			{

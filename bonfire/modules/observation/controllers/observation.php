@@ -11,6 +11,7 @@ class observation extends Front_Controller {
 
 		$this->load->library('form_validation');
 		$this->load->model('observation_model', null, true);
+		$this->load->model('Color_model', null, true);
 		$this->lang->load('observation');
 		
 			Assets::add_css('flick/jquery-ui-1.8.13.custom.css');
