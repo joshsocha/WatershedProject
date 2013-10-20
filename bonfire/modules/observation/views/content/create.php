@@ -169,7 +169,7 @@ $id = isset($observation['id']) ? $observation['id'] : '';
             <?php echo form_label('How fast is the water moving?'. lang('bf_form_label_required'), 'observation_water_speed', array('class' => "control-label") ); ?>
             <div class='controls'>
         <label class="radio">
-            <input id="observation_water_speed" name="observation_water_speed" type="radio" class="" value="very fast" <?php echo set_radio('observation_water_speed', 'very fast', TRUE); ?> />
+            <input id="observation_water_speed" name="observation_water_speed" type="radio" class="" value="very fast" <?php echo set_radio('observation_water_speed', 'very fast'); ?> />
             <label for="observation_water_speed">Very fast</label>
             <input id="observation_water_speed" name="observation_water_speed" type="radio" class="" value="fast" <?php echo set_radio('observation_water_speed', 'fast'); ?> />
             <label for="observation_water_speed">Fast</label>
@@ -443,9 +443,109 @@ $id = isset($observation['id']) ? $observation['id'] : '';
             </label>
         </div>
 
+</div>
+		
+		<div class="control-group <?php echo form_error('observation_land_use') ? 'error' : ''; ?>">
+            <?php echo form_label('How is the land along the stream being used? Look at the areas on both sides of the stream and immediately upstream from you sampling site (check all uses observed)', 'observation_land_use', array('class' => "control-label") ); ?>
+            <div class='controls'>
+            <label class="checkbox" for="land_farming"> Farming/crops
+            <input type="checkbox" id="land_farming" name="land_farming" value="1" <?php echo (isset($observation['land_farming']) && $observation['land_farming'] == 1) ? 'checked="checked"' : set_checkbox('land_farming', 1); ?>>
+            <span class="help-inline"><?php echo form_error('land_farming'); ?></span>
+            </label>
+			
+			<label class="checkbox" for="land_forest"> Forest
+            <input type="checkbox" id="land_forest" name="land_forest" value="1" <?php echo (isset($observation['land_forest']) && $observation['land_forest'] == 1) ? 'checked="checked"' : set_checkbox('land_forest', 1); ?>>
+            <span class="help-inline"><?php echo form_error('land_forest'); ?></span>
+            </label>
+			
+			<label class="checkbox" for="land_residential">Residential neighborhood
+            <input type="checkbox" id="land_residential" name="land_residential" value="1" <?php echo (isset($observation['land_residential']) && $observation['land_residential'] == 1) ? 'checked="checked"' : set_checkbox('land_residential', 1); ?>>
+            <span class="help-inline"><?php echo form_error('land_residential'); ?></span>
+            </label>
+			
+			<label class="checkbox" for="land_poultry_swine"> Poultry/swine
+            <input type="checkbox" id="land_poultry_swine" name="land_poultry_swine" value="1" <?php echo (isset($observation['land_poultry_swine']) && $observation['land_poultry_swine'] == 1) ? 'checked="checked"' : set_checkbox('land_poultry_swine', 1); ?>>
+            <span class="help-inline"><?php echo form_error('land_poultry_swine'); ?></span>
+            </label>
+			
+			<label class="checkbox" for="land_stores"> Stores/malls
+            <input type="checkbox" id="land_stores" name="land_stores" value="1" <?php echo (isset($observation['land_stores']) && $observation['land_stores'] == 1) ? 'checked="checked"' : set_checkbox('land_stores', 1); ?>>
+            <span class="help-inline"><?php echo form_error('land_stores'); ?></span>
+            </label>
+			
+			<label class="checkbox" for="land_stores"> Mining
+            <input type="checkbox" id="land_stores" name="land_stores" value="1" <?php echo (isset($observation['land_stores']) && $observation['land_stores'] == 1) ? 'checked="checked"' : set_checkbox('land_stores', 1); ?>>
+            <span class="help-inline"><?php echo form_error('land_stores'); ?></span>
+            </label>
 
+			<label class="checkbox" for="land_construction"> Construction
+            <input type="checkbox" id="land_construction" name="land_construction" value="1" <?php echo (isset($observation['land_construction']) && $observation['land_construction'] == 1) ? 'checked="checked"' : set_checkbox('land_construction', 1); ?>>
+            <span class="help-inline"><?php echo form_error('land_construction'); ?></span>
+            </label>
+			
+			<label class="checkbox" for="land_factories"> Factories
+            <input type="checkbox" id="land_factories" name="land_factories" value="1" <?php echo (isset($observation['land_factories']) && $observation['land_factories'] == 1) ? 'checked="checked"' : set_checkbox('land_factories', 1); ?>>
+            <span class="help-inline"><?php echo form_error('land_factories'); ?></span>
+            </label>
+			
+			<label class="checkbox" for="land_factories"> Logging
+            <input type="checkbox" id="land_factories" name="land_factories" value="1" <?php echo (isset($observation['land_factories']) && $observation['land_factories'] == 1) ? 'checked="checked"' : set_checkbox('land_factories', 1); ?>>
+            <span class="help-inline"><?php echo form_error('land_factories'); ?></span>
+            </label>
+        </div>
 
         </div>
+		
+		
+				
+		<div class="control-group <?php echo form_error('observation_stream_use') ? 'error' : ''; ?>">
+            <?php echo form_label('What are likely uses of the stream?', 'observation_stream_use', array('class' => "control-label") ); ?>
+            <div class='controls'>
+            <label class="checkbox" for="stream_drinking"> Drinking water supply
+            <input type="checkbox" id="stream_drinking" name="stream_drinking" value="1" <?php echo (isset($observation['stream_drinking']) && $observation['stream_drinking'] == 1) ? 'checked="checked"' : set_checkbox('stream_drinking', 1); ?>>
+            <span class="help-inline"><?php echo form_error('stream_drinking'); ?></span>
+            </label>
+			
+			<label class="checkbox" for="stream_recreation"> Recreation
+            <input type="checkbox" id="stream_recreation" name="stream_recreation" value="1" <?php echo (isset($observation['stream_recreation']) && $observation['stream_recreation'] == 1) ? 'checked="checked"' : set_checkbox('stream_recreation', 1); ?>>
+            <span class="help-inline"><?php echo form_error('stream_recreation'); ?></span>
+            </label>
+			
+			<label class="checkbox" for="stream_swimming">Swimming
+            <input type="checkbox" id="stream_swimming" name="stream_swimming" value="1" <?php echo (isset($observation['stream_swimming']) && $observation['stream_swimming'] == 1) ? 'checked="checked"' : set_checkbox('land_forest', 1); ?>>
+            <span class="help-inline"><?php echo form_error('stream_swimming'); ?></span>
+            </label>
+			
+			<label class="checkbox" for="stream_fishing"> Fishing
+            <input type="checkbox" id="stream_fishing" name="stream_fishing" value="1" <?php echo (isset($observation['stream_fishing']) && $observation['stream_fishing'] == 1) ? 'checked="checked"' : set_checkbox('stream_fishing', 1); ?>>
+            <span class="help-inline"><?php echo form_error('stream_fishing'); ?></span>
+            </label>
+			
+			<label class="checkbox" for="stream_industrial"> Industrial water supply
+            <input type="checkbox" id="stream_industrial" name="stream_industrial" value="1" <?php echo (isset($observation['stream_industrial']) && $observation['stream_industrial'] == 1) ? 'checked="checked"' : set_checkbox('stream_industrial', 1); ?>>
+            <span class="help-inline"><?php echo form_error('stream_industrial'); ?></span>
+            </label>
+			
+			<label class="checkbox" for="stream_agriculture"> Agriculture
+            <input type="checkbox" id="stream_agriculture" name="stream_agriculture" value="1" <?php echo (isset($observation['stream_agriculture']) && $observation['stream_agriculture'] == 1) ? 'checked="checked"' : set_checkbox('stream_agriculture', 1); ?>>
+            <span class="help-inline"><?php echo form_error('stream_agriculture'); ?></span>
+            </label>
+
+			<label class="checkbox" for="stream_irrigation"> Irrigation
+            <input type="checkbox" id="stream_irrigation" name="stream_irrigation" value="1" <?php echo (isset($observation['stream_irrigation']) && $observation['stream_irrigation'] == 1) ? 'checked="checked"' : set_checkbox('stream_irrigation', 1); ?>>
+            <span class="help-inline"><?php echo form_error('stream_irrigation'); ?></span>
+            </label>
+			
+			<label class="checkbox" for="stream_livestock"> Livestock watering
+            <input type="checkbox" id="stream_livestock" name="stream_livestock" value="1" <?php echo (isset($observation['stream_livestock']) && $observation['stream_livestock'] == 1) ? 'checked="checked"' : set_checkbox('stream_livestock', 1); ?>>
+            <span class="help-inline"><?php echo form_error('stream_livestock'); ?></span>
+            </label>
+			
+			
+        </div>
+
+        </div>
+		
         <div class="control-group <?php echo form_error('observation_pipes') ? 'error' : ''; ?>">
             <?php echo form_label('Are there any pipes emptying directly into or near the stream?'. lang('bf_form_label_required'), 'observation_pipes', array('class' => "control-label") ); ?>
             <div class='controls'>
@@ -491,8 +591,35 @@ $id = isset($observation['id']) ? $observation['id'] : '';
         </div>
 
 
+</div>
+		
+		<div class="control-group <?php echo form_error('observation_barriers') ? 'error' : ''; ?>">
+            <?php echo form_label('Are there barriers in the stream?', 'observation_barriers', array('class' => "control-label") ); ?>
+            <div class='controls'>
+            <label class="checkbox" for="barriers_dams"> Dams
+            <input type="checkbox" id="barriers_dams" name="barriers_dams" value="1" <?php echo (isset($observation['barriers_dams']) && $observation['barriers_dams'] == 1) ? 'checked="checked"' : set_checkbox('barriers_dams', 1); ?>>
+            <span class="help-inline"><?php echo form_error('barriers_dams'); ?></span>
+            </label>
+			
+			<label class="checkbox" for="barriers_bridges"> Bridges
+            <input type="checkbox" id="barriers_bridges" name="barriers_bridges" value="1" <?php echo (isset($observation['barriers_bridges']) && $observation['barriers_bridges'] == 1) ? 'checked="checked"' : set_checkbox('barriers_bridges', 1); ?>>
+            <span class="help-inline"><?php echo form_error('barriers_bridges'); ?></span>
+            </label>
+			
+			<label class="checkbox" for="barriers_woody_debris">Woody debris
+            <input type="checkbox" id="barriers_woody_debris" name="barriers_woody_debris" value="1" <?php echo (isset($observation['barriers_woody_debris']) && $observation['barriers_woody_debris'] == 1) ? 'checked="checked"' : set_checkbox('barriers_woody_debris', 1); ?>>
+            <span class="help-inline"><?php echo form_error('barriers_woody_debris'); ?></span>
+            </label>
+			
+			<label class="checkbox" for="barriers_waterfalls"> Waterfalls
+            <input type="checkbox" id="barriers_waterfalls" name="barriers_waterfalls" value="1" <?php echo (isset($observation['barriers_waterfalls']) && $observation['barriers_waterfalls'] == 1) ? 'checked="checked"' : set_checkbox('barriers_waterfalls', 1); ?>>
+            <span class="help-inline"><?php echo form_error('barriers_waterfalls'); ?></span>
+            </label>
+			
+        </div>
 
         </div>
+
         <div class="control-group <?php echo form_error('observation_comments') ? 'error' : ''; ?>">
             <?php echo form_label('Comments', 'observation_comments', array('class' => "control-label") ); ?>
             <div class='controls'>

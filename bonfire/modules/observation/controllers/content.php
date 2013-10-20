@@ -20,6 +20,8 @@ class content extends Admin_Controller {
 		$this->load->model('land_model', null, true);
 		$this->load->model('stream_model', null, true);
 		$this->load->model('barrier_model', null, true);
+		
+
 		$this->lang->load('observation');
 		
 			Assets::add_css('flick/jquery-ui-1.8.13.custom.css');
@@ -212,6 +214,13 @@ class content extends Admin_Controller {
 		$this->form_validation->set_rules('observation_trash','Trash','required|trim|xss_clean|max_length[50]');
 		$this->form_validation->set_rules('observation_comments','Comments','trim|xss_clean|max_length[1000]');
 
+		
+		$this->form_validation->set_rules('color_clear','Clear','trim|xss_clean|max_length[50]');
+
+		
+		
+		
+		
 		if ($this->form_validation->run() === FALSE)
 		{
 			return FALSE;
@@ -295,6 +304,36 @@ class content extends Admin_Controller {
 		$dataAlgaeColor['algae_orange']        = $this->input->post('algae_orange');
 		
 		
+		$dataLandUse = array();
+		$dataLandUse['land_farming']        = $this->input->post('land_farming');
+		$dataLandUse['land_forest']        = $this->input->post('land_forest');
+		$dataLandUse['land_residential']        = $this->input->post('land_residential');
+		$dataLandUse['land_poultry_swine']        = $this->input->post('poultry_swine');
+		$dataLandUse['land_pasture']        = $this->input->post('land_pasture');
+		$dataLandUse['land_stores']        = $this->input->post('land_stores');
+		$dataLandUse['land_mining']        = $this->input->post('land_mining');
+		$dataLandUse['land_construction']        = $this->input->post('land_construction');
+		$dataLandUse['land_factories']        = $this->input->post('land_factories');
+		$dataLandUse['land_logging']        = $this->input->post('land_logging');
+		
+		
+		$dataStreamUse = array();
+		$dataStreamUse['stream_drinking']        = $this->input->post('stream_drinking');
+		$dataStreamUse['stream_recreation']        = $this->input->post('stream_recreation');
+		$dataStreamUse['stream_swimming']        = $this->input->post('stream_swimming');
+		$dataStreamUse['stream_fishing']        = $this->input->post('stream_fishing');
+		$dataStreamUse['stream_industrial']        = $this->input->post('stream_industrial');
+		$dataStreamUse['stream_agriculture']        = $this->input->post('stream_agriculture');
+		$dataStreamUse['stream_irrigation']        = $this->input->post('ostream_irrigation');
+		$dataStreamUse['stream_livestock']        = $this->input->post('stream_livestock');
+
+		
+		$dataBarriers = array();
+		$dataBarriers['barriers_dams']        = $this->input->post('barriers_dams');
+		$dataBarriers['barriers_bridges']        = $this->input->post('barriers_bridges');
+		$dataBarriers['barriers_woody_debris']        = $this->input->post('barriers_woody_debris');
+		$dataBarriers['barriers_waterfalls']        = $this->input->post('barriers_waterfalls');
+		
 		
 		if ($type == 'insert')
 		{
@@ -317,6 +356,15 @@ class content extends Admin_Controller {
 			
 			$dataAlgaeColor['observation_id'] = $id;
 			$this->algae_color_model->insert($dataAlgaeColor);
+			
+			$dataLandUse['observation_id'] = $id;
+			$this->land_model->insert($dataLandUse);
+			
+			$dataStreamUse['observation_id'] = $id;
+			$this->stream_model->insert($dataStreamUse);
+
+			$dataBarriers['observation_id'] = $id;
+			$this->barrier_model->insert($dataBarriers);
 
 			if (is_numeric($id))
 			{
