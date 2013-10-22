@@ -148,7 +148,7 @@ class Migration_Install_observation extends Migration {
 				'default' => '0000-00-00'
 			),
 			'modified_on' => array(
-				'type' => 'DATE'
+				'type' => 'DATE',
 				'default' => '0000-00-00'
 			)
 		);
@@ -158,14 +158,38 @@ class Migration_Install_observation extends Migration {
 
 
 		$fields = array(
-			'observation_id' int(11) NOT NULL,
-			'algae_light_green' int(11) NOT NULL,
-			'algae_dark_green' int(11) NOT NULL,
-			'algae_brown' int(11) NOT NULL,
-			'algae_red' int(11) NOT NULL,
-			'algae_orange' int(11) NOT NULL,
-			'created_on' date NOT NULL DEFAULT '0000-00-00',
-			'modified_on' date NOT NULL DEFAULT '0000-00-00',
+			'observation_id' => array(
+				'type' => 'INT',
+				'constraint' => 11
+			),
+			'algae_light_green' => array(
+				'type' => 'INT',
+				'constraint' => 11
+			),
+			'algae_dark_green' => array(
+				'type' => 'INT',
+				'constraint' => 11
+			),
+			'algae_brown' => array(
+				'type' => 'INT',
+				'constraint' => 11
+			),
+			'algae_red' => array(
+				'type' => 'INT',
+				'constraint' => 11
+			),
+			'algae_orange' => array(
+				'type' => 'INT',
+				'constraint' => 11
+			),
+			'created_on' => array(
+				'type' => "DATE",
+				'default' => '0000-00-00'
+			),
+			'modified_on' => array(
+				'type' => "DATE",
+				'default' => '0000-00-00'
+			)
   		);
 		$this->dbforge->add_field($fields);
 		$this->dbforge->add_key('observation_id', true);
@@ -195,11 +219,11 @@ class Migration_Install_observation extends Migration {
 			),
 			'created_on' => array(
 				'type' => 'DATE',
-				'default' => 0000-00-00
+				'default' => '0000-00-00'
 			),
 			'modified_on' => array(
 				'type' => 'DATE',
-				'default' => 0000-00-00
+				'default' => '0000-00-00'
 			)
 		);
 		$this->dbforge->add_field($fields);
@@ -214,11 +238,11 @@ class Migration_Install_observation extends Migration {
 			),
 			'created_on' => array(
 				'type' => 'DATE',
-				'default' => 0000-00-00
+				'default' => '0000-00-00'
 			),
 			'modified_on' => array(
 				'type' => 'DATE',
-				'default' => 0000-00-00
+				'default' => '0000-00-00'
 			),
 			'color_clear' => array(
 				'type' => 'INT',
@@ -289,11 +313,11 @@ class Migration_Install_observation extends Migration {
 			),
 			'created_on' => array(
 				'type' => 'DATE',
-				'default' => 0000-00-00
+				'default' => '0000-00-00'
 			),
 			'modified_on' => array(
 				'type' => 'DATE',
-				'default' => 0000-00-00
+				'default' => '0000-00-00'
 			)
 		);
 		$this->dbforge->add_field($fields);
@@ -348,11 +372,11 @@ class Migration_Install_observation extends Migration {
 			),
 			'created_on' => array(
 				'type' => 'DATE',
-				'default' => 0000-00-00
+				'default' => '0000-00-00'
 			),
 			'modified_on' => array(
 				'type' => 'DATE',
-				'default' => 0000-00-00
+				'default' => '0000-00-00'
 			)
 		);
 		$this->dbforge->add_field($fields);
@@ -391,11 +415,11 @@ class Migration_Install_observation extends Migration {
 			),
 			'created_on' => array(
 				'type' => 'DATE',
-				'default' => 0000-00-00
+				'default' => '0000-00-00'
 			),
 			'modified_on' => array(
 				'type' => 'DATE',
-				'default' => 0000-00-00
+				'default' => '0000-00-00'
 			)
 		);
 		$this->dbforge->add_field($fields);
@@ -442,11 +466,11 @@ class Migration_Install_observation extends Migration {
 			),
 			'modified_on' => array(
 				'type' => 'DATE',
-				'default' => 0000-00-00
+				'default' => '0000-00-00'
 			),
 			'created_on' => array(
 				'type' => 'DATE',
-				'default' => 0000-00-00
+				'default' => '0000-00-00'
 			)
 		);
 		$this->dbforge->add_field($fields);
@@ -493,11 +517,11 @@ class Migration_Install_observation extends Migration {
 			),
 			'created_on' => array(
 				'type' => 'DATE',
-				'default' => 0000-00-00
+				'default' => '0000-00-00'
 			),
 			'modified_on' => array(
 				'type' => 'DATE',
-				'default' => 0000-00-00
+				'default' => '0000-00-00'
 			)
 		);
 		$this->dbforge->add_field($fields);
