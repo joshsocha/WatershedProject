@@ -59,6 +59,14 @@ $id = isset($observation['id']) ? $observation['id'] : '';
         <span class="help-inline"><?php echo form_error('observation_location_long'); ?></span>
         </div>
 
+        </div>
+        <div class="control-group <?php echo form_error('observation_location_lat') ? 'error' : ''; ?>">
+            <?php echo form_label('Latitude'. lang('bf_form_label_required'), 'observation_location_lat', array('class' => "control-label") ); ?>
+            <div class='controls'>
+        <input id="observation_location_lat" type="text" name="observation_location_lat" maxlength="50" value="<?php echo set_value('observation_location_lat', isset($observation['observation_location_lat']) ? $observation['observation_location_lat'] : ''); ?>"  />
+        <span class="help-inline"><?php echo form_error('observation_location_lat'); ?></span>
+        </div>
+
 
         </div>
          <div class="control-group <?php echo form_error('observation_water_color') ? 'error' : ''; ?>">
