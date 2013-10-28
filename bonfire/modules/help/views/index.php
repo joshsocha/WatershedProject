@@ -5,9 +5,10 @@
 
             <?php
             $record = (array)$record;
-
-            if ($record['help_type'] == 'head') {
-                echo($record['help_text']);
+            if (!empty($record)) {
+                if ($record['help_type'] == 'head') {
+                    echo($record['help_text']);
+                }
             }
             ?>
         <?php endforeach; ?>
@@ -27,9 +28,10 @@
 
                 <?php
                 $record = (array)$record;
-
-                if ($record['help_type'] == 'FAQ') {
-                    echo($record['help_title']);
+                if (!empty($record)) {
+                    if ($record['help_type'] == 'FAQ') {
+                        echo($record['help_title']);
+                    }
                 }
                 ?>
             </h4>
@@ -37,11 +39,13 @@
 
         <div class="span8 large">
 
-                <?php
+            <?php
+            if (!empty($record)) {
                 if ($record['help_type'] == 'FAQ') {
                     echo($record['help_text']);
                 }
-                ?>
+            }
+            ?>
         </div>
     </div>
     <br>
