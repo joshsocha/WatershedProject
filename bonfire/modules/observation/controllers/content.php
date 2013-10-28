@@ -163,6 +163,33 @@ class content extends Admin_Controller {
 		Template::set('observation', $this->observation_model->find($id));
 		Assets::add_module_js('observation', 'observation.js');
 
+		$colors = $this->color_model->where('observation_id', $id)->find_all()[0];
+		Template::set('colors', $colors);
+
+		$smells = $this->smell_model->where('observation_id', $id)->find_all()[0];
+		Template::set('smells', $smells);
+
+		$composition = $this->composition_model->where('observation_id', $id)->find_all()[0];
+		Template::set('composition', $composition);
+
+		$materials = $this->materials_model->where('observation_id', $id)->find_all()[0];
+		Template::set('materials', $materials);
+
+		$algae = $this->algae_model->where('observation_id', $id)->find_all()[0];
+		Template::set('algae', $algae);
+
+		$algae_color = $this->algae_color_model->where('observation_id', $id)->find_all()[0];
+		Template::set('algae_color', $algae_color);
+
+		$land = $this->land_model->where('observation_id', $id)->find_all()[0];
+		Template::set('land', $land);
+
+		$stream = $this->stream_model->where('observation_id', $id)->find_all()[0];
+		Template::set('stream', $stream);
+
+		$barriers = $this->barrier_model->where('observation_id', $id)->find_all()[0];
+		Template::set('barriers', $barriers);
+
 		Template::set('toolbar_title', lang('observation_edit') . ' Observation');
 		Template::render();
 	}
@@ -247,6 +274,7 @@ class content extends Admin_Controller {
 		$data['observation_pipe_secretion']        = $this->input->post('observation_pipe_secretion');
 		$data['observation_trash']        = $this->input->post('observation_trash');
 		$data['observation_comments']        = $this->input->post('observation_comments');
+		$data['observation_anonymous']        = $this->input->post('observation_anonymous');
 		
 		
 		
@@ -308,7 +336,7 @@ class content extends Admin_Controller {
 		$dataLandUse['land_farming']        = $this->input->post('land_farming');
 		$dataLandUse['land_forest']        = $this->input->post('land_forest');
 		$dataLandUse['land_residential']        = $this->input->post('land_residential');
-		$dataLandUse['land_poultry_swine']        = $this->input->post('poultry_swine');
+		$dataLandUse['land_poultry_swine']        = $this->input->post('land_poultry_swine');
 		$dataLandUse['land_pasture']        = $this->input->post('land_pasture');
 		$dataLandUse['land_stores']        = $this->input->post('land_stores');
 		$dataLandUse['land_mining']        = $this->input->post('land_mining');
@@ -324,7 +352,7 @@ class content extends Admin_Controller {
 		$dataStreamUse['stream_fishing']        = $this->input->post('stream_fishing');
 		$dataStreamUse['stream_industrial']        = $this->input->post('stream_industrial');
 		$dataStreamUse['stream_agriculture']        = $this->input->post('stream_agriculture');
-		$dataStreamUse['stream_irrigation']        = $this->input->post('ostream_irrigation');
+		$dataStreamUse['stream_irrigation']        = $this->input->post('stream_irrigation');
 		$dataStreamUse['stream_livestock']        = $this->input->post('stream_livestock');
 
 		
@@ -377,6 +405,33 @@ class content extends Admin_Controller {
 		else if ($type == 'update')
 		{
 			$return = $this->observation_model->update($id, $data);
+
+			$dataColor['observation_id'] = $id;
+			$this->color_model->update_where('observation_id', $id, $dataColor);
+			
+			$dataSmell['observation_id'] = $id;
+			$this->smell_model->update_where('observation_id', $id, $dataSmell);
+			
+			$dataComposition['observation_id'] = $id;
+			$this->composition_model->update_where('observation_id', $id, $dataComposition);
+			
+			$dataMaterial['observation_id'] = $id;
+			$this->materials_model->update_where('observation_id', $id, $dataMaterial);
+			
+			$dataAlgae['observation_id'] = $id;
+			$this->algae_model->update_where('observation_id', $id, $dataAlgae);
+			
+			$dataAlgaeColor['observation_id'] = $id;
+			$this->algae_color_model->update_where('observation_id', $id, $dataAlgaeColor);
+			
+			$dataLandUse['observation_id'] = $id;
+			$this->land_model->update_where('observation_id', $id, $dataLandUse);
+			
+			$dataStreamUse['observation_id'] = $id;
+			$this->stream_model->update_where('observation_id', $id, $dataStreamUse);
+			
+			$dataBarriers['observation_id'] = $id;
+			$this->barrier_model->update_where('observation_id', $id, $dataBarriers);
 		}
 
 		return $return;

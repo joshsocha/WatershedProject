@@ -73,42 +73,42 @@ $id = isset($observation['id']) ? $observation['id'] : '';
             <?php echo form_label('What color is the water? (Check all that apply)', 'color_clear', array('class' => "control-label") ); ?>
             <div class='controls'>
             <label class="checkbox" for="color_clear"> Clear
-            <input type="checkbox" id="color_clear" name="color_clear" value="1" <?php echo (isset($observation['color_clear']) && $observation['color_clear'] == 1) ? 'checked="checked"' : set_checkbox('color_clear', 1); ?>>
+            <input type="checkbox" id="color_clear" name="color_clear" value="1" <?php echo (isset($colors->color_clear) && $colors->color_clear == 1) ? 'checked="checked"' : set_checkbox('color_clear', 1); ?>>
             <span class="help-inline"><?php echo form_error('color_clear'); ?></span>
             </label>
 			
 			<label class="checkbox" for="color_oily"> Oily
-            <input type="checkbox" id="color_oily" name="color_oily" value="1" <?php echo (isset($observation['color_oily']) && $observation['color_oily'] == 1) ? 'checked="checked"' : set_checkbox('color_oily', 1); ?>>
+            <input type="checkbox" id="color_oily" name="color_oily" value="1" <?php echo (isset($colors->color_oily) && $colors->color_oily == 1) ? 'checked="checked"' : set_checkbox('color_oily', 1); ?>>
             <span class="help-inline"><?php echo form_error('color_oily'); ?></span>
             </label>
 			
 			<label class="checkbox" for="color_black"> Black
-            <input type="checkbox" id="color_black" name="color_black" value="1" <?php echo (isset($observation['color_black']) && $observation['color_black'] == 1) ? 'checked="checked"' : set_checkbox('color_black', 1); ?>>
+            <input type="checkbox" id="color_black" name="color_black" value="1" <?php echo (isset($colors->color_black) && $colors->color_black == 1) ? 'checked="checked"' : set_checkbox('color_black', 1); ?>>
             <span class="help-inline"><?php echo form_error('color_oily'); ?></span>
             </label>
 			
 			<label class="checkbox" for="color_foamy"> Foamy
-            <input type="checkbox" id="color_foamy" name="color_foamy" value="1" <?php echo (isset($observation['color_foamy']) && $observation['color_foamy'] == 1) ? 'checked="checked"' : set_checkbox('color_foamy', 1); ?>>
+            <input type="checkbox" id="color_foamy" name="color_foamy" value="1" <?php echo (isset($colors->color_foamy) && $colors->color_foamy == 1) ? 'checked="checked"' : set_checkbox('color_foamy', 1); ?>>
             <span class="help-inline"><?php echo form_error('color_foamy'); ?></span>
             </label>
 			
 			<label class="checkbox" for="color_green"> Green
-            <input type="checkbox" id="color_green" name="color_green" value="1" <?php echo (isset($observation['color_green']) && $observation['color_green'] == 1) ? 'checked="checked"' : set_checkbox('color_green', 1); ?>>
+            <input type="checkbox" id="color_green" name="color_green" value="1" <?php echo (isset($colors->color_green) && $colors->color_green == 1) ? 'checked="checked"' : set_checkbox('color_green', 1); ?>>
             <span class="help-inline"><?php echo form_error('color_green'); ?></span>
             </label>
 			
 			<label class="checkbox" for="color_muddy"> Muddy
-            <input type="checkbox" id="color_muddy" name="color_muddy" value="1" <?php echo (isset($observation['color_muddy']) && $observation['color_muddy'] == 1) ? 'checked="checked"' : set_checkbox('color_muddy', 1); ?>>
+            <input type="checkbox" id="color_muddy" name="color_muddy" value="1" <?php echo (isset($colors->color_muddy) && $colors->color_muddy == 1) ? 'checked="checked"' : set_checkbox('color_muddy', 1); ?>>
             <span class="help-inline"><?php echo form_error('color_muddy'); ?></span>
             </label>
 			
 			<label class="checkbox" for="color_brown"> Brown
-            <input type="checkbox" id="color_brown" name="color_brown" value="1" <?php echo (isset($observation['color_brown']) && $observation['color_brown'] == 1) ? 'checked="checked"' : set_checkbox('color_brown', 1); ?>>
+            <input type="checkbox" id="color_brown" name="color_brown" value="1" <?php echo (isset($colors->color_brown) && $colors->color_brown == 1) ? 'checked="checked"' : set_checkbox('color_brown', 1); ?>>
             <span class="help-inline"><?php echo form_error('color_brown'); ?></span>
             </label>
 			
 			<label class="checkbox" for="color_other"> Other
-            <input type="checkbox" id="color_other" name="color_other" value="1" <?php echo (isset($observation['color_other']) && $observation['color_other'] == 1) ? 'checked="checked"' : set_checkbox('color_other', 1); ?>>
+            <input type="checkbox" id="color_other" name="color_other" value="1" <?php echo (isset($colors->color_other) && $colors->color_other == 1) ? 'checked="checked"' : set_checkbox('color_other', 1); ?>>
             <span class="help-inline"><?php echo form_error('color_other'); ?></span>
             </label>
 
@@ -120,42 +120,42 @@ $id = isset($observation['id']) ? $observation['id'] : '';
             <?php echo form_label('What color is the water? (Check all that apply)', 'observation_water_smell', array('class' => "control-label") ); ?>
             <div class='controls'>
             <label class="checkbox" for="smell_no_odor"> No odor
-            <input type="checkbox" id="smell_no_odor" name="smell_no_odor" value="1" <?php echo (isset($observation['smell_no_odor']) && $observation['smell_no_odor'] == 1) ? 'checked="checked"' : set_checkbox('smell_no_odor', 1); ?>>
+            <input type="checkbox" id="smell_no_odor" name="smell_no_odor" value="1" <?php echo (isset($smells->smell_no_odor) && $smells->smell_no_odor == 1) ? 'checked="checked"' : set_checkbox('smell_no_odor', 1); ?>>
             <span class="help-inline"><?php echo form_error('smell_no_odor'); ?></span>
             </label>
 			
 			<label class="checkbox" for="smell_rotten_egg"> Rotten egg
-            <input type="checkbox" id="smell_rotten_egg" name="smell_rotten_egg" value="1" <?php echo (isset($observation['smell_rotten_egg']) && $observation['smell_rotten_egg'] == 1) ? 'checked="checked"' : set_checkbox('smell_rotten_egg', 1); ?>>
+            <input type="checkbox" id="smell_rotten_egg" name="smell_rotten_egg" value="1" <?php echo (isset($smells->smell_rotten_egg) && $smells->smell_rotten_egg == 1) ? 'checked="checked"' : set_checkbox('smell_rotten_egg', 1); ?>>
             <span class="help-inline"><?php echo form_error('smell_rotten_egg'); ?></span>
             </label>
 			
 			<label class="checkbox" for="smell_gasoline_oil"> Gasoline or oil
-            <input type="checkbox" id="smell_gasoline_oil" name="smell_gasoline_oil" value="1" <?php echo (isset($observation['smell_gasoline_oil']) && $observation['smell_gasoline_oil'] == 1) ? 'checked="checked"' : set_checkbox('smell_gasoline_oil', 1); ?>>
+            <input type="checkbox" id="smell_gasoline_oil" name="smell_gasoline_oil" value="1" <?php echo (isset($smells->smell_gasoline_oil) && $smells->smell_gasoline_oil == 1) ? 'checked="checked"' : set_checkbox('smell_gasoline_oil', 1); ?>>
             <span class="help-inline"><?php echo form_error('smell_gasoline_oil'); ?></span>
             </label>
 			
 			<label class="checkbox" for="smell_chemical"> Chemical
-            <input type="checkbox" id="smell_chemical" name="smell_chemical" value="1" <?php echo (isset($observation['smell_chemical']) && $observation['smell_chemical'] == 1) ? 'checked="checked"' : set_checkbox('smell_chemical', 1); ?>>
+            <input type="checkbox" id="smell_chemical" name="smell_chemical" value="1" <?php echo (isset($smells->smell_chemical) && $smells->smell_chemical == 1) ? 'checked="checked"' : set_checkbox('smell_chemical', 1); ?>>
             <span class="help-inline"><?php echo form_error('smell_chemical'); ?></span>
             </label>
 			
 			<label class="checkbox" for="smell_chlorine"> Chlorine
-            <input type="checkbox" id="smell_chlorine" name="smell_chlorine" value="1" <?php echo (isset($observation['smell_chlorine']) && $observation['smell_chlorine'] == 1) ? 'checked="checked"' : set_checkbox('smell_chlorine', 1); ?>>
+            <input type="checkbox" id="smell_chlorine" name="smell_chlorine" value="1" <?php echo (isset($smells->smell_chlorine) && $smells->smell_chlorine == 1) ? 'checked="checked"' : set_checkbox('smell_chlorine', 1); ?>>
             <span class="help-inline"><?php echo form_error('smell_chlorine'); ?></span>
             </label>
 			
 			<label class="checkbox" for="smell_sewage"> Sewage
-            <input type="checkbox" id="smell_sewage" name="smell_sewage" value="1" <?php echo (isset($observation['smell_sewage']) && $observation['smell_sewage'] == 1) ? 'checked="checked"' : set_checkbox('smell_sewage', 1); ?>>
+            <input type="checkbox" id="smell_sewage" name="smell_sewage" value="1" <?php echo (isset($smells->smell_sewage) && $smells->smell_sewage == 1) ? 'checked="checked"' : set_checkbox('smell_sewage', 1); ?>>
             <span class="help-inline"><?php echo form_error('smell_sewage'); ?></span>
             </label>
 			
 			<label class="checkbox" for="smell_rotting"> Rotting
-            <input type="checkbox" id="smell_rotting" name="smell_rotting" value="1" <?php echo (isset($observation['smell_rotting']) && $observation['smell_rotting'] == 1) ? 'checked="checked"' : set_checkbox('smell_rotting', 1); ?>>
+            <input type="checkbox" id="smell_rotting" name="smell_rotting" value="1" <?php echo (isset($smells->smell_rotting) && $smells->smell_rotting == 1) ? 'checked="checked"' : set_checkbox('smell_rotting', 1); ?>>
             <span class="help-inline"><?php echo form_error('smell_rotting'); ?></span>
             </label>
 			
 			<label class="checkbox" for="smell_fishy"> Fishy
-            <input type="checkbox" id="smell_fishy" name="smell_fishy" value="1" <?php echo (isset($observation['smell_fishy']) && $observation['smell_fishy'] == 1) ? 'checked="checked"' : set_checkbox('smell_fishy', 1); ?>>
+            <input type="checkbox" id="smell_fishy" name="smell_fishy" value="1" <?php echo (isset($smells->smell_fishy) && $smells->smell_fishy == 1) ? 'checked="checked"' : set_checkbox('smell_fishy', 1); ?>>
             <span class="help-inline"><?php echo form_error('smell_fishy'); ?></span>
             </label>
 
@@ -196,36 +196,36 @@ $id = isset($observation['id']) ? $observation['id'] : '';
             </label>
         </div>
 
-		<div class="control-group <?php echo form_error('observation_stream_compostion') ? 'error' : ''; ?>">
-            <?php echo form_label('What is the compostion of the stream bottom? (Check all that apply)', 'observation_water_smell', array('class' => "control-label") ); ?>
+		<div class="control-group <?php echo form_error('observation_stream_composition') ? 'error' : ''; ?>">
+            <?php echo form_label('What is the composition of the stream bottom? (Check all that apply)', 'observation_water_smell', array('class' => "control-label") ); ?>
             <div class='controls'>
-            <label class="checkbox" for="compostion_sand"> Sand
-            <input type="checkbox" id="compostion_sand" name="compostion_sand" value="1" <?php echo (isset($observation['compostion_sand']) && $observation['compostion_sand'] == 1) ? 'checked="checked"' : set_checkbox('compostion_sand', 1); ?>>
-            <span class="help-inline"><?php echo form_error('compostion_sand'); ?></span>
+            <label class="checkbox" for="composition_sand"> Sand
+            <input type="checkbox" id="composition_sand" name="composition_sand" value="1" <?php echo (isset($composition->composition_sand) && $composition->composition_sand == 1) ? 'checked="checked"' : set_checkbox('composition_sand', 1); ?>>
+            <span class="help-inline"><?php echo form_error('composition_sand'); ?></span>
             </label>
 			
-			<label class="checkbox" for="compostion_gravel"> Gravel
-            <input type="checkbox" id="compostion_gravel" name="compostion_gravel" value="1" <?php echo (isset($observation['compostion_gravel']) && $observation['compostion_gravel'] == 1) ? 'checked="checked"' : set_checkbox('compostion_gravel', 1); ?>>
-            <span class="help-inline"><?php echo form_error('compostion_gravel'); ?></span>
+			<label class="checkbox" for="composition_gravel"> Gravel
+            <input type="checkbox" id="composition_gravel" name="composition_gravel" value="1" <?php echo (isset($composition->composition_gravel) && $composition->composition_gravel == 1) ? 'checked="checked"' : set_checkbox('composition_gravel', 1); ?>>
+            <span class="help-inline"><?php echo form_error('composition_gravel'); ?></span>
             </label>
 			
-			<label class="checkbox" for="compostion_boulders"> Boulders
-            <input type="checkbox" id="compostion_boulders" name="compostion_boulders" value="1" <?php echo (isset($observation['compostion_boulders']) && $observation['compostion_boulders'] == 1) ? 'checked="checked"' : set_checkbox('compostion_boulders', 1); ?>>
-            <span class="help-inline"><?php echo form_error('compostion_boulders'); ?></span>
+			<label class="checkbox" for="composition_boulders"> Boulders
+            <input type="checkbox" id="composition_boulders" name="composition_boulders" value="1" <?php echo (isset($composition->composition_boulders) && $composition->composition_boulders == 1) ? 'checked="checked"' : set_checkbox('composition_boulders', 1); ?>>
+            <span class="help-inline"><?php echo form_error('composition_boulders'); ?></span>
             </label>
 			
-			<label class="checkbox" for="compostion_silt"> Silt
-            <input type="checkbox" id="compostion_silt" name="compostion_silt" value="1" <?php echo (isset($observation['compostion_silt']) && $observation['compostion_silt'] == 1) ? 'checked="checked"' : set_checkbox('compostion_silt', 1); ?>>
-            <span class="help-inline"><?php echo form_error('compostion_silt'); ?></span>
+			<label class="checkbox" for="composition_silt"> Silt
+            <input type="checkbox" id="composition_silt" name="composition_silt" value="1" <?php echo (isset($composition->composition_silt) && $composition->composition_silt == 1) ? 'checked="checked"' : set_checkbox('composition_silt', 1); ?>>
+            <span class="help-inline"><?php echo form_error('composition_silt'); ?></span>
             </label>
 			
-			<label class="checkbox" for="compostion_other"> Other
-            <input type="checkbox" id="compostion_other" name="compostion_other" value="1" <?php echo (isset($observation['compostion_other']) && $observation['compostion_other'] == 1) ? 'checked="checked"' : set_checkbox('compostion_other', 1); ?>>
-            <span class="help-inline"><?php echo form_error('compostion_other'); ?></span>
+			<label class="checkbox" for="composition_other"> Other
+            <input type="checkbox" id="composition_other" name="composition_other" value="1" <?php echo (isset($composition->composition_other) && $composition->composition_other == 1) ? 'checked="checked"' : set_checkbox('composition_other', 1); ?>>
+            <span class="help-inline"><?php echo form_error('composition_other'); ?></span>
             </label>
 			
 			<label class="checkbox" for="composition_man_made_cement"> Man made concrete
-            <input type="checkbox" id="composition_man_made_cement" name="composition_man_made_cement" value="1" <?php echo (isset($observation['composition_man_made_cement']) && $observation['composition_man_made_cement'] == 1) ? 'checked="checked"' : set_checkbox('composition_man_made_cement', 1); ?>>
+            <input type="checkbox" id="composition_man_made_cement" name="composition_man_made_cement" value="1" <?php echo (isset($composition->composition_man_made_cement) && $composition->composition_man_made_cement == 1) ? 'checked="checked"' : set_checkbox('composition_man_made_cement', 1); ?>>
             <span class="help-inline"><?php echo form_error('composition_man_made_cement'); ?></span>
             </label>
         </div>
@@ -236,32 +236,32 @@ $id = isset($observation['id']) ? $observation['id'] : '';
             <?php echo form_label('What materials form most of the stream bottom(THIS NEEDS TO BE CHANGED)', 'observation_water_smell', array('class' => "control-label") ); ?>
             <div class='controls'>
             <label class="checkbox" for="material_sand"> Sand
-            <input type="checkbox" id="material_sand" name="material_sand" value="1" <?php echo (isset($observation['material_sand']) && $observation['material_sand'] == 1) ? 'checked="checked"' : set_checkbox('material_sand', 1); ?>>
+            <input type="checkbox" id="material_sand" name="material_sand" value="1" <?php echo (isset($materials->material_sand) && $materials->material_sand == 1) ? 'checked="checked"' : set_checkbox('material_sand', 1); ?>>
             <span class="help-inline"><?php echo form_error('material_sand'); ?></span>
             </label>
 			
 			<label class="checkbox" for="material_gravel"> Gravel
-            <input type="checkbox" id="material_gravel" name="material_gravel" value="1" <?php echo (isset($observation['material_gravel']) && $observation['material_gravel'] == 1) ? 'checked="checked"' : set_checkbox('material_gravel', 1); ?>>
+            <input type="checkbox" id="material_gravel" name="material_gravel" value="1" <?php echo (isset($materials->material_gravel) && $materials->material_gravel == 1) ? 'checked="checked"' : set_checkbox('material_gravel', 1); ?>>
             <span class="help-inline"><?php echo form_error('material_gravel'); ?></span>
             </label>
 			
 			<label class="checkbox" for="material_boulders"> Boulders
-            <input type="checkbox" id="material_boulders" name="material_boulders" value="1" <?php echo (isset($observation['material_boulders']) && $observation['material_boulders'] == 1) ? 'checked="checked"' : set_checkbox('material_boulders', 1); ?>>
+            <input type="checkbox" id="material_boulders" name="material_boulders" value="1" <?php echo (isset($materials->material_boulders) && $materials->material_boulders == 1) ? 'checked="checked"' : set_checkbox('material_boulders', 1); ?>>
             <span class="help-inline"><?php echo form_error('material_boulders'); ?></span>
             </label>
 			
 			<label class="checkbox" for="material_bedrock"> Bedrock
-            <input type="checkbox" id="material_bedrock" name="material_bedrock" value="1" <?php echo (isset($observation['material_bedrock']) && $observation['material_bedrock'] == 1) ? 'checked="checked"' : set_checkbox('material_bedrock', 1); ?>>
+            <input type="checkbox" id="material_bedrock" name="material_bedrock" value="1" <?php echo (isset($materials->material_bedrock) && $materials->material_bedrock == 1) ? 'checked="checked"' : set_checkbox('material_bedrock', 1); ?>>
             <span class="help-inline"><?php echo form_error('material_bedrock'); ?></span>
             </label>
 			
 			<label class="checkbox" for="material_silt"> silt
-            <input type="checkbox" id="material_silt" name="material_silt" value="1" <?php echo (isset($observation['material_silt']) && $observation['material_silt'] == 1) ? 'checked="checked"' : set_checkbox('material_silt', 1); ?>>
+            <input type="checkbox" id="material_silt" name="material_silt" value="1" <?php echo (isset($materials->material_silt) && $materials->material_silt == 1) ? 'checked="checked"' : set_checkbox('material_silt', 1); ?>>
             <span class="help-inline"><?php echo form_error('material_silt'); ?></span>
             </label>
 			
 			<label class="checkbox" for="material_other"> Other
-            <input type="checkbox" id="material_other" name="material_other" value="1" <?php echo (isset($observation['material_other']) && $observation['material_other'] == 1) ? 'checked="checked"' : set_checkbox('material_other', 1); ?>>
+            <input type="checkbox" id="material_other" name="material_other" value="1" <?php echo (isset($materials->material_other) && $materials->material_other == 1) ? 'checked="checked"' : set_checkbox('material_other', 1); ?>>
             <span class="help-inline"><?php echo form_error('material_other'); ?></span>
             </label>
         </div>
@@ -272,32 +272,32 @@ $id = isset($observation['id']) ? $observation['id'] : '';
             <?php echo form_label('Are algae present?(Algae: variety of aquatic photosynthetic organisms, Check all that you see)', 'observation_algae', array('class' => "control-label") ); ?>
             <div class='controls'>
             <label class="checkbox" for="algae_not_present"> Not present
-            <input type="checkbox" id="algae_not_present" name="algae_not_present" value="1" <?php echo (isset($observation['algae_not_present']) && $observation['algae_not_present'] == 1) ? 'checked="checked"' : set_checkbox('algae_not_present', 1); ?>>
+            <input type="checkbox" id="algae_not_present" name="algae_not_present" value="1" <?php echo (isset($algae->algae_not_present) && $algae->algae_not_present == 1) ? 'checked="checked"' : set_checkbox('algae_not_present', 1); ?>>
             <span class="help-inline"><?php echo form_error('algae_not_present'); ?></span>
             </label>
 			
 			<label class="checkbox" for="algae_present_in_spots"> Present in spots
-            <input type="checkbox" id="algae_present_in_spots" name="algae_present_in_spots" value="1" <?php echo (isset($observation['algae_present_in_spots']) && $observation['algae_present_in_spots'] == 1) ? 'checked="checked"' : set_checkbox('algae_present_in_spots', 1); ?>>
+            <input type="checkbox" id="algae_present_in_spots" name="algae_present_in_spots" value="1" <?php echo (isset($algae->algae_present_in_spots) && $algae->algae_present_in_spots == 1) ? 'checked="checked"' : set_checkbox('algae_present_in_spots', 1); ?>>
             <span class="help-inline"><?php echo form_error('algae_present_in_spots'); ?></span>
             </label>
 			
 			<label class="checkbox" for="algae_attached_to_rocks"> Attached to rocks
-            <input type="checkbox" id="algae_attached_to_rocks" name="algae_attached_to_rocks" value="1" <?php echo (isset($observation['algae_attached_to_rocks']) && $observation['algae_attached_to_rocks'] == 1) ? 'checked="checked"' : set_checkbox('algae_attached_to_rocks', 1); ?>>
+            <input type="checkbox" id="algae_attached_to_rocks" name="algae_attached_to_rocks" value="1" <?php echo (isset($algae->algae_attached_to_rocks) && $algae->algae_attached_to_rocks == 1) ? 'checked="checked"' : set_checkbox('algae_attached_to_rocks', 1); ?>>
             <span class="help-inline"><?php echo form_error('algae_attached_to_rocks'); ?></span>
             </label>
 			
 			<label class="checkbox" for="algae_everywhere"> Everywhere
-            <input type="checkbox" id="algae_everywhere" name="algae_everywhere" value="1" <?php echo (isset($observation['algae_everywhere']) && $observation['algae_everywhere'] == 1) ? 'checked="checked"' : set_checkbox('algae_everywhere', 1); ?>>
+            <input type="checkbox" id="algae_everywhere" name="algae_everywhere" value="1" <?php echo (isset($algae->algae_everywhere) && $algae->algae_everywhere == 1) ? 'checked="checked"' : set_checkbox('algae_everywhere', 1); ?>>
             <span class="help-inline"><?php echo form_error('algae_everywhere'); ?></span>
             </label>
 			
 			<label class="checkbox" for="algae_floating"> Floating
-            <input type="checkbox" id="algae_floating" name="algae_floating" value="1" <?php echo (isset($observation['algae_floating']) && $observation['algae_floating'] == 1) ? 'checked="checked"' : set_checkbox('algae_floating', 1); ?>>
+            <input type="checkbox" id="algae_floating" name="algae_floating" value="1" <?php echo (isset($algae->algae_floating) && $algae->algae_floating == 1) ? 'checked="checked"' : set_checkbox('algae_floating', 1); ?>>
             <span class="help-inline"><?php echo form_error('algae_floating'); ?></span>
             </label>
 			
 			<label class="checkbox" for="algae_matted_on_the_streambed"> Matted on the streambed
-            <input type="checkbox" id="algae_matted_on_the_streambed" name="algae_matted_on_the_streambed" value="1" <?php echo (isset($observation['algae_matted_on_the_streambed']) && $observation['algae_matted_on_the_streambed'] == 1) ? 'checked="checked"' : set_checkbox('algae_matted_on_the_streambed', 1); ?>>
+            <input type="checkbox" id="algae_matted_on_the_streambed" name="algae_matted_on_the_streambed" value="1" <?php echo (isset($algae->algae_matted_on_the_streambed) && $algae->algae_matted_on_the_streambed == 1) ? 'checked="checked"' : set_checkbox('algae_matted_on_the_streambed', 1); ?>>
             <span class="help-inline"><?php echo form_error('algae_matted_on_the_streambed'); ?></span>
             </label>
 
@@ -309,27 +309,27 @@ $id = isset($observation['id']) ? $observation['id'] : '';
             <?php echo form_label('If present, what color are the algae (Check all that apply)', 'observation_algae_color', array('class' => "control-label") ); ?>
             <div class='controls'>
             <label class="checkbox" for="algae_light_green"> Light green
-            <input type="checkbox" id="algae_light_green" name="algae_light_green" value="1" <?php echo (isset($observation['algae_light_green']) && $observation['algae_light_green'] == 1) ? 'checked="checked"' : set_checkbox('algae_light_green', 1); ?>>
+            <input type="checkbox" id="algae_light_green" name="algae_light_green" value="1" <?php echo (isset($algae_color->algae_light_green) && $algae_color->algae_light_green == 1) ? 'checked="checked"' : set_checkbox('algae_light_green', 1); ?>>
             <span class="help-inline"><?php echo form_error('algae_light_green'); ?></span>
             </label>
 			
 			<label class="checkbox" for="algae_dark_green"> Dark green
-            <input type="checkbox" id="algae_dark_green" name="algae_dark_green" value="1" <?php echo (isset($observation['algae_dark_green']) && $observation['algae_dark_green'] == 1) ? 'checked="checked"' : set_checkbox('algae_dark_green', 1); ?>>
+            <input type="checkbox" id="algae_dark_green" name="algae_dark_green" value="1" <?php echo (isset($algae_color->algae_dark_green) && $algae_color->algae_dark_green == 1) ? 'checked="checked"' : set_checkbox('algae_dark_green', 1); ?>>
             <span class="help-inline"><?php echo form_error('algae_dark_green'); ?></span>
             </label>
 			
 			<label class="checkbox" for="algae_brown"> Brown
-            <input type="checkbox" id="algae_brown" name="algae_brown" value="1" <?php echo (isset($observation['algae_brown']) && $observation['algae_brown'] == 1) ? 'checked="checked"' : set_checkbox('algae_brown', 1); ?>>
+            <input type="checkbox" id="algae_brown" name="algae_brown" value="1" <?php echo (isset($algae_color->algae_brown) && $algae_color->algae_brown == 1) ? 'checked="checked"' : set_checkbox('algae_brown', 1); ?>>
             <span class="help-inline"><?php echo form_error('algae_brown'); ?></span>
             </label>
 			
 			<label class="checkbox" for="algae_red"> Red
-            <input type="checkbox" id="algae_red" name="algae_red" value="1" <?php echo (isset($observation['algae_red']) && $observation['algae_red'] == 1) ? 'checked="checked"' : set_checkbox('algae_red', 1); ?>>
+            <input type="checkbox" id="algae_red" name="algae_red" value="1" <?php echo (isset($algae_color->algae_red) && $algae_color->algae_red == 1) ? 'checked="checked"' : set_checkbox('algae_red', 1); ?>>
             <span class="help-inline"><?php echo form_error('algae_red'); ?></span>
             </label>
 			
 			<label class="checkbox" for="algae_orange"> Orange
-            <input type="checkbox" id="algae_orange" name="algae_orange" value="1" <?php echo (isset($observation['algae_orange']) && $observation['algae_orange'] == 1) ? 'checked="checked"' : set_checkbox('algae_orange', 1); ?>>
+            <input type="checkbox" id="algae_orange" name="algae_orange" value="1" <?php echo (isset($algae_color->algae_orange) && $algae_color->algae_orange == 1) ? 'checked="checked"' : set_checkbox('algae_orange', 1); ?>>
             <span class="help-inline"><?php echo form_error('algae_orange'); ?></span>
             </label>
 			
@@ -447,48 +447,48 @@ $id = isset($observation['id']) ? $observation['id'] : '';
             <?php echo form_label('How is the land along the stream being used? Look at the areas on both sides of the stream and immediately upstream from you sampling site (check all uses observed)', 'observation_land_use', array('class' => "control-label") ); ?>
             <div class='controls'>
             <label class="checkbox" for="land_farming"> Farming/crops
-            <input type="checkbox" id="land_farming" name="land_farming" value="1" <?php echo (isset($observation['land_farming']) && $observation['land_farming'] == 1) ? 'checked="checked"' : set_checkbox('land_farming', 1); ?>>
+            <input type="checkbox" id="land_farming" name="land_farming" value="1" <?php echo (isset($land->land_farming) && $land->land_farming == 1) ? 'checked="checked"' : set_checkbox('land_farming', 1); ?>>
             <span class="help-inline"><?php echo form_error('land_farming'); ?></span>
             </label>
 			
 			<label class="checkbox" for="land_forest"> Forest
-            <input type="checkbox" id="land_forest" name="land_forest" value="1" <?php echo (isset($observation['land_forest']) && $observation['land_forest'] == 1) ? 'checked="checked"' : set_checkbox('land_forest', 1); ?>>
+            <input type="checkbox" id="land_forest" name="land_forest" value="1" <?php echo (isset($land->land_forest) && $land->land_forest == 1) ? 'checked="checked"' : set_checkbox('land_forest', 1); ?>>
             <span class="help-inline"><?php echo form_error('land_forest'); ?></span>
             </label>
 			
 			<label class="checkbox" for="land_residential">Residential neighborhood
-            <input type="checkbox" id="land_residential" name="land_residential" value="1" <?php echo (isset($observation['land_residential']) && $observation['land_residential'] == 1) ? 'checked="checked"' : set_checkbox('land_residential', 1); ?>>
+            <input type="checkbox" id="land_residential" name="land_residential" value="1" <?php echo (isset($land->land_residential) && $land->land_residential == 1) ? 'checked="checked"' : set_checkbox('land_residential', 1); ?>>
             <span class="help-inline"><?php echo form_error('land_residential'); ?></span>
             </label>
 			
 			<label class="checkbox" for="land_poultry_swine"> Poultry/swine
-            <input type="checkbox" id="land_poultry_swine" name="land_poultry_swine" value="1" <?php echo (isset($observation['land_poultry_swine']) && $observation['land_poultry_swine'] == 1) ? 'checked="checked"' : set_checkbox('land_poultry_swine', 1); ?>>
+            <input type="checkbox" id="land_poultry_swine" name="land_poultry_swine" value="1" <?php echo (isset($land->land_poultry_swine) && $land->land_poultry_swine == 1) ? 'checked="checked"' : set_checkbox('land_poultry_swine', 1); ?>>
             <span class="help-inline"><?php echo form_error('land_poultry_swine'); ?></span>
             </label>
 			
 			<label class="checkbox" for="land_stores"> Stores/malls
-            <input type="checkbox" id="land_stores" name="land_stores" value="1" <?php echo (isset($observation['land_stores']) && $observation['land_stores'] == 1) ? 'checked="checked"' : set_checkbox('land_stores', 1); ?>>
+            <input type="checkbox" id="land_stores" name="land_stores" value="1" <?php echo (isset($land->land_stores) && $land->land_stores == 1) ? 'checked="checked"' : set_checkbox('land_stores', 1); ?>>
             <span class="help-inline"><?php echo form_error('land_stores'); ?></span>
             </label>
 			
-			<label class="checkbox" for="land_stores"> Mining
-            <input type="checkbox" id="land_stores" name="land_stores" value="1" <?php echo (isset($observation['land_stores']) && $observation['land_stores'] == 1) ? 'checked="checked"' : set_checkbox('land_stores', 1); ?>>
-            <span class="help-inline"><?php echo form_error('land_stores'); ?></span>
+			<label class="checkbox" for="land_mining"> Mining
+            <input type="checkbox" id="land_mining" name="land_mining" value="1" <?php echo (isset($land->land_mining) && $land->land_mining == 1) ? 'checked="checked"' : set_checkbox('land_mining', 1); ?>>
+            <span class="help-inline"><?php echo form_error('land_mining'); ?></span>
             </label>
 
 			<label class="checkbox" for="land_construction"> Construction
-            <input type="checkbox" id="land_construction" name="land_construction" value="1" <?php echo (isset($observation['land_construction']) && $observation['land_construction'] == 1) ? 'checked="checked"' : set_checkbox('land_construction', 1); ?>>
+            <input type="checkbox" id="land_construction" name="land_construction" value="1" <?php echo (isset($land->land_construction) && $land->land_construction == 1) ? 'checked="checked"' : set_checkbox('land_construction', 1); ?>>
             <span class="help-inline"><?php echo form_error('land_construction'); ?></span>
             </label>
 			
 			<label class="checkbox" for="land_factories"> Factories
-            <input type="checkbox" id="land_factories" name="land_factories" value="1" <?php echo (isset($observation['land_factories']) && $observation['land_factories'] == 1) ? 'checked="checked"' : set_checkbox('land_factories', 1); ?>>
+            <input type="checkbox" id="land_factories" name="land_factories" value="1" <?php echo (isset($land->land_factories) && $land->land_factories == 1) ? 'checked="checked"' : set_checkbox('land_factories', 1); ?>>
             <span class="help-inline"><?php echo form_error('land_factories'); ?></span>
             </label>
 			
-			<label class="checkbox" for="land_factories"> Logging
-            <input type="checkbox" id="land_factories" name="land_factories" value="1" <?php echo (isset($observation['land_factories']) && $observation['land_factories'] == 1) ? 'checked="checked"' : set_checkbox('land_factories', 1); ?>>
-            <span class="help-inline"><?php echo form_error('land_factories'); ?></span>
+			<label class="checkbox" for="land_logging"> Logging
+            <input type="checkbox" id="land_logging" name="land_logging" value="1" <?php echo (isset($land->land_logging) && $land->land_logging == 1) ? 'checked="checked"' : set_checkbox('land_logging', 1); ?>>
+            <span class="help-inline"><?php echo form_error('land_logging'); ?></span>
             </label>
         </div>
 
@@ -500,42 +500,42 @@ $id = isset($observation['id']) ? $observation['id'] : '';
             <?php echo form_label('What are likely uses of the stream?', 'observation_stream_use', array('class' => "control-label") ); ?>
             <div class='controls'>
             <label class="checkbox" for="stream_drinking"> Drinking water supply
-            <input type="checkbox" id="stream_drinking" name="stream_drinking" value="1" <?php echo (isset($observation['stream_drinking']) && $observation['stream_drinking'] == 1) ? 'checked="checked"' : set_checkbox('stream_drinking', 1); ?>>
+            <input type="checkbox" id="stream_drinking" name="stream_drinking" value="1" <?php echo (isset($stream->stream_drinking) && $stream->stream_drinking == 1) ? 'checked="checked"' : set_checkbox('stream_drinking', 1); ?>>
             <span class="help-inline"><?php echo form_error('stream_drinking'); ?></span>
             </label>
 			
 			<label class="checkbox" for="stream_recreation"> Recreation
-            <input type="checkbox" id="stream_recreation" name="stream_recreation" value="1" <?php echo (isset($observation['stream_recreation']) && $observation['stream_recreation'] == 1) ? 'checked="checked"' : set_checkbox('stream_recreation', 1); ?>>
+            <input type="checkbox" id="stream_recreation" name="stream_recreation" value="1" <?php echo (isset($stream->stream_recreation) && $stream->stream_recreation == 1) ? 'checked="checked"' : set_checkbox('stream_recreation', 1); ?>>
             <span class="help-inline"><?php echo form_error('stream_recreation'); ?></span>
             </label>
 			
 			<label class="checkbox" for="stream_swimming">Swimming
-            <input type="checkbox" id="stream_swimming" name="stream_swimming" value="1" <?php echo (isset($observation['stream_swimming']) && $observation['stream_swimming'] == 1) ? 'checked="checked"' : set_checkbox('land_forest', 1); ?>>
+            <input type="checkbox" id="stream_swimming" name="stream_swimming" value="1" <?php echo (isset($stream->stream_swimming) && $stream->stream_swimming == 1) ? 'checked="checked"' : set_checkbox('land_forest', 1); ?>>
             <span class="help-inline"><?php echo form_error('stream_swimming'); ?></span>
             </label>
 			
 			<label class="checkbox" for="stream_fishing"> Fishing
-            <input type="checkbox" id="stream_fishing" name="stream_fishing" value="1" <?php echo (isset($observation['stream_fishing']) && $observation['stream_fishing'] == 1) ? 'checked="checked"' : set_checkbox('stream_fishing', 1); ?>>
+            <input type="checkbox" id="stream_fishing" name="stream_fishing" value="1" <?php echo (isset($stream->stream_fishing) && $stream->stream_fishing == 1) ? 'checked="checked"' : set_checkbox('stream_fishing', 1); ?>>
             <span class="help-inline"><?php echo form_error('stream_fishing'); ?></span>
             </label>
 			
 			<label class="checkbox" for="stream_industrial"> Industrial water supply
-            <input type="checkbox" id="stream_industrial" name="stream_industrial" value="1" <?php echo (isset($observation['stream_industrial']) && $observation['stream_industrial'] == 1) ? 'checked="checked"' : set_checkbox('stream_industrial', 1); ?>>
+            <input type="checkbox" id="stream_industrial" name="stream_industrial" value="1" <?php echo (isset($stream->stream_industrial) && $stream->stream_industrial == 1) ? 'checked="checked"' : set_checkbox('stream_industrial', 1); ?>>
             <span class="help-inline"><?php echo form_error('stream_industrial'); ?></span>
             </label>
 			
 			<label class="checkbox" for="stream_agriculture"> Agriculture
-            <input type="checkbox" id="stream_agriculture" name="stream_agriculture" value="1" <?php echo (isset($observation['stream_agriculture']) && $observation['stream_agriculture'] == 1) ? 'checked="checked"' : set_checkbox('stream_agriculture', 1); ?>>
+            <input type="checkbox" id="stream_agriculture" name="stream_agriculture" value="1" <?php echo (isset($stream->stream_agriculture) && $stream->stream_agriculture == 1) ? 'checked="checked"' : set_checkbox('stream_agriculture', 1); ?>>
             <span class="help-inline"><?php echo form_error('stream_agriculture'); ?></span>
             </label>
 
 			<label class="checkbox" for="stream_irrigation"> Irrigation
-            <input type="checkbox" id="stream_irrigation" name="stream_irrigation" value="1" <?php echo (isset($observation['stream_irrigation']) && $observation['stream_irrigation'] == 1) ? 'checked="checked"' : set_checkbox('stream_irrigation', 1); ?>>
+            <input type="checkbox" id="stream_irrigation" name="stream_irrigation" value="1" <?php echo (isset($stream->stream_irrigation) && $stream->stream_irrigation == 1) ? 'checked="checked"' : set_checkbox('stream_irrigation', 1); ?>>
             <span class="help-inline"><?php echo form_error('stream_irrigation'); ?></span>
             </label>
 			
 			<label class="checkbox" for="stream_livestock"> Livestock watering
-            <input type="checkbox" id="stream_livestock" name="stream_livestock" value="1" <?php echo (isset($observation['stream_livestock']) && $observation['stream_livestock'] == 1) ? 'checked="checked"' : set_checkbox('stream_livestock', 1); ?>>
+            <input type="checkbox" id="stream_livestock" name="stream_livestock" value="1" <?php echo (isset($stream->stream_livestock) && $stream->stream_livestock == 1) ? 'checked="checked"' : set_checkbox('stream_livestock', 1); ?>>
             <span class="help-inline"><?php echo form_error('stream_livestock'); ?></span>
             </label>
 			
@@ -595,25 +595,35 @@ $id = isset($observation['id']) ? $observation['id'] : '';
             <?php echo form_label('Are there barriers in the stream?', 'observation_barriers', array('class' => "control-label") ); ?>
             <div class='controls'>
             <label class="checkbox" for="barriers_dams"> Dams
-            <input type="checkbox" id="barriers_dams" name="barriers_dams" value="1" <?php echo (isset($observation['barriers_dams']) && $observation['barriers_dams'] == 1) ? 'checked="checked"' : set_checkbox('barriers_dams', 1); ?>>
+            <input type="checkbox" id="barriers_dams" name="barriers_dams" value="1" <?php echo (isset($barriers->barriers_dams) && $barriers->barriers_dams == 1) ? 'checked="checked"' : set_checkbox('barriers_dams', 1); ?>>
             <span class="help-inline"><?php echo form_error('barriers_dams'); ?></span>
             </label>
 			
 			<label class="checkbox" for="barriers_bridges"> Bridges
-            <input type="checkbox" id="barriers_bridges" name="barriers_bridges" value="1" <?php echo (isset($observation['barriers_bridges']) && $observation['barriers_bridges'] == 1) ? 'checked="checked"' : set_checkbox('barriers_bridges', 1); ?>>
+            <input type="checkbox" id="barriers_bridges" name="barriers_bridges" value="1" <?php echo (isset($barriers->barriers_bridges) && $barriers->barriers_bridges == 1) ? 'checked="checked"' : set_checkbox('barriers_bridges', 1); ?>>
             <span class="help-inline"><?php echo form_error('barriers_bridges'); ?></span>
             </label>
 			
 			<label class="checkbox" for="barriers_woody_debris">Woody debris
-            <input type="checkbox" id="barriers_woody_debris" name="barriers_woody_debris" value="1" <?php echo (isset($observation['barriers_woody_debris']) && $observation['barriers_woody_debris'] == 1) ? 'checked="checked"' : set_checkbox('barriers_woody_debris', 1); ?>>
+            <input type="checkbox" id="barriers_woody_debris" name="barriers_woody_debris" value="1" <?php echo (isset($barriers->barriers_woody_debris) && $barriers->barriers_woody_debris == 1) ? 'checked="checked"' : set_checkbox('barriers_woody_debris', 1); ?>>
             <span class="help-inline"><?php echo form_error('barriers_woody_debris'); ?></span>
             </label>
 			
 			<label class="checkbox" for="barriers_waterfalls"> Waterfalls
-            <input type="checkbox" id="barriers_waterfalls" name="barriers_waterfalls" value="1" <?php echo (isset($observation['barriers_waterfalls']) && $observation['barriers_waterfalls'] == 1) ? 'checked="checked"' : set_checkbox('barriers_waterfalls', 1); ?>>
+            <input type="checkbox" id="barriers_waterfalls" name="barriers_waterfalls" value="1" <?php echo (isset($barriers->barriers_waterfalls) && $barriers->barriers_waterfalls == 1) ? 'checked="checked"' : set_checkbox('barriers_waterfalls', 1); ?>>
             <span class="help-inline"><?php echo form_error('barriers_waterfalls'); ?></span>
             </label>
 			
+        </div>
+
+        </div>
+
+        <div class="control-group <?php echo form_error('observation_anonymous') ? 'error' : ''; ?>">
+            <?php echo form_label('Remain anonymous?', 'observation_anonymous', array('class' => "control-label") ); ?>
+            <div class='controls'>
+            <input type="checkbox" id="observation_anonymous" name="observation_anonymous" value="1" <?php echo (isset($observation['observation_anonymous']) && $observation['observation_anonymous'] == 1) ? 'checked="checked"' : set_checkbox('observation_anonymous', 1); ?>>
+            <span class="help-inline"><?php echo form_error('observation_anonymous'); ?></span>
+            </label>            
         </div>
 
         </div>
