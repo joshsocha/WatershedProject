@@ -47,19 +47,9 @@ $id = isset($help['id']) ? $help['id'] : '';
 
         <div class="form-actions">
             <br/>
-            <input type="submit" name="save" class="btn btn-primary" value="Edit Help" />
-            or <?php echo anchor(SITE_AREA .'/content/help', lang('help_cancel'), 'class="btn btn-warning"'); ?>
+            <input type="submit" name="save" class="btn btn-primary" value="Create Help" />
+            or <?php echo anchor(SITE_AREA .'/help/help', lang('help_cancel'), 'class="btn btn-warning"'); ?>
             
-
-    <?php if ($this->auth->has_permission('Help.Content.Delete')) : ?>
-
-            or <button type="submit" name="delete" class="btn btn-danger" id="delete-me" onclick="return confirm('<?php echo lang('help_delete_confirm'); ?>')">
-            <i class="icon-trash icon-white">&nbsp;</i>&nbsp;<?php echo lang('help_delete_record'); ?>
-            </button>
-
-    <?php endif; ?>
-
-
         </div>
     </fieldset>
     <?php echo form_close(); ?>

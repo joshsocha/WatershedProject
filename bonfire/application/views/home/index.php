@@ -1,10 +1,31 @@
-
 <div class="container">
 
 	<div class="hero-unit">
-		<h1>Welcome to Bonfire.</h1>
+        <div id="myCarousel" class="carousel slide">
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+                <div class="active item">
+                    <h1>Welcome to the Watershed Web App.</h1>
 
-		<p>Kickstart your CodeIgniter applications.</p>
+                    <p>Community based water monitoring</p>
+                </div>
+                <div class="item">
+                    <img src="http://placehold.it/1200x480" alt="" />
+                    <div class="carousel-caption">
+                        <p>Lorem Ipsum</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="http://placehold.it/1200x480" alt="" />
+                    <div class="carousel-caption">
+                        <p>Lorem Ipsum</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Carousel nav -->
+            <a class="carousel-control left" href="#myCarousel" data-slide="prev">‹</a>
+            <a class="carousel-control right" href="#myCarousel" data-slide="next">›</a>
+        </div>
 	</div>
 
 <p>If you're new to Bonfire, but familiar with <a href="http://www.codeigniter.com" target="_blank">CodeIgniter</a>, then you should be up an running within the system in no time.</p>
@@ -31,3 +52,6 @@
 
 
 </div>
+<script type="text/javascript">
+    $('.carousel').carousel()
+</script>

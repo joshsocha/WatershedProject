@@ -66,8 +66,14 @@
 								<?php echo lang('bf_action_login') ?>
 							</a>
 						</li>
+                        <li>
+                            <a href="<?php echo site_url('help');?>">
+                                <?php echo lang('bf_action_help') ?>
+                            </a>
+                        </li>
 
-					<?php endif; ?>
+
+                    <?php endif; ?>
 				</ul>
 
 			</div><!--/.nav-collapse -->

@@ -4,6 +4,10 @@ class Migration_Install_help_permissions extends Migration {
 
 	// permissions to migrate
 	private $permission_values = array(
+		array('name' => 'Help.Help.View', 'description' => '', 'status' => 'active',),
+		array('name' => 'Help.Help.Create', 'description' => '', 'status' => 'active',),
+		array('name' => 'Help.Help.Edit', 'description' => '', 'status' => 'active',),
+		array('name' => 'Help.Help.Delete', 'description' => '', 'status' => 'active',),
 		array('name' => 'Help.Content.View', 'description' => '', 'status' => 'active',),
 		array('name' => 'Help.Content.Create', 'description' => '', 'status' => 'active',),
 		array('name' => 'Help.Content.Edit', 'description' => '', 'status' => 'active',),
