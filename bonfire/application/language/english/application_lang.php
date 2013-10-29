@@ -84,6 +84,7 @@ $lang['bf_action_restore']		= 'Restore';
 $lang['bf_action_show']			= 'Show';
 $lang['bf_action_login']		= 'Sign In';
 $lang['bf_action_help']		    = 'Help';
+$lang['bf_action_observation']  = 'Observations';
 $lang['bf_action_logout']		= 'Sign Out';
 $lang['bf_actions']				= 'Actions';
 $lang['bf_clear']				= 'Clear';

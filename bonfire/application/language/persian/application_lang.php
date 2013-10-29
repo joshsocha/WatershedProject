@@ -86,6 +86,7 @@ $lang['bf_action_restore']		= 'بازگردانی';
 $lang['bf_action_show']			= 'نمایش';
 $lang['bf_action_login']		= 'ورود';
 $lang['bf_action_help']		    = 'کمک';
+$lang['bf_action_observation']  = 'مشاهدات';
 $lang['bf_action_logout']		= 'خروج';
 $lang['bf_actions']				= 'عملیات';
 $lang['bf_clear']				= 'پاک کردن';

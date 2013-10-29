@@ -1,0 +1,30 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+$lang['survey_manage']			= 'Manage Survey';
+$lang['survey_edit']				= 'Edit';
+$lang['survey_true']				= 'True';
+$lang['survey_false']				= 'False';
+$lang['survey_create']			= 'Create';
+$lang['survey_list']				= 'List';
+$lang['survey_new']				= 'New';
+$lang['survey_edit_text']			= 'Edit this to suit your needs';
+$lang['survey_no_records']			= 'There aren\'t any survey in the system.';
+$lang['survey_create_new']			= 'Create a new Survey.';
+$lang['survey_create_success']			= 'Survey successfully created.';
+$lang['survey_create_failure']			= 'There was a problem creating the survey: ';
+$lang['survey_create_new_button']			= 'Create New Survey';
+$lang['survey_invalid_id']			= 'Invalid Survey ID.';
+$lang['survey_edit_success']			= 'Survey successfully saved.';
+$lang['survey_edit_failure']			= 'There was a problem saving the survey: ';
+$lang['survey_delete_success']			= 'record(s) successfully deleted.';
+$lang['survey_delete_failure']			= 'We could not delete the record: ';
+$lang['survey_delete_error']			= 'You have not selected any records to delete.';
+$lang['survey_actions']			= 'Actions';
+$lang['survey_cancel']			= 'Cancel';
+$lang['survey_delete_record']			= 'Delete this Survey';
+$lang['survey_delete_confirm']			= 'Are you sure you want to delete this survey?';
+$lang['survey_edit_heading']			= 'Edit Survey';
+
+// Activities
+$lang['survey_act_create_record']			= 'Created record with ID';
+$lang['survey_act_edit_record']			= 'Updated record with ID';
+$lang['survey_act_delete_record']			= 'Deleted record with ID';

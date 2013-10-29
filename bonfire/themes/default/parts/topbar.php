@@ -56,6 +56,16 @@
 
 					<?php else :  ?>
 
+                        <li>
+                            <a href="<?php echo site_url('observation');?>">
+                                <?php echo lang('bf_action_observation') ?>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="<?php echo site_url('help');?>">
+                                <?php echo lang('bf_action_help') ?>
+                            </a>
+                        </li>
 						<li>
 							<a href="<?php echo site_url('register');?>">
 								<?php echo lang('bf_action_register') ?>
@@ -66,11 +76,7 @@
 								<?php echo lang('bf_action_login') ?>
 							</a>
 						</li>
-                        <li>
-                            <a href="<?php echo site_url('help');?>">
-                                <?php echo lang('bf_action_help') ?>
-                            </a>
-                        </li>
+
 
 
                     <?php endif; ?>

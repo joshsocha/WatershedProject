@@ -75,7 +75,8 @@ $lang['bf_action_purge']		= 'Purgar';
 $lang['bf_action_restore']		= 'Recuperar';
 $lang['bf_action_show']			= 'Mostrar';
 $lang['bf_action_login']		= 'Login';
-$lang['bf_action_help']		    = 'Ajudar';
+$lang['bf_action_help']		    = 'Observações';
+$lang['bf_action_observation']  = 'مشاهدات';
 $lang['bf_actions']				= 'Acções';
 
 $lang['bf_update_show_edge']	= 'Ver bleeding edge updates?';
