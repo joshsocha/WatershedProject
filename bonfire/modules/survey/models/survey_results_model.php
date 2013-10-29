@@ -3,12 +3,12 @@
  * Created by PhpStorm.
  * User: Greg
  * Date: 10/28/13
- * Time: 7:13 PM
+ * Time: 8:41 PM
  */
 
-class Survey_Questions_Model extends BF_Model{
+class Survey_Results_Model extends BF_Model {
 
-    protected $table		= "survey_questions";
+    protected $table		= "survey_results";
     protected $key			= "id";
     protected $soft_deletes	= false;
     protected $date_format	= "datetime";
