@@ -1,10 +1,11 @@
 <?php
 // Setup our default assets to load.
+
 Assets::add_js('bootstrap.min.js');
 
 
 Assets::add_css('orbit-1.2.3.css');
-Assets::add_css(array('bootstrap.min.css', 'bootstrap-responsive.min.css'));
+Assets::add_css(array('bootstrap.min.css', 'bootstrap-responsive.min.css','app.css'));
 
 $inline = '$(".dropdown-toggle").dropdown();';
 $inline .= '$(".tooltips").tooltip();';

@@ -34,9 +34,9 @@
 					<?php endif;?>
 					
 				<?php if ($this->auth->has_permission('Survey.Help.Edit')) : ?>
-				<td><?php echo anchor(SITE_AREA .'/help/survey/edit/'. $record->id, '<i class="icon-pencil">&nbsp;</i>' .  $record->survey_poll_name) ?></td>
+				<td><?php echo anchor(SITE_AREA .'/help/survey/edit/'. $record->id, '<i class="icon-pencil">&nbsp;</i>' .  $record->survey_name) ?></td>
 				<?php else: ?>
-				<td><?php echo $record->survey_poll_name ?></td>
+				<td><?php echo $record->survey_name ?></td>
 				<?php endif; ?>
 			
 				<td><?php echo $record->survey_question?></td>

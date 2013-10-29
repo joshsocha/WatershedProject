@@ -21,6 +21,7 @@
 	<?php echo Assets::css(null, true); ?>
 
 	<script src="<?php echo Template::theme_url('js/modernizr-2.5.3.js'); ?>"></script>
+    <script src="<?php echo site_url().'assets/js/jquery-1.7.2.js' ?>"></script>
 </head>
 <body class="desktop">
 <!--[if lt IE 7]>

@@ -7,8 +7,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-				<script src="<?php echo Template::theme_url('js/modernizr-2.5.3.js') ?>"></script>
-
+				<script src="<?php echo site_url().'assets/js/jquery-1.7.2.js' ?>"></script>
+      <script src="<?php echo Template::theme_url('js/modernizr-2.5.3.js'); ?>"></script>
 				<?php echo Assets::css(); ?>
 
     <!-- iPhone and Mobile favicon's and touch icons -->

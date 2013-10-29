@@ -179,7 +179,7 @@ class developer extends Admin_Controller {
 		}
 
 		
-		$this->form_validation->set_rules('survey_poll_name','Survey Name','required|xss_clean|max_length[255]');
+		$this->form_validation->set_rules('survey_name','Survey Name','required|xss_clean|max_length[255]');
 		$this->form_validation->set_rules('survey_question','Question','required|xss_clean|max_length[255]');
 		$this->form_validation->set_rules('survey_active','Active','required|xss_clean|max_length[1]');
 
@@ -191,7 +191,7 @@ class developer extends Admin_Controller {
 		// make sure we only pass in the fields we want
 		
 		$data = array();
-		$data['survey_poll_name']        = $this->input->post('survey_poll_name');
+		$data['survey_name']        = $this->input->post('survey_name');
 		$data['survey_question']        = $this->input->post('survey_question');
 		$data['survey_active']        = $this->input->post('survey_active');
 

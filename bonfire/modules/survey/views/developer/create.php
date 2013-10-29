@@ -16,11 +16,11 @@ $id = isset($survey['id']) ? $survey['id'] : '';
     <h3>Survey</h3>
 <?php echo form_open($this->uri->uri_string(), 'class="form-horizontal"'); ?>
     <fieldset>
-        <div class="control-group <?php echo form_error('survey_poll_name') ? 'error' : ''; ?>">
-            <?php echo form_label('Survey Name'. lang('bf_form_label_required'), 'survey_poll_name', array('class' => "control-label") ); ?>
+        <div class="control-group <?php echo form_error('survey_name') ? 'error' : ''; ?>">
+            <?php echo form_label('Survey Name'. lang('bf_form_label_required'), 'survey_name', array('class' => "control-label") ); ?>
             <div class='controls'>
-        <input id="survey_poll_name" type="text" name="survey_poll_name" maxlength="255" value="<?php echo set_value('survey_poll_name', isset($survey['survey_poll_name']) ? $survey['survey_poll_name'] : ''); ?>"  />
-        <span class="help-inline"><?php echo form_error('survey_poll_name'); ?></span>
+        <input id="survey_name" type="text" name="survey_name" maxlength="255" value="<?php echo set_value('survey_name', isset($survey['survey_name']) ? $survey['survey_name'] : ''); ?>"  />
+        <span class="help-inline"><?php echo form_error('survey_name'); ?></span>
         </div>
 
 
@@ -50,7 +50,7 @@ $id = isset($survey['id']) ? $survey['id'] : '';
             <br/>
             <input type="submit" name="save" class="btn btn-primary" value="Create Survey" />
             or <?php echo anchor(SITE_AREA .'/developer/survey', lang('survey_cancel'), 'class="btn btn-warning"'); ?>
-            
+
         </div>
     </fieldset>
     <?php echo form_close(); ?>
