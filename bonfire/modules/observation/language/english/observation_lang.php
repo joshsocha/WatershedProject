@@ -28,3 +28,8 @@ $lang['observation_edit_heading']			= 'Edit Observation';
 $lang['observation_act_create_record']			= 'Created record with ID';
 $lang['observation_act_edit_record']			= 'Updated record with ID';
 $lang['observation_act_delete_record']			= 'Deleted record with ID';
+
+// View and search
+$lang['observation_no_results']			= 'No watershed health reports match your search.';
+$lang['observation_no_reports']			= 'There are no watershed health reports to see at this time.';
+$lang['observation_ask_create']			= 'Would you like to [b][url=/admin/content/observation/create]create one[/url][/b]?';

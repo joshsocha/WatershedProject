@@ -84,7 +84,6 @@ DROP TABLE IF EXISTS bf_observation;
 
 CREATE TABLE `bf_observation` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `observation_description` text NOT NULL,
   `observation_obs_date` date NOT NULL DEFAULT '0000-00-00',
   `observation_obs_location` varchar(150) NOT NULL,
   `observation_anonymous` tinyint(1) NOT NULL,

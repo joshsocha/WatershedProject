@@ -11,16 +11,11 @@ class Migration_Install_observation extends Migration {
 			'id' => array(
 				'type' => 'INT',
 				'constraint' => 11,
-				'auto_increment' => TRUE,
-			),
-			'observation_description' => array(
-				'type' => 'TEXT',
-				
+				'auto_increment' => TRUE
 			),
 			'observation_observation_date' => array(
 				'type' => 'datetime',
-				'default' => '0000-00-00',
-				
+				'default' => '0000-00-00'
 			),
 			'observation_waterbody' => array(
 				'type' => 'VARCHAR',
@@ -92,21 +87,20 @@ class Migration_Install_observation extends Migration {
 			),
 			'observation_anonymous' => array(
 				'type' => 'TINYINT',
-				'constraint' => 1,
-				
+				'constraint' => 1
 			),
 			'deleted' => array(
 				'type' => 'TINYINT',
 				'constraint' => 1,
-				'default' => '0',
+				'default' => '0'
 			),
 			'created_on' => array(
 				'type' => 'datetime',
-				'default' => '0000-00-00 00:00:00',
+				'default' => '0000-00-00 00:00:00'
 			),
 			'modified_on' => array(
 				'type' => 'datetime',
-				'default' => '0000-00-00 00:00:00',
+				'default' => '0000-00-00 00:00:00'
 			),
 		);
 		$this->dbforge->add_field($fields);
