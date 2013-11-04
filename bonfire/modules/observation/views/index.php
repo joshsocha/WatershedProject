@@ -39,7 +39,9 @@
 			<tr>
 			<?php foreach($record as $field => $value) : ?>
 				
-				<?php if ($field != 'id') : ?>
+				<?php 
+				$toRemove = array('id');
+				if (in_array($field,$toRemove)): ?>
 					<td><?php echo ($field == 'deleted') ? (($value > 0) ? lang('observation_true') : lang('observation_false')) : $value; ?></td>
 				<?php endif; ?>
 				

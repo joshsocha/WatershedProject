@@ -12,10 +12,12 @@ if( isset($observation) ) {
 }
 $id = isset($observation['id']) ? $observation['id'] : '';
 ?>
+
 <div class="admin-box">
     <h3>Observation</h3>
 <?php echo form_open($this->uri->uri_string(), 'class="form-horizontal"'); ?>
     <fieldset>
+
         <div class="control-group <?php echo form_error('observation_observation_date') ? 'error' : ''; ?>">
             <?php echo form_label('Observation Date'. lang('bf_form_label_required'), 'observation_observation_date', array('class' => "control-label") ); ?>
             <div class='controls'>
@@ -58,7 +60,6 @@ $id = isset($observation['id']) ? $observation['id'] : '';
         <input id="observation_location_long" type="text" name="observation_location_long" maxlength="50" value="<?php echo set_value('observation_location_long', isset($observation['observation_location_long']) ? $observation['observation_location_long'] : ''); ?>"  />
         <span class="help-inline"><?php echo form_error('observation_location_long'); ?></span>
         </div>
-
         </div>
         <div class="control-group <?php echo form_error('observation_location_lat') ? 'error' : ''; ?>">
             <?php echo form_label('Latitude'. lang('bf_form_label_required'), 'observation_location_lat', array('class' => "control-label") ); ?>
@@ -617,7 +618,6 @@ $id = isset($observation['id']) ? $observation['id'] : '';
         </div>
 
         </div>
-
         <div class="control-group <?php echo form_error('observation_anonymous') ? 'error' : ''; ?>">
             <?php echo form_label('Remain anonymous?', 'observation_anonymous', array('class' => "control-label") ); ?>
             <div class='controls'>

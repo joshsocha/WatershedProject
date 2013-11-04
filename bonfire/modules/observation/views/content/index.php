@@ -14,17 +14,6 @@
 					<th>Sate and Municipality</th>
 					<th>Longitude</th>
 					<th>Latitude</th>
-					<th>Water Speed</th>
-					<th>Water Movement</th>
-					<th>Fish Presence</th>
-					<th>Reptiles or Fish Present</th>
-					<th>Fish Types</th>
-					<th>Tree Shade</th>
-					<th>Left Bank</th>
-					<th>Right Bank</th>
-					<th>Pipes Present</th>
-					<th>Pipe Secretion</th>
-					<th>Trash</th>
 					<th>Comments</th>
 					<th>Created</th>
 					<th>Modified</th>
@@ -61,17 +50,6 @@
 				<td><?php echo $record->observation_sate_muni?></td>
 				<td><?php echo $record->observation_location_long?></td>
 				<td><?php echo $record->observation_location_lat?></td>
-				<td><?php echo $record->observation_water_speed?></td>
-				<td><?php echo $record->observation_water_movement?></td>
-				<td><?php echo $record->observation_fish_presence?></td>
-				<td><?php echo $record->observation_rep_amph_present?></td>
-				<td><?php echo $record->observation_fish_types?></td>
-				<td><?php echo $record->observation_tree_shade?></td>
-				<td><?php echo $record->observation_left_bank?></td>
-				<td><?php echo $record->observation_right_bank?></td>
-				<td><?php echo $record->observation_pipes?></td>
-				<td><?php echo $record->observation_pipe_secretion?></td>
-				<td><?php echo $record->observation_trash?></td>
 				<td><?php echo $record->observation_comments?></td>
 				<td><?php echo $record->created_on?></td>
 				<td><?php echo $record->modified_on?></td>
