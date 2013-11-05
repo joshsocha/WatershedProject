@@ -14,19 +14,6 @@
 		<th>Waterbody</th>
 		<th>Watershed</th>
 		<th>Sate and Municipality</th>
-		<th>Longitude</th>
-		<th>Latitude</th>
-		<th>Water Speed</th>
-		<th>Water Movement</th>
-		<th>Fish Presence</th>
-		<th>Reptiles or Fish Present</th>
-		<th>Fish Types</th>
-		<th>Tree Shade</th>
-		<th>Left Bank</th>
-		<th>Right Bank</th>
-		<th>Pipes Present</th>
-		<th>Pipe Secretion</th>
-		<th>Trash</th>
 		<th>Comments</th>
 		<th>Created</th>
 		<th>Modified</th>
@@ -40,9 +27,16 @@
 			<?php foreach($record as $field => $value) : ?>
 				
 				<?php 
-				$toRemove = array('id');
-				if (in_array($field,$toRemove)): ?>
-					<td><?php echo ($field == 'deleted') ? (($value > 0) ? lang('observation_true') : lang('observation_false')) : $value; ?></td>
+				$toRemove = array(
+					'id', 'observation_location_long', 'observation_location_lat',
+					'observation_trash', 'observation_water_speed', 'observation_water_movement',
+					'observation_fish_presence', 'observation_rep_amph_present', 'observation_fish_types',
+					'observation_left_bank', 'observation_right_bank', 'observation_pipes',
+					'observation_pipe_secretion', 'observation_tree_shade',
+					'observation_anonymous', 'deleted'
+				);
+				if (!in_array($field,$toRemove)): ?>
+					<td><?php echo convert_display($field, $value); ?></td>
 				<?php endif; ?>
 				
 			<?php endforeach; ?>
@@ -51,6 +45,10 @@
 		<?php endforeach; ?>
 		</tbody>
 	</table>
+
+	<?php if($this->auth->has_permission("Observation.Reports.Create"): ?>
+		<p><?php echo bbcode(lang('observation_new_button')); ?></p>
+	<?php endif; ?>
 <?php else:
 	echo '<h3>' . lang('observation_no_reports') . '</h3>';
 	if($this->auth->has_permission('Observation.Reports.Create')) {
@@ -59,6 +57,15 @@
 endif; ?>
 
 <?php
+// Function to display different value formats nicely
+function convert_display($field, $value) {
+	// Date fields
+	if(strpos($field, 'date') !== false || $field == 'modified_on' || $field == 'created_on') {
+		// TODO: Localization!
+		return strftime("%B %e, %Y at %l:%M%P", time($value));
+	}
+	else return $value;
+}
 // TODO: Move this into an autoloaded Bonfire helper (CI helper)
 // TODO: Use PHP's builtin bbcode_create, bbcode_addelement, and bbcode_parse instead!
 function bbcode($s) {
