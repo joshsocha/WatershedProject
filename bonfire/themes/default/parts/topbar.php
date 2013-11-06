@@ -1,7 +1,7 @@
 <div class="navbar navbar-fixed-top">
 	<div class="navbar-inner">
 
-	    <div class="container">
+		<div class="container">
 			<!-- .btn-navbar is used as the toggle for collapsible content -->
 			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 				<span class="icon-bar"></span>
@@ -17,6 +17,16 @@
 			<div class="nav-collapse collapse">
 				<ul class="nav pull-right">
 					<li class="divider-vertical"></li>
+					<li>
+						<a href="<?php echo site_url('observation');?>">
+							<?php echo lang('bf_action_observation') ?>
+						</a>
+					</li>
+					<li>
+						<a href="<?php echo site_url('help');?>">
+							<?php echo lang('bf_action_help') ?>
+						</a>
+					</li>
 <?php //style="height:40px" ?>
 					<?php if (isset($current_user->email)) : ?>
 					<li class="dropdown" >
@@ -56,16 +66,16 @@
 
 					<?php else :  ?>
 
-                        <li>
-                            <a href="<?php echo site_url('observation');?>">
-                                <?php echo lang('bf_action_observation') ?>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?php echo site_url('help');?>">
-                                <?php echo lang('bf_action_help') ?>
-                            </a>
-                        </li>
+						<li>
+							<a href="<?php echo site_url('observation');?>">
+								<?php echo lang('bf_action_observation') ?>
+							</a>
+						</li>
+						<li>
+							<a href="<?php echo site_url('help');?>">
+								<?php echo lang('bf_action_help') ?>
+							</a>
+						</li>
 						<li>
 							<a href="<?php echo site_url('register');?>">
 								<?php echo lang('bf_action_register') ?>
@@ -79,7 +89,7 @@
 
 
 
-                    <?php endif; ?>
+					<?php endif; ?>
 				</ul>
 
 			</div><!--/.nav-collapse -->

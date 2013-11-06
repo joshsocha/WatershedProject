@@ -13,7 +13,7 @@
 		<th>Observation Date</th>
 		<th>Waterbody</th>
 		<th>Watershed</th>
-		<th>Sate and Municipality</th>
+		<th>State and Municipality</th>
 		<th>Comments</th>
 		<th>Created</th>
 		<th>Modified</th>
@@ -46,7 +46,7 @@
 		</tbody>
 	</table>
 
-	<?php if($this->auth->has_permission("Observation.Reports.Create"): ?>
+	<?php if($this->auth->has_permission("Observation.Reports.Create")): ?>
 		<p><?php echo bbcode(lang('observation_new_button')); ?></p>
 	<?php endif; ?>
 <?php else:
