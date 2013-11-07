@@ -29,11 +29,17 @@ class observation extends Front_Controller {
 
 		Displays a list of form data.
 	*/
-	public function index()
+	public function index($page = 1)
 	{
+		if($page < 1) $page = 1;
 
-		$records = $this->observation_model->find_all();
+		$pageSize = 5;
 
+		$full    = $this->observation_model->find_all();
+		$records = $this->observation_model->limit($pageSize, ($page-1)*$pageSize)->find_all();
+
+		Template::set("curpage", $page);
+		Template::set('numpages', count($full) / $pageSize);
 		Template::set('records', $records);
 		Template::render();
 	}

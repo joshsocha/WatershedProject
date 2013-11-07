@@ -40,7 +40,7 @@ class content extends Admin_Controller {
 
 		Displays a list of form data.
 	*/
-	public function index()
+	public function index($page = 0)
 	{
 
 		// Deleting anything?
