@@ -62,7 +62,7 @@ function convert_display($field, $value) {
 	// Date fields
 	if(strpos($field, 'date') !== false || $field == 'modified_on' || $field == 'created_on') {
 		// TODO: Localization!
-		return strftime("%B %e, %Y at %l:%M%P", time($value));
+		return strftime("%B %e, %Y at %l:%M%P", strtotime($value));
 	}
 	else return $value;
 }
