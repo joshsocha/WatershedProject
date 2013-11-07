@@ -167,14 +167,14 @@ $id = isset($observation['id']) ? $observation['id'] : '';
             <?php echo form_label('How fast is the water moving?'. lang('bf_form_label_required'), 'observation_water_speed', array('class' => "control-label") ); ?>
             <div class='controls'>
         <label class="radio">
-            <input id="observation_water_speed" name="observation_water_speed" type="radio" class="" value="very fast" <?php echo set_radio('observation_water_speed', 'very fast'); ?> />
-            <label for="observation_water_speed">Very fast</label>
-            <input id="observation_water_speed" name="observation_water_speed" type="radio" class="" value="fast" <?php echo set_radio('observation_water_speed', 'fast'); ?> />
-            <label for="observation_water_speed">Fast</label>
-			<input id="observation_water_speed" name="observation_water_speed" type="radio" class="" value="slow" <?php echo set_radio('observation_water_speed', 'slow'); ?> />
-            <label for="observation_water_speed">Slow</label>
-			<input id="observation_water_speed" name="observation_water_speed" type="radio" class="" value="very slow" <?php echo set_radio('observation_water_speed', 'very slow'); ?> />
-            <label for="observation_water_speed">Very slow</label>
+            <input id="very_fast" name="observation_water_speed" type="radio" class="" value="very_fast" <?php echo (isset($observation['observation_water_speed']) && $observation['observation_water_speed'] == 'very_fast') ? 'checked="checked"' : set_radio('observation_water_speed', 'very_fast', true); ?> />
+            <label for="very_fast">Very fast</label>
+            <input id="fast" name="observation_water_speed" type="radio" class="" value="fast" <?php echo (isset($observation['observation_water_speed']) && $observation['observation_water_speed'] == 'fast') ? 'checked="checked"' : set_radio('observation_water_speed', 'fast'); ?> />
+            <label for="fast">Fast</label>
+			<input id="slow" name="observation_water_speed" type="radio" class="" value="slow" <?php echo (isset($observation['observation_water_speed']) && $observation['observation_water_speed'] == 'slow') ? 'checked="checked"' : set_radio('observation_water_speed', 'slow'); ?> />
+            <label for="slow">Slow</label>
+			<input id="very_slow" name="observation_water_speed" type="radio" class="" value="very_slow" <?php echo (isset($observation['observation_water_speed']) && $observation['observation_water_speed'] == 'very_slow') ? 'checked="checked"' : set_radio('observation_water_speed', 'very_slow'); ?> />
+            <label for="very_slow">Very slow</label>
             <span class="help-inline"><?php echo form_error('observation_water_speed'); ?></span>
             </label>
         </div>
@@ -186,12 +186,12 @@ $id = isset($observation['id']) ? $observation['id'] : '';
             <?php echo form_label('Which condition best describes the water movement in the Streamwalk area?'. lang('bf_form_label_required'), 'observation_water_movement', array('class' => "control-label") ); ?>
             <div class='controls'>
         <label class="radio">
-            <input id="observation_water_movement" name="observation_water_movement" type="radio" class="" value="mostly fast throughout" <?php echo set_radio('observation_water_movement', 'mostly fast throughout', TRUE); ?> />
-            <label for="observation_water_movement">Mostly fast throughout</label>
-            <input id="observation_water_movement" name="observation_water_movement" type="radio" class="" value="changes from fast to slow" <?php echo set_radio('observation_water_movement', 'changes from fast to slow'); ?> />
-            <label for="observation_water_movement">Changes from fast to slow</label>
-			<input id="observation_water_movement" name="observation_water_movement" type="radio" class="" value="Mostly slow throughout" <?php echo set_radio('observation_water_movement', 'Mostly slow throughout'); ?> />
-            <label for="observation_water_movement">Mostly slow throughout</label>
+            <input id="mostly_fast_throughout" name="observation_water_movement" type="radio" class="" value="mostly_fast_throughout" <?php echo (isset($observation['observation_water_movement']) && $observation['observation_water_movement'] == 'mostly_fast_throughout') ? 'checked="checked"' : set_radio('observation_water_movement', 'mostly_fast_throughout', TRUE); ?> />
+            <label for="mostly_fast_throughout">Mostly fast throughout</label>
+            <input id="changes_from_fast_to_slow" name="observation_water_movement" type="radio" class="" value="changes_from_fast_to_slow" <?php echo (isset($observation['observation_water_movement']) && $observation['observation_water_movement'] == 'changes_from_fast_to_slow') ? 'checked="checked"' : set_radio('observation_water_movement', 'changes_from_fast_to_slow'); ?> />
+            <label for="changes_from_fast_to_slow">Changes from fast to slow</label>
+			<input id="mostly_slow_throughout" name="observation_water_movement" type="radio" class="" value="mostly_slow_throughout" <?php echo (isset($observation['observation_water_movement']) && $observation['observation_water_movement'] == 'mostly_slow_throughout') ? 'checked="checked"' : set_radio('observation_water_movement', 'mostly_slow_throughout'); ?> />
+            <label for="mostly_slow_throughout">Mostly slow throughout</label>
             <span class="help-inline"><?php echo form_error('observation_water_movement'); ?></span>
             </label>
         </div>
@@ -341,12 +341,12 @@ $id = isset($observation['id']) ? $observation['id'] : '';
             <?php echo form_label('Do you see any fish in the stream?'. lang('bf_form_label_required'), 'observation_fish_presence', array('class' => "control-label") ); ?>
             <div class='controls'>
         <label class="radio">
-            <input id="observation_fish_presence" name="observation_fish_presence" type="radio" class="" value="absent" <?php echo set_radio('observation_fish_presence', 'absent', TRUE); ?> />
-            <label for="observation_fish_presence">Absent</label>
-            <input id="observation_fish_presence" name="observation_fish_presence" type="radio" class="" value="moderately abundant" <?php echo set_radio('observation_fish_presence', 'moderately abundant'); ?> />
-            <label for="observation_fish_presence">Moderately abundant</label>
-			<input id="observation_fish_presence" name="observation_fish_presence" type="radio" class="" value="abundant" <?php echo set_radio('observation_fish_presence', 'abundant'); ?> />
-            <label for="observation_fish_presence">Abundant</label>
+            <input id="absent" name="observation_fish_presence" type="radio" class="" value="absent" <?php echo (isset($observation['observation_fish_presence']) && $observation['observation_fish_presence'] == 'absent') ? 'checked="checked"' : set_radio('observation_fish_presence', 'absent', TRUE); ?> />
+            <label for="absent">Absent</label>
+            <input id="moderately_abundant" name="observation_fish_presence" type="radio" class="" value="moderately_abundant" <?php echo (isset($observation['observation_fish_presence']) && $observation['observation_fish_presence'] == 'moderately_abundant') ? 'checked="checked"' : set_radio('observation_fish_presence', 'moderately_abundant'); ?> />
+            <label for="moderately_abundant">Moderately abundant</label>
+			<input id="abundant" name="observation_fish_presence" type="radio" class="" value="abundant" <?php echo (isset($observation['observation_fish_presence']) && $observation['observation_fish_presence'] == 'abundant') ? 'checked="checked"' : set_radio('observation_fish_presence', 'abundant'); ?> />
+            <label for="abundant">Abundant</label>
             <span class="help-inline"><?php echo form_error('observation_fish_presence'); ?></span>
             </label>
         </div>
@@ -358,12 +358,12 @@ $id = isset($observation['id']) ? $observation['id'] : '';
             <?php echo form_label('How many types of fish are in the stream'. lang('bf_form_label_required'), 'observation_fish_types', array('class' => "control-label") ); ?>
             <div class='controls'>
         <label class="radio">
-            <input id="observation_fish_types" name="observation_fish_types" type="radio" class="" value="1" <?php echo set_radio('observation_fish_types', '1', TRUE); ?> />
-            <label for="observation_fish_types">1</label>
-            <input id="observation_fish_types" name="observation_fish_types" type="radio" class="" value="2-4" <?php echo set_radio('observation_fish_types', '2-4'); ?> />
-            <label for="observation_fish_types">2-4</label>
-			<input id="observation_fish_types" name="observation_fish_types" type="radio" class="" value="4+" <?php echo set_radio('observation_fish_types', '4+'); ?> />
-            <label for="observation_fish_types">4+</label>
+            <input id="1" name="observation_fish_types" type="radio" class="" value="1" <?php echo (isset($observation['observation_fish_types']) && $observation['observation_fish_types'] == '1') ? 'checked="checked"' : set_radio('observation_fish_types', '1', TRUE); ?> />
+            <label for="1">1</label>
+            <input id="2-4" name="observation_fish_types" type="radio" class="" value="2-4" <?php echo (isset($observation['observation_fish_types']) && $observation['observation_fish_types'] == '2-4') ? 'checked="checked"' : set_radio('observation_fish_types', '2-4'); ?> />
+            <label for="2-4">2-4</label>
+			<input id="4plus" name="observation_fish_types" type="radio" class="" value="4plus" <?php echo (isset($observation['observation_fish_types']) && $observation['observation_fish_types'] == '4plus') ? 'checked="checked"' : set_radio('observation_fish_types', '4plus'); ?> />
+            <label for="4plus">4+</label>
             <span class="help-inline"><?php echo form_error('observation_fish_types'); ?></span>
             </label>
         </div>
@@ -375,10 +375,10 @@ $id = isset($observation['id']) ? $observation['id'] : '';
             <?php echo form_label('Did you see any amphibians or reptiles?'. lang('bf_form_label_required'), 'observation_rep_amph_present', array('class' => "control-label") ); ?>
             <div class='controls'>
         <label class="radio">
-            <input id="observation_rep_amph_present" name="observation_rep_amph_present" type="radio" class="" value="yes" <?php echo set_radio('observation_rep_amph_present', 'yes', TRUE); ?> />
-            <label for="observation_rep_amph_present">Yes</label>
-            <input id="observation_rep_amph_present" name="observation_rep_amph_present" type="radio" class="" value="no" <?php echo set_radio('observation_rep_amph_present', 'no'); ?> />
-            <label for="observation_rep_amph_present">No</label>
+            <input id="yes_rep" name="observation_rep_amph_present" type="radio" class="" value="yes" <?php echo (isset($observation['observation_rep_amph_present']) && $observation['observation_rep_amph_present'] == 'yes') ? 'checked="checked"' : set_radio('observation_rep_amph_present', 'yes', TRUE); ?> />
+            <label for="yes_rep">Yes</label>
+            <input id="no_rep" name="observation_rep_amph_present" type="radio" class="" value="no" <?php echo (isset($observation['observation_rep_amph_present']) && $observation['observation_rep_amph_present'] == 'no') ? 'checked="checked"' : set_radio('observation_rep_amph_present', 'no'); ?> />
+            <label for="no_rep">No</label>
             <span class="help-inline"><?php echo form_error('observation_rep_amph_present'); ?></span>
             </label>
         </div>
@@ -391,14 +391,14 @@ $id = isset($observation['id']) ? $observation['id'] : '';
             <?php echo form_label('As you consider the stream as a whole, how much of its surface area is shaded by trees?'. lang('bf_form_label_required'), 'observation_tree_shade', array('class' => "control-label") ); ?>
             <div class='controls'>
         <label class="radio">
-            <input id="observation_tree_shade" name="observation_tree_shade" type="radio" class="" value="completely shaded" <?php echo set_radio('observation_tree_shade', 'completely shaded', TRUE); ?> />
-            <label for="observation_tree_shade">Completely shaded</label>
-            <input id="observation_tree_shade" name="observation_tree_shade" type="radio" class="" value="more than half shaded" <?php echo set_radio('observation_tree_shade', 'more than half shaded'); ?> />
-            <label for="observation_tree_shade">More than half shaded</label>
-			<input id="observation_tree_shade" name="observation_tree_shade" type="radio" class="" value="less than half shaded" <?php echo set_radio('observation_tree_shade', 'less than half shaded'); ?> />
-            <label for="observation_tree_shade">Less than half shaded</label>
-			<input id="observation_tree_shade" name="observation_tree_shade" type="radio" class="" value="no shade, or almost none" <?php echo set_radio('observation_tree_shade', 'no shade, or almost none'); ?> />
-            <label for="observation_tree_shade">No shade, or almost none</label>
+            <input id="completely_shaded" name="observation_tree_shade" type="radio" class="" value="completely_shaded" <?php echo (isset($observation['observation_tree_shade']) && $observation['observation_tree_shade'] == 'completely_shaded') ? 'checked="checked"' : set_radio('observation_tree_shade', 'completely_shaded', TRUE); ?> />
+            <label for="completely_shaded">Completely shaded</label>
+            <input id="more_than_half_shaded" name="observation_tree_shade" type="radio" class="" value="more_than_half_shaded" <?php echo (isset($observation['observation_tree_shade']) && $observation['observation_tree_shade'] == 'more_than_half_shaded') ? 'checked="checked"' : set_radio('observation_tree_shade', 'more_than_half_shaded'); ?> />
+            <label for="more_than_half_shaded">More than half shaded</label>
+			<input id="less_than_half_shaded" name="observation_tree_shade" type="radio" class="" value="less_than_half_shaded" <?php echo (isset($observation['observation_tree_shade']) && $observation['observation_tree_shade'] == 'less_than_half_shaded') ? 'checked="checked"' : set_radio('observation_tree_shade', 'less_than_half_shaded'); ?> />
+            <label for="less_than_half_shaded">Less than half shaded</label>
+			<input id="no_shade_or_almost_none" name="observation_tree_shade" type="radio" class="" value="no_shade_or_almost_none" <?php echo (isset($observation['observation_tree_shade']) && $observation['observation_tree_shade'] == 'no_shade_or_almost_none') ? 'checked="checked"' : set_radio('observation_tree_shade', 'no_shade_or_almost_none'); ?> />
+            <label for="no_shade_or_almost_none">No shade, or almost none</label>
             <span class="help-inline"><?php echo form_error('observation_tree_shade'); ?></span>
             </label>
         </div>
@@ -410,14 +410,14 @@ $id = isset($observation['id']) ? $observation['id'] : '';
             <?php echo form_label('Facing Upstream, how mush of the stream bank is covered by plants, rocks and logs? <br><br> Left Bank:'. lang('bf_form_label_required'), 'observation_left_bank', array('class' => "control-label") ); ?>
             <div class='controls'>
         <label class="radio">
-            <input id="observation_left_bank" name="observation_left_bank" type="radio" class="" value="completely covered" <?php echo set_radio('observation_left_bank', 'completely covered', TRUE); ?> />
-            <label for="observation_left_bank">Completely covered</label>
-            <input id="observation_left_bank" name="observation_left_bank" type="radio" class="" value="more than half covered" <?php echo set_radio('observation_left_bank', 'more than half covered'); ?> />
-            <label for="observation_left_bank">More than half covered</label>
-			<input id="observation_left_bank" name="observation_left_bank" type="radio" class="" value="less than half covered" <?php echo set_radio('observation_left_bank', 'less than half covered'); ?> />
-            <label for="observation_left_bank">Less than half covered</label>
-			<input id="observation_left_bank" name="observation_left_bank" type="radio" class="" value="no plants, rocks and logs" <?php echo set_radio('observation_left_bank', 'no plants, rocks and logs'); ?> />
-            <label for="observation_left_bank">No plants, rocks and logs</label>
+            <input id="completely_covered_left" name="observation_left_bank" type="radio" class="" value="completely_covered" <?php echo (isset($observation['observation_left_bank']) && $observation['observation_left_bank'] == 'completely_covered') ? 'checked="checked"' : set_radio('observation_left_bank', 'completely_covered', TRUE); ?> />
+            <label for="completely_covered_left">Completely covered</label>
+            <input id="more_than_half_covered_left" name="observation_left_bank" type="radio" class="" value="more_than_half_covered" <?php echo (isset($observation['observation_left_bank']) && $observation['observation_left_bank'] == 'more_than_half_covered') ? 'checked="checked"' : set_radio('observation_left_bank', 'more_than_half_covered'); ?> />
+            <label for="more_than_half_covered_left">More than half covered</label>
+			<input id="less_than_half_covered_left" name="observation_left_bank" type="radio" class="" value="less_than_half_covered" <?php echo (isset($observation['observation_left_bank']) && $observation['observation_left_bank'] == 'less_than_half_covered') ? 'checked="checked"' : set_radio('observation_left_bank', 'less_than_half_covered'); ?> />
+            <label for="less_than_half_covered_left">Less than half covered</label>
+			<input id="not_covered_left" name="observation_left_bank" type="radio" class="" value="not_covered" <?php echo (isset($observation['observation_left_bank']) && $observation['observation_left_bank'] == 'not_covered') ? 'checked="checked"' : set_radio('observation_left_bank', 'not_covered'); ?> />
+            <label for="not_covered_left">Not covered</label>
             <span class="help-inline"><?php echo form_error('observation_left_bank'); ?></span>
             </label>
         </div>
@@ -429,14 +429,14 @@ $id = isset($observation['id']) ? $observation['id'] : '';
             <?php echo form_label('Facing Upstream, how mush of the stream bank is covered by plants, rocks and logs? <br><br> Right Bank:'. lang('bf_form_label_required'), 'observation_right_bank', array('class' => "control-label") ); ?>
             <div class='controls'>
         <label class="radio">
-            <input id="observation_right_bank" name="observation_right_bank" type="radio" class="" value="completely covered" <?php echo set_radio('observation_right_bank', 'completely covered', TRUE); ?> />
-            <label for="observation_right_bank">Completely covered</label>
-            <input id="observation_right_bank" name="observation_right_bank" type="radio" class="" value="more than half covered" <?php echo set_radio('observation_right_bank', 'more than half covered'); ?> />
-            <label for="observation_right_bank">More than half covered</label>
-			<input id="observation_right_bank" name="observation_right_bank" type="radio" class="" value="less than half covered" <?php echo set_radio('observation_right_bank', 'less than half covered'); ?> />
-            <label for="observation_right_bank">Less than half covered</label>
-			<input id="observation_right_bank" name="observation_right_bank" type="radio" class="" value="no plants, rocks and logs" <?php echo set_radio('observation_right_bank', 'no plants, rocks and logs'); ?> />
-            <label for="observation_right_bank">More than half covered</label>
+            <input id="completely_covered_right" name="observation_right_bank" type="radio" class="" value="completely_covered" <?php echo (isset($observation['observation_left_bank']) && $observation['observation_left_bank'] == 'completely_covered') ? 'checked="checked"' : set_radio('observation_right_bank', 'completely_covered', TRUE); ?> />
+            <label for="completely_covered_right">Completely covered</label>
+            <input id="more_than_half_covered_right" name="observation_right_bank" type="radio" class="" value="more_than_half_covered" <?php echo (isset($observation['observation_left_bank']) && $observation['observation_left_bank'] == 'more_than_half_covered') ? 'checked="checked"' : set_radio('observation_right_bank', 'more_than_half_covered'); ?> />
+            <label for="more_than_half_covered_right">More than half covered</label>
+			<input id="less_than_half_covered_right" name="observation_right_bank" type="radio" class="" value="less_than_half_covered" <?php echo (isset($observation['observation_left_bank']) && $observation['observation_left_bank'] == 'less_than_half_covered') ? 'checked="checked"' : set_radio('observation_right_bank', 'less_than_half_covered'); ?> />
+            <label for="less_than_half_covered_right">Less than half covered</label>
+			<input id="not_covered_right" name="observation_right_bank" type="radio" class="" value="not_covered" <?php echo (isset($observation['observation_left_bank']) && $observation['observation_left_bank'] == 'not_covered') ? 'checked="checked"' : set_radio('observation_right_bank', 'not_covered'); ?> />
+            <label for="not_covered_right">Not covered</label>
             <span class="help-inline"><?php echo form_error('observation_right_bank'); ?></span>
             </label>
         </div>
@@ -548,10 +548,10 @@ $id = isset($observation['id']) ? $observation['id'] : '';
             <?php echo form_label('Are there any pipes emptying directly into or near the stream?'. lang('bf_form_label_required'), 'observation_pipes', array('class' => "control-label") ); ?>
             <div class='controls'>
         <label class="radio">
-            <input id="observation_pipes" name="observation_pipes" type="radio" class="" value="yes" <?php echo set_radio('observation_pipes', 'yes', TRUE); ?> />
-            <label for="observation_pipes">Yes</label>
-            <input id="observation_pipes" name="observation_pipes" type="radio" class="" value="no" <?php echo set_radio('observation_pipes', 'no'); ?> />
-            <label for="observation_pipes">No</label>
+            <input id="yes_pipes" name="observation_pipes" type="radio" class="" value="yes" <?php echo (isset($observation['observation_pipes']) && $observation['observation_pipes'] == 'yes') ? 'checked="checked"' : set_radio('observation_pipes', 'yes', TRUE); ?> />
+            <label for="yes_pipes">Yes</label>
+            <input id="no_pipes" name="observation_pipes" type="radio" class="" value="no" <?php echo (isset($observation['observation_pipes']) && $observation['observation_pipes'] == 'no') ? 'checked="checked"' : set_radio('observation_pipes', 'no'); ?> />
+            <label for="no_pipes">No</label>
             <span class="help-inline"><?php echo form_error('observation_pipes'); ?></span>
             </label>
         </div>
@@ -563,10 +563,10 @@ $id = isset($observation['id']) ? $observation['id'] : '';
             <?php echo form_label('if yes to previous question, is there anything coming out of it?'. lang('bf_form_label_required'), 'observation_pipe_secretion', array('class' => "control-label") ); ?>
             <div class='controls'>
         <label class="radio">
-            <input id="observation_pipe_secretion" name="observation_pipe_secretion" type="radio" class="" value="yes" <?php echo set_radio('observation_pipe_secretion', 'yes', TRUE); ?> />
-            <label for="observation_pipe_secretion">Yes</label>
-            <input id="observation_pipe_secretion" name="observation_pipe_secretion" type="radio" class="" value="no" <?php echo set_radio('observation_pipe_secretion', 'no'); ?> />
-            <label for="observation_pipe_secretion">No</label>
+            <input id="yes_sec" name="observation_pipe_secretion" type="radio" class="" value="yes" <?php echo (isset($observation['observation_pipe_secretion']) && $observation['observation_pipe_secretion'] == 'yes') ? 'checked="checked"' : set_radio('observation_pipe_secretion', 'yes', TRUE); ?> />
+            <label for="yes_sec">Yes</label>
+            <input id="no_sec" name="observation_pipe_secretion" type="radio" class="" value="no" <?php echo (isset($observation['observation_pipe_secretion']) && $observation['observation_pipe_secretion'] == 'no') ? 'checked="checked"' : set_radio('observation_pipe_secretion', 'no'); ?> />
+            <label for="no_sec">No</label>
             <span class="help-inline"><?php echo form_error('observation_pipe_secretion'); ?></span>
             </label>
         </div>
@@ -578,12 +578,10 @@ $id = isset($observation['id']) ? $observation['id'] : '';
             <?php echo form_label('Is there any trash in or immediately adjacent to the stream?'. lang('bf_form_label_required'), 'observation_trash', array('class' => "control-label") ); ?>
             <div class='controls'>
         <label class="radio">
-            <input id="observation_trash" name="observation_trash" type="radio" class="" value="absent" <?php echo set_radio('observation_trash', 'absent', TRUE); ?> />
-            <label for="observation_trash">Absent</label>
-            <input id="observation_trash" name="observation_trash" type="radio" class="" value="moderately abundant" <?php echo set_radio('observation_trash', 'moderately abundant'); ?> />
-            <label for="observation_trash">moderately abundant</label>
-			<input id="observation_trash" name="observation_trash" type="radio" class="" value="moderately abundant" <?php echo set_radio('observation_trash', 'moderately abundant'); ?> />
-            <label for="observation_trash">moderately abundant</label>
+            <input id="trash_absent" name="observation_trash" type="radio" class="" value="absent" <?php echo (isset($observation['observation_trash']) && $observation['observation_trash'] == 'absent') ? 'checked="checked"' : set_radio('observation_trash', 'absent', TRUE); ?> />
+            <label for="trash_absent">Absent</label>
+            <input id="trash_moderately_abundant" name="observation_trash" type="radio" class="" value="moderately_abundant" <?php echo (isset($observation['observation_trash']) && $observation['observation_trash'] == 'moderately_abundant') ? 'checked="checked"' : set_radio('observation_trash', 'moderately_abundant'); ?> />
+            <label for="trash_moderately_abundant">Moderately abundant</label>
             <span class="help-inline"><?php echo form_error('observation_trash'); ?></span>
             </label>
         </div>
