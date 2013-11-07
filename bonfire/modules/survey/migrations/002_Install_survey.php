@@ -91,9 +91,9 @@ class Migration_Install_survey extends Migration {
 	{
 		$prefix = $this->db->dbprefix;
 
-		$this->dbforge->drop_table('survey');
         $this->dbforge->drop_table('survey_answers');
         $this->dbforge->drop_table('survey_results');
+        $this->dbforge->drop_table('survey');
 
 	}
 

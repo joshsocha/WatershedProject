@@ -529,7 +529,7 @@ class Migration_Install_observation extends Migration {
 	{
 		$prefix = $this->db->dbprefix;
 
-		$this->dbforge->drop_table('observation');
+		
 		$this->dbforge->drop_table('observation_algae');
 		$this->dbforge->drop_table('observation_algae_color');
 		$this->dbforge->drop_table('observation_barriers');
@@ -539,6 +539,7 @@ class Migration_Install_observation extends Migration {
 		$this->dbforge->drop_table('observation_material');
 		$this->dbforge->drop_table('observation_smell');
 		$this->dbforge->drop_table('observation_stream_use');
+		$this->dbforge->drop_table('observation');
 
 	}
 
