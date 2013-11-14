@@ -17,6 +17,8 @@
 			<div class="nav-collapse collapse">
 				<ul class="nav pull-right">
 					<li class="divider-vertical"></li>
+
+					<!-- Links that show up regardless of login status -->
 					<li>
 						<a href="<?php echo site_url('observation');?>">
 							<?php echo lang('bf_action_observation') ?>
@@ -27,7 +29,8 @@
 							<?php echo lang('bf_action_help') ?>
 						</a>
 					</li>
-<?php //style="height:40px" ?>
+
+					<!-- Links that only show up for logged in users -->
 					<?php if (isset($current_user->email)) : ?>
 					<li class="dropdown" >
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -64,18 +67,8 @@
 						</ul>
 					</li>
 
+					<!-- Links that only show up if user is not logged in -->
 					<?php else :  ?>
-
-						<li>
-							<a href="<?php echo site_url('observation');?>">
-								<?php echo lang('bf_action_observation') ?>
-							</a>
-						</li>
-						<li>
-							<a href="<?php echo site_url('help');?>">
-								<?php echo lang('bf_action_help') ?>
-							</a>
-						</li>
 						<li>
 							<a href="<?php echo site_url('register');?>">
 								<?php echo lang('bf_action_register') ?>
@@ -86,9 +79,6 @@
 								<?php echo lang('bf_action_login') ?>
 							</a>
 						</li>
-
-
-
 					<?php endif; ?>
 				</ul>
 
