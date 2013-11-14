@@ -51,6 +51,7 @@
 	<?php endif; ?>
 
 	<br/>
+	<?php // TODO: Move pagination to a separate view with parameters, so we can reuse it! ?>
 	<div class="pagination" style="width:100%;text-align:center;">
 		<ul>
 			<?php
@@ -66,7 +67,7 @@
 			}
 
 			// Next
-			echo '<li'.($curpage == $numpages? ' class="disabled"' : '').'>';
+			echo '<li'.($curpage >= $numpages? ' class="disabled"' : '').'>';
 			echo '  <a href="'.($curpage+1).'"">&raquo;</a></li>';
 			?>
 		</ul>

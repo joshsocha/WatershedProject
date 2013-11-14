@@ -36,6 +36,9 @@ class observation extends Front_Controller {
 		$pageSize = 5;
 
 		$full    = $this->observation_model->find_all();
+		if($page > count($full)/$pageSize) {
+			$page = ceil(count($full) / $pageSize);
+		}
 		$records = $this->observation_model->limit($pageSize, ($page-1)*$pageSize)->find_all();
 
 		Template::set("curpage", $page);
