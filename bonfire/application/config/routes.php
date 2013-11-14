@@ -50,7 +50,7 @@ $route['reset_password/(:any)/(:any)']	= "users/reset_password/$1/$2";
 $route['activate/(:any)/(:any)']					= 'users/activate/$1/$2';
 
 // Custom routes
-// Observations
+// Observations (paging)
 $route['observation/(:num)'] = 'observation/index/$1';
 
 // Contexts

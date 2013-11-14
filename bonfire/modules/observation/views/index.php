@@ -51,27 +51,7 @@
 	<?php endif; ?>
 
 	<br/>
-	<?php // TODO: Move pagination to a separate view with parameters, so we can reuse it! ?>
-	<div class="pagination" style="width:100%;text-align:center;">
-		<ul>
-			<?php
-			// Previous
-			echo '<li'.($curpage == 1? ' class="disabled"' : '').'>';
-			echo '  <a href="'.($curpage-1).'"">&laquo;</a></li>';
-
-			// Show no more than 7 page links
-			$initial = max(1, $curpage-3);
-			$limit   = min($numpages+1, $initial+7);
-			for($i = $initial; $i < $limit; $i++) {
-				echo '<li'.($i==$curpage?' class="active"':'').'><a href="'.$i.'">'.$i.'</a></li>';
-			}
-
-			// Next
-			echo '<li'.($curpage >= $numpages? ' class="disabled"' : '').'>';
-			echo '  <a href="'.($curpage+1).'"">&raquo;</a></li>';
-			?>
-		</ul>
-	</div>
+	<?php echo theme_view("parts/pagination"); ?>
 <?php else:
 	echo '<h3>' . lang('observation_no_reports') . '</h3>';
 	if($this->auth->has_permission('Observation.Reports.Create')) {
@@ -81,36 +61,16 @@ endif; ?>
 
 <?php
 // Function to display different value formats nicely
-function convert_display($field, $value) {
+// TODO: Should this be a helper?
+function convert_display($field, $value, $nullDate='Never') {
 	// Date fields
 	if(strpos($field, 'date') !== false || $field == 'modified_on' || $field == 'created_on') {
 		// TODO: Localization!
 		if($value == "0000-00-00" || $value == "0000-00-00 00:00:00")
-			return "Never";
+			return $nullDate;
 		else
 			return strftime("%B %e, %Y at %l:%M%P", strtotime($value));
 	}
 	else return $value;
-}
-// TODO: Move this into an autoloaded Bonfire helper (CI helper)
-// TODO: Use PHP's builtin bbcode_create, bbcode_addelement, and bbcode_parse instead!
-function bbcode($s) {
-	// Complex replacements, such as parameterized codes
-	$patterns = array(
-		'/\[url=([^\s]*)\](.*)\[\/url\]/i', // [url=someurl]link text[/url]
-	);
-	$replacements = array(
-		function($matches) {
-			return '<a href="' . str_replace('%2F', '/', urlencode($matches[1])) . '">' . $matches[2] . '</a>';
-		}
-	);
-	foreach($patterns as $i => $p) {
-		$s = preg_replace_callback($p, $replacements[$i], $s, -1);
-	}
-
-	// Simpler searches, such as [b]
-	$s = str_replace('[b]', '<b>', $s);
-	$s = str_replace('[/b]', '</b>', $s);
-	return $s;
 }
 ?>
