@@ -34,3 +34,10 @@ $lang['observation_no_results']			= 'No watershed health reports match your sear
 $lang['observation_no_reports']			= 'There are no watershed health reports to see at this time.';
 $lang['observation_ask_create']			= 'Would you like to [b][url=/admin/content/observation/create]create one[/url][/b]?';
 $lang['observation_new_button']			= '[b][url=/admin/content/observation/create]New observation[/url][/b]';
+
+// Accordion strings
+$lang['observation_essentials']			= 'Observation Essentials';
+$lang['stream_characteristics']			= 'Stream Characteristics';
+$lang['stream_biology']					= 'Stream Biology';
+$lang['stream_surroundings']			= 'Stream Surroundings';
+$lang['stream_concerns']				= 'Stream Concerns';
