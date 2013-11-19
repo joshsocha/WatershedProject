@@ -1,10 +1,11 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Migration_Install_survey extends Migration {
+class Migration_Update_survey extends Migration {
 
     public function up()
     {
         $prefix = $this->db->dbprefix;
+        $this->dbforge->drop_table('survey');
 
         $fields = array(
             'id' => array(

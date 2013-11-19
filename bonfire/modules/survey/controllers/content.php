@@ -169,7 +169,7 @@ class content extends Admin_Controller
         //Validate Survey
         $this->form_validation->set_rules('survey_name', 'Survey Name', 'required|xss_clean|max_length[255]');
         $this->form_validation->set_rules('survey_question', 'Question', 'required|xss_clean|max_length[255]');
-        $this->form_validation->set_rules('survey_active', 'Active', 'required|xss_clean|max_length[1]');
+
 
         //validate answers
         $this->form_validation->set_rules('numAnswers', 'Answer Text', 'callback_has_answer');
@@ -186,12 +186,17 @@ class content extends Admin_Controller
         $data['survey_question'] = $this->input->post('survey_question');
         $data['survey_active'] = $this->input->post('survey_active');
 
-
-
         //insert survey
         if ($type == 'insert') {
             $id = $this->survey_model->insert($data);
-            if (is_numeric($id)) {
+            if (is_numeric($id))
+            {
+                //update active survey if necessary
+                if($data['survey_active']==1)
+                {
+                    $this->survey_model->update_active($id);
+                }
+
                 $return = $id;
             } else {
                 $return = FALSE;
@@ -207,10 +212,8 @@ class content extends Admin_Controller
 
         for($index = 0; $index<$_POST['numAnswers']; $index++)
         {
-
             $survey_answer['survey_answer_text'] = $this->input->post('lblAddAnswer'.$index);
             $survey_answer['survey_answer_number'] = $index;
-            var_dump($survey_answer);
             $this->survey_answers_model->insert($survey_answer);
         }
         return $return;

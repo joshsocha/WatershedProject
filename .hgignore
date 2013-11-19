@@ -14,5 +14,4 @@ bonfire/application/controllers/welcome.php
 bonfire/application/logs/
 bonfire/application/config/database.php
 bonfire/application/config/development/database.php
-.htaccess
 bonfire/system/system.phpproj
