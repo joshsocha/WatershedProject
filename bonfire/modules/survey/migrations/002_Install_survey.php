@@ -25,7 +25,6 @@ class Migration_Install_survey extends Migration {
 			'survey_active' => array(
 				'type' => 'TINYINT',
 				'constraint' => 1,
-				
 			),
 		);
 		$this->dbforge->add_field($fields);
