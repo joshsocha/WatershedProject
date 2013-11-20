@@ -5,19 +5,17 @@
 <br />
 
 <?php if (isset($records) && is_array($records) && count($records)) : ?>
-				
+	<?php $this->load->view('observation/partials/search'); ?>
+
 	<table class="table table-striped table-bordered">
 		<thead>
-		
-			
-		<th>Observation Date</th>
-		<th>Waterbody</th>
-		<th>Watershed</th>
-		<th>State and Municipality</th>
-		<th>Comments</th>
-		<th>Created</th>
-		<th>Modified</th>
-		
+			<th>Observation Date</th>
+			<th>Waterbody</th>
+			<th>Watershed</th>
+			<th>State and Municipality</th>
+			<th>Comments</th>
+			<th>Created</th>
+			<th>Modified</th>
 		</thead>
 		<tbody>
 		
@@ -62,12 +60,12 @@ endif; ?>
 <?php
 // Function to display different value formats nicely
 // TODO: Should this be a helper?
-function convert_display($field, $value, $nullDate='Never') {
+function convert_display($field, $value, $nullDate='Unknown') {
 	// Date fields
 	if(strpos($field, 'date') !== false || $field == 'modified_on' || $field == 'created_on') {
 		// TODO: Localization!
 		if($value == "0000-00-00" || $value == "0000-00-00 00:00:00")
-			return $nullDate;
+			return $field == 'modified_on'? 'Never' : $nullDate;
 		else
 			return strftime("%B %e, %Y at %l:%M%P", strtotime($value));
 	}

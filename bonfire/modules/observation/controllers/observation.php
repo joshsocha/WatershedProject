@@ -35,5 +35,15 @@ class observation extends Front_Controller {
 		Template::render();
 	}
 
+	public function search() {
+		$query = $this->input->post('query');
+		// No like() function, except the docs say there is too.
+		//$records = $this->observation_model->like('observation_watershed', $query)->find_all();
+		$records = $this->observation_model->find_all();
+		Template::set('query', $query);
+		Template::set('records', $records);
+		Template::render();
+	}
+
 	//--------------------------------------------------------------------
 }
