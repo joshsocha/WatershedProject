@@ -32,38 +32,34 @@ class observation extends Front_Controller
 
         Displays a list of form data.
     */
+
     public function index($page = 1)
     {
-        if ($page < 1)
-        {
-            $page = 1;
-        }
-
-        $pageSize = 5;
-
         //Set permissions for Intermediate user:
         $role_id = $this->auth->role_id();
         $role_name = $this->auth->role_name_by_id($role_id);
 
-        var_dump($role_name);
-        //only display approved records for intermediate users
-        if ($role_name=='Intermediate')
+        if($role_name=='Intermediate'||empty($role_name))
         {
-            $records = $this->observation_model->get_approved_observations();
-            //$records = $this->observation_model->limit($pageSize, ($page - 1) * $pageSize)->get_approved_observations();
+            paginate_approved($page, $this->observation_model, 5);
         }
         else
         {
-            $full = $this->observation_model->find_all();
-            $records = $this->observation_model->limit($pageSize, ($page - 1) * $pageSize)->find_all();
+            paginate($page, $this->observation_model, 5);
         }
-        Template::set("curpage", $page);
-        Template::set('numpages', count($full) / $pageSize);
-        Template::set('records', $records);
         Template::render();
     }
 
-    //--------------------------------------------------------------------
+    public function search()
+    {
+        $query = $this->input->post('query');
+        // No like() function, except the docs say there is too.
+        //$records = $this->observation_model->like('observation_watershed', $query)->find_all();
+        $records = $this->observation_model->find_all();
+        Template::set('query', $query);
+        Template::set('records', $records);
+        Template::render();
+    }
 
 
 }

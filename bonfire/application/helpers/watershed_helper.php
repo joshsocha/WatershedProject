@@ -17,6 +17,24 @@ if(!function_exists('paginate')) {
 	}
 }
 
+//only gets approved records
+if(!function_exists('paginate_approved')) {
+    function paginate_approved($page, $model, $pageSize = 5) {
+        $full    = $model->find_all_by('approved',1);
+
+        if($page < 1) $page = 1;
+        if($page > count($full)/$pageSize) {
+            $page = ceil(count($full) / $pageSize);
+        }
+
+        $records = $model->limit($pageSize, ($page-1)*$pageSize)->find_all_by('approved',1);
+
+        Template::set("curpage", $page);
+        Template::set('numpages', ceil(count($full) / $pageSize));
+        Template::set('records', $records);
+    }
+}
+
 if(!function_exists('bbcode')) {
 	// TODO: Use PHP's builtin bbcode_create, bbcode_addelement, and bbcode_parse instead!
 	function bbcode($s) {

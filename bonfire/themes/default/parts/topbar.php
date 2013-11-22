@@ -19,9 +19,17 @@
 
 					<!-- Links that show up regardless of login status -->
 					<li>
-						<a href="<?php echo site_url('observation');?>">
-							<?php echo lang('bf_action_observation') ?>
-						</a>
+                        <?php if (isset($current_user->email)) : ?>
+                            <?php if (has_permission('Observation.Content.Create')) : ?>
+                                <a href="<?php echo site_url('admin/content/observation'); ?>">
+                                    <?php echo lang('bf_action_observation') ?>
+                                </a>
+                            <?php endif; ?>
+                        <?php else : ?>
+                            <a href="<?php echo site_url('observation'); ?>">
+                                <?php echo lang('bf_action_observation') ?>
+                            </a>
+                        <?php endif; ?>
 					</li>
 					<li>
 						<a href="<?php echo site_url('help');?>">

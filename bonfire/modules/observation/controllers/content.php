@@ -45,56 +45,18 @@ class content extends Admin_Controller
     */
     public function index($page = 1)
     {
-
-        if ($page < 1)
-        {
-            $page = 1;
-        }
-
-        $pageSize = 5;
-
-        // Deleting anything?
-        if (isset($_POST['delete']))
-        {
-            $checked = $this->input->post('checked');
-
-            if (is_array($checked) && count($checked))
-            {
-                $result = FALSE;
-                foreach ($checked as $pid)
-                {
-                    $result = $this->observation_model->delete($pid);
-                }
-
-                if ($result)
-                {
-                    Template::set_message(count($checked) . ' ' . lang('observation_delete_success'), 'success');
-                }
-                else
-                {
-                    Template::set_message(lang('observation_delete_failure') . $this->observation_model->error, 'error');
-                }
-            }
-        }
         //Set permissions for Intermediate user:
         $role_id = $this->auth->role_id();
         $role_name = $this->auth->role_name_by_id($role_id);
 
-
-        //only display approved records for intermediate users
-        if ($role_name=='Intermediate')
+        if($role_name=='Intermediate'||empty($role_name))
         {
-            $full = $this->observation_model->find_all();
-            $records = $this->observation_model->limit($pageSize, ($page - 1) * $pageSize)->find_all_by('approved',1);
+            paginate_approved($page, $this->observation_model, 5);
         }
         else
         {
-            $full = $this->observation_model->find_all();
-            $records = $this->observation_model->limit($pageSize, ($page - 1) * $pageSize)->find_all();
+            paginate($page, $this->observation_model, 5);
         }
-
-        Template::set('records', $records);
-        Template::set('toolbar_title', 'Manage Observation');
         Template::render();
     }
 
@@ -189,31 +151,31 @@ class content extends Admin_Controller
         Template::set('observation', $this->observation_model->find($id));
         Assets::add_module_js('observation', 'observation.js');
 
-        $colors = $this->color_model->where('observation_id', $id)->find_all()[0];
+        $colors = $this->color_model->where('observation_id', $id)->find_all();
         Template::set('colors', $colors);
 
-        $smells = $this->smell_model->where('observation_id', $id)->find_all()[0];
+        $smells = $this->smell_model->where('observation_id', $id)->find_all();
         Template::set('smells', $smells);
 
-        $composition = $this->composition_model->where('observation_id', $id)->find_all()[0];
+        $composition = $this->composition_model->where('observation_id', $id)->find_all();
         Template::set('composition', $composition);
 
-        $materials = $this->materials_model->where('observation_id', $id)->find_all()[0];
+        $materials = $this->materials_model->where('observation_id', $id)->find_all();
         Template::set('materials', $materials);
 
-        $algae = $this->algae_model->where('observation_id', $id)->find_all()[0];
+        $algae = $this->algae_model->where('observation_id', $id)->find_all();
         Template::set('algae', $algae);
 
-        $algae_color = $this->algae_color_model->where('observation_id', $id)->find_all()[0];
+        $algae_color = $this->algae_color_model->where('observation_id', $id)->find_all();
         Template::set('algae_color', $algae_color);
 
-        $land = $this->land_model->where('observation_id', $id)->find_all()[0];
+        $land = $this->land_model->where('observation_id', $id)->find_all();
         Template::set('land', $land);
 
-        $stream = $this->stream_model->where('observation_id', $id)->find_all()[0];
+        $stream = $this->stream_model->where('observation_id', $id)->find_all();
         Template::set('stream', $stream);
 
-        $barriers = $this->barrier_model->where('observation_id', $id)->find_all()[0];
+        $barriers = $this->barrier_model->where('observation_id', $id)->find_all();
         Template::set('barriers', $barriers);
 
         Template::set('toolbar_title', lang('observation_edit') . ' Observation');
@@ -227,19 +189,7 @@ class content extends Admin_Controller
     // !PRIVATE METHODS
     //--------------------------------------------------------------------
 
-    /*
-        Method: save_observation()
 
-        Does the actual validation and saving of form data.
-
-        Parameters:
-            $type	- Either "insert" or "update"
-            $id		- The ID of the record to update. Not needed for inserts.
-
-        Returns:
-            An INT id for successful inserts. If updating, returns TRUE on success.
-            Otherwise, returns FALSE.
-    */
     private function save_observation($type = 'insert', $id = 0)
     {
         if ($type == 'update')
