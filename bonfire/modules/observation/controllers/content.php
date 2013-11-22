@@ -43,8 +43,16 @@ class content extends Admin_Controller
 
         Displays a list of form data.
     */
-    public function index($page = 0)
+    public function index($page = 1)
     {
+
+        if ($page < 1)
+        {
+            $page = 1;
+        }
+
+        $pageSize = 5;
+
         // Deleting anything?
         if (isset($_POST['delete']))
         {
@@ -68,8 +76,22 @@ class content extends Admin_Controller
                 }
             }
         }
+        //Set permissions for Intermediate user:
+        $role_id = $this->auth->role_id();
+        $role_name = $this->auth->role_name_by_id($role_id);
 
-        $records = $this->observation_model->find_all();
+
+        //only display approved records for intermediate users
+        if ($role_name=='Intermediate')
+        {
+            $full = $this->observation_model->find_all();
+            $records = $this->observation_model->limit($pageSize, ($page - 1) * $pageSize)->find_all_by('approved',1);
+        }
+        else
+        {
+            $full = $this->observation_model->find_all();
+            $records = $this->observation_model->limit($pageSize, ($page - 1) * $pageSize)->find_all();
+        }
 
         Template::set('records', $records);
         Template::set('toolbar_title', 'Manage Observation');

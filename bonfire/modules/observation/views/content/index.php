@@ -11,7 +11,7 @@
 					<th>Observation Date</th>
 					<th>Waterbody</th>
 					<th>Watershed</th>
-					<th>Sate and Municipality</th>
+					<th>State and Municipality</th>
 					<th>Longitude</th>
 					<th>Latitude</th>
 					<th>Comments</th>
@@ -44,7 +44,7 @@
 				<?php else: ?>
 				<td><?php echo $record->observation_observation_date ?></td>
 				<?php endif; ?>
-			
+
 				<td><?php echo $record->observation_waterbody?></td>
 				<td><?php echo $record->observation_watershed?></td>
 				<td><?php echo $record->observation_sate_muni?></td>
