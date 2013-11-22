@@ -3,7 +3,7 @@
 		<?php
 		// Previous
 		echo '<li'.($curpage == 1? ' class="disabled"' : '').'>';
-		echo '  <a href="'.max($curpage-1,1).'"">&laquo;</a></li>';
+		echo '  <a href="'.max($curpage-1,1).'">&laquo;</a></li>';
 
 		// Show no more than 7 page links
 		$initial = max(1, $curpage-3);
@@ -14,7 +14,7 @@
 
 		// Next
 		echo '<li'.($curpage >= $numpages? ' class="disabled"' : '').'>';
-		echo '  <a href="'.min($curpage+1,$numpages).'"">&raquo;</a></li>';
+		echo '  <a href="'.min($curpage+1,$numpages).'">&raquo;</a></li>';
 		?>
 	</ul>
 </div>
