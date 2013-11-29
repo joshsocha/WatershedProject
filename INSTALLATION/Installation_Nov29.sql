@@ -12,7 +12,7 @@ CREATE TABLE `bf_activities` (
   `created_on` datetime NOT NULL,
   `deleted` tinyint(12) NOT NULL DEFAULT '0',
   PRIMARY KEY (`activity_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
 
 INSERT INTO bf_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (1, 1, 'logged in from: 127.0.0.1', 'users', '2013-10-02 19:40:46', 0);
 INSERT INTO bf_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (2, 1, 'created a new User: Collin', 'users', '2013-10-02 19:53:03', 0);
@@ -39,6 +39,15 @@ INSERT INTO bf_activities (`activity_id`, `user_id`, `activity`, `module`, `crea
 INSERT INTO bf_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (23, 1, 'App settings saved from: 127.0.0.1', 'core', '2013-10-07 15:31:14', 0);
 INSERT INTO bf_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (24, 1, 'modified user: Admin', 'users', '2013-10-07 15:31:37', 0);
 INSERT INTO bf_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (25, 1, 'App settings saved from: 127.0.0.1', 'core', '2013-10-07 15:31:51', 0);
+INSERT INTO bf_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (26, 1, 'logged in from: 127.0.0.1', 'users', '2013-11-29 16:52:03', 0);
+INSERT INTO bf_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (27, 1, 'Migrate Type: observation_ to Version: 3 from: 127.0.0.1', 'migrations', '2013-11-29 16:52:33', 0);
+INSERT INTO bf_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (28, 1, 'Migrate Type: help_ Uninstalled Version: 0 from: 127.0.0.1', 'migrations', '2013-11-29 16:52:40', 0);
+INSERT INTO bf_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (29, 1, 'Migrate Type: survey_ to Version: 3 from: 127.0.0.1', 'migrations', '2013-11-29 16:52:52', 0);
+INSERT INTO bf_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (30, 1, 'Migrate Type: observation_ Uninstalled Version: 0 from: 127.0.0.1', 'migrations', '2013-11-29 16:52:58', 0);
+INSERT INTO bf_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (31, 1, 'Migrate Type: observation_ to Version: 3 from: 127.0.0.1', 'migrations', '2013-11-29 16:53:05', 0);
+INSERT INTO bf_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (32, 1, 'Migrate Type: help_ Uninstalled Version: 0 from: 127.0.0.1', 'migrations', '2013-11-29 17:01:57', 0);
+INSERT INTO bf_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (33, 1, 'Migrate Type: help_ to Version: 3 from: 127.0.0.1', 'migrations', '2013-11-29 17:02:03', 0);
+INSERT INTO bf_activities (`activity_id`, `user_id`, `activity`, `module`, `created_on`, `deleted`) VALUES (34, 1, 'logged in from: 127.0.0.1', 'users', '2013-11-29 17:02:54', 0);
 
 
 #
@@ -63,6 +72,25 @@ CREATE TABLE `bf_email_queue` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 #
+# TABLE STRUCTURE FOR: bf_help
+#
+
+DROP TABLE IF EXISTS bf_help;
+
+CREATE TABLE `bf_help` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `help_title` varchar(1000) NOT NULL,
+  `help_text` varchar(1000) NOT NULL,
+  `help_type` varchar(25) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+INSERT INTO bf_help (`id`, `help_title`, `help_text`, `help_type`) VALUES (1, 'Help', 'Welcome to the help page! If you are new here, please take the site tour. For any other questions, see the FAQs.', 'head');
+INSERT INTO bf_help (`id`, `help_title`, `help_text`, `help_type`) VALUES (2, 'How can I start reporting about watersheds near me?', 'In order to submit observations, you must be a registered user. Registration is free, just click the Sign Up link in the top right corner.', 'FAQ');
+INSERT INTO bf_help (`id`, `help_title`, `help_text`, `help_type`) VALUES (3, 'How do I become a trusted user?', 'In order to become a trusted user  you must have 15 of your observations approved by an trusted user.', 'FAQ');
+
+
+#
 # TABLE STRUCTURE FOR: bf_login_attempts
 #
 
@@ -84,13 +112,209 @@ DROP TABLE IF EXISTS bf_observation;
 
 CREATE TABLE `bf_observation` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `observation_obs_date` date NOT NULL DEFAULT '0000-00-00',
-  `observation_obs_location` varchar(150) NOT NULL,
+  `observation_observation_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `observation_waterbody` varchar(50) NOT NULL,
+  `observation_watershed` varchar(50) NOT NULL,
+  `observation_sate_muni` varchar(50) NOT NULL,
+  `observation_location_long` varchar(50) NOT NULL,
+  `observation_location_lat` varchar(50) NOT NULL,
+  `observation_water_speed` varchar(50) NOT NULL,
+  `observation_water_movement` varchar(50) NOT NULL,
+  `observation_fish_presence` varchar(50) NOT NULL,
+  `observation_rep_amph_present` varchar(50) NOT NULL,
+  `observation_fish_types` varchar(50) NOT NULL,
+  `observation_tree_shade` varchar(50) NOT NULL,
+  `observation_left_bank` varchar(50) NOT NULL,
+  `observation_right_bank` varchar(50) NOT NULL,
+  `observation_pipes` varchar(50) NOT NULL,
+  `observation_pipe_secretion` varchar(50) NOT NULL,
+  `observation_trash` varchar(50) NOT NULL,
+  `observation_comments` varchar(50) NOT NULL,
   `observation_anonymous` tinyint(1) NOT NULL,
   `deleted` tinyint(1) NOT NULL DEFAULT '0',
   `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `user_id` int(11) NOT NULL,
+  `approved` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# TABLE STRUCTURE FOR: bf_observation_algae
+#
+
+DROP TABLE IF EXISTS bf_observation_algae;
+
+CREATE TABLE `bf_observation_algae` (
+  `observation_id` int(11) NOT NULL,
+  `algae_not_present` int(11) NOT NULL,
+  `algae_present_in_spots` int(11) NOT NULL,
+  `algae_attached_to_rocks` int(11) NOT NULL,
+  `algae_everywhere` int(11) NOT NULL,
+  `algae_floating` int(11) NOT NULL,
+  `algae_matted_on_the_streambed` int(11) NOT NULL,
+  `created_on` date NOT NULL DEFAULT '0000-00-00',
+  `modified_on` date NOT NULL DEFAULT '0000-00-00',
+  PRIMARY KEY (`observation_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# TABLE STRUCTURE FOR: bf_observation_algae_color
+#
+
+DROP TABLE IF EXISTS bf_observation_algae_color;
+
+CREATE TABLE `bf_observation_algae_color` (
+  `observation_id` int(11) NOT NULL,
+  `algae_light_green` int(11) NOT NULL,
+  `algae_dark_green` int(11) NOT NULL,
+  `algae_brown` int(11) NOT NULL,
+  `algae_red` int(11) NOT NULL,
+  `algae_orange` int(11) NOT NULL,
+  `created_on` date NOT NULL DEFAULT '0000-00-00',
+  `modified_on` date NOT NULL DEFAULT '0000-00-00',
+  PRIMARY KEY (`observation_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# TABLE STRUCTURE FOR: bf_observation_barriers
+#
+
+DROP TABLE IF EXISTS bf_observation_barriers;
+
+CREATE TABLE `bf_observation_barriers` (
+  `observation_id` int(11) NOT NULL,
+  `barriers_dams` int(11) NOT NULL,
+  `barriers_bridges` int(11) NOT NULL,
+  `barriers_woody_debris` int(11) NOT NULL,
+  `barriers_waterfalls` int(11) NOT NULL,
+  `created_on` date NOT NULL DEFAULT '0000-00-00',
+  `modified_on` date NOT NULL DEFAULT '0000-00-00',
+  PRIMARY KEY (`observation_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# TABLE STRUCTURE FOR: bf_observation_color
+#
+
+DROP TABLE IF EXISTS bf_observation_color;
+
+CREATE TABLE `bf_observation_color` (
+  `observation_id` int(11) NOT NULL,
+  `created_on` date NOT NULL DEFAULT '0000-00-00',
+  `modified_on` date NOT NULL DEFAULT '0000-00-00',
+  `color_clear` int(11) NOT NULL,
+  `color_oily` int(11) NOT NULL,
+  `color_black` int(11) NOT NULL,
+  `color_foamy` int(11) NOT NULL,
+  `color_green` int(11) NOT NULL,
+  `color_muddy` int(11) NOT NULL,
+  `color_brown` int(11) NOT NULL,
+  `color_other` int(11) NOT NULL,
+  PRIMARY KEY (`observation_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# TABLE STRUCTURE FOR: bf_observation_composition
+#
+
+DROP TABLE IF EXISTS bf_observation_composition;
+
+CREATE TABLE `bf_observation_composition` (
+  `observation_id` int(11) NOT NULL,
+  `composition_sand` int(11) NOT NULL,
+  `composition_gravel` int(11) NOT NULL,
+  `composition_boulders` int(11) NOT NULL,
+  `composition_silt` int(11) NOT NULL,
+  `composition_other` int(11) NOT NULL,
+  `composition_man_made_cement` int(11) NOT NULL,
+  `created_on` date NOT NULL DEFAULT '0000-00-00',
+  `modified_on` date NOT NULL DEFAULT '0000-00-00',
+  PRIMARY KEY (`observation_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# TABLE STRUCTURE FOR: bf_observation_land_use
+#
+
+DROP TABLE IF EXISTS bf_observation_land_use;
+
+CREATE TABLE `bf_observation_land_use` (
+  `observation_id` int(11) NOT NULL,
+  `land_farming` int(11) NOT NULL,
+  `land_forest` int(11) NOT NULL,
+  `land_residential` int(11) NOT NULL,
+  `land_poultry_swine` int(11) NOT NULL,
+  `land_pasture` int(11) NOT NULL,
+  `land_stores` int(11) NOT NULL,
+  `land_mining` int(11) NOT NULL,
+  `land_construction` int(11) NOT NULL,
+  `land_factories` int(11) NOT NULL,
+  `land_logging` int(11) NOT NULL,
+  `created_on` date NOT NULL DEFAULT '0000-00-00',
+  `modified_on` date NOT NULL DEFAULT '0000-00-00',
+  PRIMARY KEY (`observation_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# TABLE STRUCTURE FOR: bf_observation_material
+#
+
+DROP TABLE IF EXISTS bf_observation_material;
+
+CREATE TABLE `bf_observation_material` (
+  `observation_id` int(11) NOT NULL,
+  `material_sand` int(11) NOT NULL,
+  `material_gravel` int(11) NOT NULL,
+  `material_boulders` int(11) NOT NULL,
+  `material_bedrock` int(11) NOT NULL,
+  `material_silt` int(11) NOT NULL,
+  `material_other` int(11) NOT NULL,
+  `created_on` date NOT NULL DEFAULT '0000-00-00',
+  `modified_on` date NOT NULL DEFAULT '0000-00-00',
+  PRIMARY KEY (`observation_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# TABLE STRUCTURE FOR: bf_observation_smell
+#
+
+DROP TABLE IF EXISTS bf_observation_smell;
+
+CREATE TABLE `bf_observation_smell` (
+  `observation_id` int(11) NOT NULL,
+  `smell_no_odor` int(11) NOT NULL,
+  `smell_rotten_egg` int(11) NOT NULL,
+  `smell_gasoline_oil` int(11) NOT NULL,
+  `smell_chemical` int(11) NOT NULL,
+  `smell_chlorine` int(11) NOT NULL,
+  `smell_sewage` int(11) NOT NULL,
+  `smell_rotting` int(11) NOT NULL,
+  `smell_fishy` int(11) NOT NULL,
+  `modified_on` date NOT NULL DEFAULT '0000-00-00',
+  `created_on` date NOT NULL DEFAULT '0000-00-00',
+  PRIMARY KEY (`observation_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# TABLE STRUCTURE FOR: bf_observation_stream_use
+#
+
+DROP TABLE IF EXISTS bf_observation_stream_use;
+
+CREATE TABLE `bf_observation_stream_use` (
+  `observation_id` int(11) NOT NULL,
+  `stream_drinking` int(11) NOT NULL,
+  `stream_recreation` int(11) NOT NULL,
+  `stream_swimming` int(11) NOT NULL,
+  `stream_fishing` int(11) NOT NULL,
+  `stream_industrial` int(11) NOT NULL,
+  `stream_agriculture` int(11) NOT NULL,
+  `stream_irrigation` int(11) NOT NULL,
+  `stream_livestock` int(11) NOT NULL,
+  `created_on` date NOT NULL DEFAULT '0000-00-00',
+  `modified_on` date NOT NULL DEFAULT '0000-00-00',
+  PRIMARY KEY (`observation_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 #
@@ -118,7 +342,7 @@ CREATE TABLE `bf_permissions` (
   `description` varchar(100) NOT NULL,
   `status` enum('active','inactive','deleted') DEFAULT 'active',
   PRIMARY KEY (`permission_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=172 DEFAULT CHARSET=utf8;
 
 INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (1, 'Site.Signin.Allow', 'Allow users to login to the site', 'active');
 INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (2, 'Site.Content.View', 'Allow users to view the Content Context', 'active');
@@ -169,10 +393,62 @@ INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VA
 INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (49, 'Bonfire.Profiler.View', 'To view the Console Profiler Bar.', 'active');
 INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (50, 'Bonfire.Roles.Add', 'To add New Roles', 'active');
 INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (51, 'Site.Learn.View', 'Allow user to view the Learn Context.', 'active');
-INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (72, 'Observation.Content.View', '', 'active');
-INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (73, 'Observation.Content.Create', '', 'active');
-INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (74, 'Observation.Content.Edit', '', 'active');
-INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (75, 'Observation.Content.Delete', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (116, 'Survey.Help.View', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (117, 'Survey.Help.Create', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (118, 'Survey.Help.Edit', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (119, 'Survey.Help.Delete', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (120, 'Survey.Content.View', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (121, 'Survey.Content.Create', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (122, 'Survey.Content.Edit', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (123, 'Survey.Content.Delete', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (124, 'Survey.Reports.View', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (125, 'Survey.Reports.Create', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (126, 'Survey.Reports.Edit', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (127, 'Survey.Reports.Delete', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (128, 'Survey.Settings.View', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (129, 'Survey.Settings.Create', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (130, 'Survey.Settings.Edit', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (131, 'Survey.Settings.Delete', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (132, 'Survey.Developer.View', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (133, 'Survey.Developer.Create', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (134, 'Survey.Developer.Edit', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (135, 'Survey.Developer.Delete', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (136, 'Observation.Content.View', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (137, 'Observation.Content.Create', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (138, 'Observation.Content.Edit', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (139, 'Observation.Content.Delete', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (140, 'Observation.Reports.View', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (141, 'Observation.Reports.Create', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (142, 'Observation.Reports.Edit', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (143, 'Observation.Reports.Delete', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (144, 'Observation.Settings.View', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (145, 'Observation.Settings.Create', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (146, 'Observation.Settings.Edit', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (147, 'Observation.Settings.Delete', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (148, 'Observation.Developer.View', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (149, 'Observation.Developer.Create', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (150, 'Observation.Developer.Edit', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (151, 'Observation.Developer.Delete', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (152, 'Help.Help.View', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (153, 'Help.Help.Create', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (154, 'Help.Help.Edit', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (155, 'Help.Help.Delete', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (156, 'Help.Content.View', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (157, 'Help.Content.Create', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (158, 'Help.Content.Edit', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (159, 'Help.Content.Delete', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (160, 'Help.Reports.View', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (161, 'Help.Reports.Create', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (162, 'Help.Reports.Edit', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (163, 'Help.Reports.Delete', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (164, 'Help.Settings.View', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (165, 'Help.Settings.Create', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (166, 'Help.Settings.Edit', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (167, 'Help.Settings.Delete', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (168, 'Help.Developer.View', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (169, 'Help.Developer.Create', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (170, 'Help.Developer.Edit', '', 'active');
+INSERT INTO bf_permissions (`permission_id`, `name`, `description`, `status`) VALUES (171, 'Help.Developer.Delete', '', 'active');
 
 
 #
@@ -236,10 +512,62 @@ INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 48);
 INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 49);
 INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 50);
 INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 51);
-INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 72);
-INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 73);
-INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 74);
-INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 75);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 116);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 117);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 118);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 119);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 120);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 121);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 122);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 123);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 124);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 125);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 126);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 127);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 128);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 129);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 130);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 131);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 132);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 133);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 134);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 135);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 136);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 137);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 138);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 139);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 140);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 141);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 142);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 143);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 144);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 145);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 146);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 147);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 148);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 149);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 150);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 151);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 152);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 153);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 154);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 155);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 156);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 157);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 158);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 159);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 160);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 161);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 162);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 163);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 164);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 165);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 166);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 167);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 168);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 169);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 170);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (1, 171);
 INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (2, 1);
 INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (2, 2);
 INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (2, 3);
@@ -261,7 +589,13 @@ INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (6, 12);
 INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (6, 13);
 INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (6, 49);
 INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (6, 51);
-
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (7, 1);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (7, 38);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (7, 72);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (7, 73);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (7, 100);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (7, 116);
+INSERT INTO bf_role_permissions (`role_id`, `permission_id`) VALUES (7, 120);
 
 #
 # TABLE STRUCTURE FOR: bf_roles
@@ -285,6 +619,7 @@ INSERT INTO bf_roles (`role_id`, `role_name`, `description`, `default`, `can_del
 INSERT INTO bf_roles (`role_id`, `role_name`, `description`, `default`, `can_delete`, `login_destination`, `deleted`, `default_context`) VALUES (2, 'Editor', 'Can handle day-to-day management, but does not have full power.', 0, 1, '', 0, 'content');
 INSERT INTO bf_roles (`role_id`, `role_name`, `description`, `default`, `can_delete`, `login_destination`, `deleted`, `default_context`) VALUES (4, 'User', 'This is the default user with access to login.', 1, 0, '', 0, 'content');
 INSERT INTO bf_roles (`role_id`, `role_name`, `description`, `default`, `can_delete`, `login_destination`, `deleted`, `default_context`) VALUES (6, 'Developer', 'Developers typically are the only ones that can access the developer tools. Otherwise identical to Administrators, at least until the site is handed off.', 0, 1, '', 0, 'content');
+INSERT INTO bf_roles (`role_id`, `role_name`, `description`, `default`, `can_delete`, `login_destination`, `deleted`, `default_context`) VALUES (7, 'Intermediate', 'Intermediate users can post observations and answer surveys, but must have observations approved. After 15 approved observations, the user will automatically be upgraded.', 0, 1, '', 0, 'content');
 
 
 #
@@ -301,7 +636,9 @@ CREATE TABLE `bf_schema_version` (
 
 INSERT INTO bf_schema_version (`type`, `version`) VALUES ('app_', 0);
 INSERT INTO bf_schema_version (`type`, `version`) VALUES ('core', 34);
-INSERT INTO bf_schema_version (`type`, `version`) VALUES ('observation_', 2);
+INSERT INTO bf_schema_version (`type`, `version`) VALUES ('help_', 3);
+INSERT INTO bf_schema_version (`type`, `version`) VALUES ('observation_', 3);
+INSERT INTO bf_schema_version (`type`, `version`) VALUES ('survey_', 3);
 
 
 #
@@ -373,6 +710,48 @@ INSERT INTO bf_settings (`name`, `module`, `value`) VALUES ('updates.do_check', 
 
 
 #
+# TABLE STRUCTURE FOR: bf_survey
+#
+
+DROP TABLE IF EXISTS bf_survey;
+
+CREATE TABLE `bf_survey` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `survey_name` varchar(255) NOT NULL,
+  `survey_question` varchar(255) NOT NULL,
+  `survey_active` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# TABLE STRUCTURE FOR: bf_survey_answers
+#
+
+DROP TABLE IF EXISTS bf_survey_answers;
+
+CREATE TABLE `bf_survey_answers` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `survey_id` int(11) NOT NULL,
+  `survey_answer_text` varchar(255) NOT NULL,
+  `survey_answer_number` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
+# TABLE STRUCTURE FOR: bf_survey_results
+#
+
+DROP TABLE IF EXISTS bf_survey_results;
+
+CREATE TABLE `bf_survey_results` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `survey_id` int(11) NOT NULL,
+  `survey_answer_id` int(11) NOT NULL,
+  `survey_votes` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+#
 # TABLE STRUCTURE FOR: bf_user_cookies
 #
 
@@ -439,6 +818,6 @@ CREATE TABLE `bf_users` (
   KEY `email` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
-INSERT INTO bf_users (`id`, `role_id`, `email`, `username`, `password_hash`, `reset_hash`, `salt`, `last_login`, `last_ip`, `created_on`, `deleted`, `banned`, `ban_message`, `reset_by`, `display_name`, `display_name_changed`, `timezone`, `language`, `active`, `activate_hash`) VALUES (1, 1, 'nobody@nowhere.com', 'Admin', '0fd6b0c95be28eaef791de737f97a99feade8140', NULL, 'CpHHl6c', '2013-10-07 14:05:56', '127.0.0.1', '0000-00-00 00:00:00', 0, 0, NULL, NULL, '', NULL, 'UM6', 'english', 1, '');
+INSERT INTO bf_users (`id`, `role_id`, `email`, `username`, `password_hash`, `reset_hash`, `salt`, `last_login`, `last_ip`, `created_on`, `deleted`, `banned`, `ban_message`, `reset_by`, `display_name`, `display_name_changed`, `timezone`, `language`, `active`, `activate_hash`) VALUES (1, 1, 'nobody@nowhere.com', 'Admin', '0fd6b0c95be28eaef791de737f97a99feade8140', NULL, 'CpHHl6c', '2013-11-29 17:02:54', '127.0.0.1', '0000-00-00 00:00:00', 0, 0, NULL, NULL, '', NULL, 'UM6', 'english', 1, '');
 
 

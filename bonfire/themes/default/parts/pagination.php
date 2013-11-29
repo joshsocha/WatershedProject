@@ -1,3 +1,4 @@
+<!-- TODO: Despite these being relative links, they behave as though they were absolute. CodeIgniter may be setting a referrer header incorrectly. Investigate! -->
 <div class="pagination" style="width:100%;text-align:center;">
 	<ul>
 		<?php
