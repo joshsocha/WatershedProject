@@ -699,7 +699,7 @@ INSERT INTO bf_settings (`name`, `module`, `value`) VALUES ('site.show_front_pro
 INSERT INTO bf_settings (`name`, `module`, `value`) VALUES ('site.show_profiler', 'core', '1');
 INSERT INTO bf_settings (`name`, `module`, `value`) VALUES ('site.status', 'core', '1');
 INSERT INTO bf_settings (`name`, `module`, `value`) VALUES ('site.system_email', 'core', 'nobody@nowhere.com');
-INSERT INTO bf_settings (`name`, `module`, `value`) VALUES ('site.title', 'core', 'Watershed');
+INSERT INTO bf_settings (`name`, `module`, `value`) VALUES ('site.title', 'core', 'RíoMío');
 INSERT INTO bf_settings (`name`, `module`, `value`) VALUES ('smtp_host', 'email', '');
 INSERT INTO bf_settings (`name`, `module`, `value`) VALUES ('smtp_pass', 'email', '');
 INSERT INTO bf_settings (`name`, `module`, `value`) VALUES ('smtp_port', 'email', '');
