@@ -1,5 +1,7 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
+// Retrieve a subset of records from the requested model
+// TODO: Expand capabilities to include WHERE, LIKE, etc, so that the paginate_approved method can be stricty convenience.
 if(!function_exists('paginate')) {
 	function paginate($page, $model, $pageSize = 5) {
 		$full    = $model->find_all();
@@ -17,7 +19,8 @@ if(!function_exists('paginate')) {
 	}
 }
 
-//only gets approved records
+// See paginate(). Only retrieves records with the 'approved' flag set.
+// TODO: Make it clearer that this only makes sense for observations, and does not belong in this helper.
 if(!function_exists('paginate_approved')) {
     function paginate_approved($page, $model, $pageSize = 5) {
         $full    = $model->find_all_by('approved',1);

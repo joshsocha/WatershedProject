@@ -62,36 +62,15 @@ endif; ?>
 
 <?php
 // Function to display different value formats nicely
-function convert_display($field, $value) {
+function convert_display($field, $value, $nullDate='Unknown') {
 	// Date fields
 	if(strpos($field, 'date') !== false || $field == 'modified_on' || $field == 'created_on') {
 		// TODO: Localization!
 		if($value == "0000-00-00" || $value == "0000-00-00 00:00:00")
-			return "Never";
+			return $field == 'modified_on'? 'Never' : $nullDate;
 		else
 			return strftime("%B %e, %Y at %l:%M%P", strtotime($value));
 	}
 	else return $value;
 }
-//// TODO: Move this into an autoloaded Bonfire helper (CI helper)
-//// TODO: Use PHP's builtin bbcode_create, bbcode_addelement, and bbcode_parse instead!
-//function bbcode($s) {
-//	// Complex replacements, such as parameterized codes
-//	$patterns = array(
-//		'/\[url=([^\s]*)\](.*)\[\/url\]/i', // [url=someurl]link text[/url]
-//	);
-//	$replacements = array(
-//		function($matches) {
-//			return '<a href="' . str_replace('%2F', '/', urlencode($matches[1])) . '">' . $matches[2] . '</a>';
-//		}
-//	);
-//	foreach($patterns as $i => $p) {
-//		$s = preg_replace_callback($p, $replacements[$i], $s, -1);
-//	}
-//
-//	// Simpler searches, such as [b]
-//	$s = str_replace('[b]', '<b>', $s);
-//	$s = str_replace('[/b]', '</b>', $s);
-//	return $s;
-//}
 ?>
