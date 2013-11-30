@@ -69,6 +69,15 @@ $id = isset($observation['id']) ? $observation['id'] : '';
 
 
         </div>
+        
+        <!-- Google Map include -->
+        <div class="control-group">
+            <label class="control-label">Map</label>
+            <div class="controls">
+                <div style="height:300px; width:500px;" id="map-canvas"></div>
+            </div>
+        </div>
+
          <div class="control-group <?php echo form_error('observation_water_color') ? 'error' : ''; ?>">
             <?php echo form_label('What color is the water? (Check all that apply)', 'color_clear', array('class' => "control-label") ); ?>
             <div class='controls'>

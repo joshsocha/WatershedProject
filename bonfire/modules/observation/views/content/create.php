@@ -67,6 +67,14 @@ $id = isset($observation['id']) ? $observation['id'] : '';
         <span class="help-inline"><?php echo form_error('observation_location_lat'); ?></span>
         </div>
 
+        <!-- Google Map include -->
+        <div class="control-group">
+            <label class="control-label">Map</label>
+            <div class="controls">
+                <div style="height:300px; width:500px;" id="map-canvas"></div>
+            </div>
+        </div>
+
 
         </div>
          <div class="control-group <?php echo form_error('observation_water_color') ? 'error' : ''; ?>">
