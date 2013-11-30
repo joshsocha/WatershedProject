@@ -32,6 +32,7 @@ class content extends Admin_Controller
 		Assets::add_js('jquery-ui-1.8.13.min.js');
 		Assets::add_css('jquery-ui-timepicker.css');
 		Assets::add_js('jquery-ui-timepicker-addon.js');
+		Assets::add_js('https://maps.googleapis.com/maps/api/js?key=' . $this->config->item('maps_api_key') . '&sensor=true');
 		Template::set_block('sub_nav', 'content/_sub_nav');
 	}
 

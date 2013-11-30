@@ -29,7 +29,7 @@ Students: Nick Lanam, Collin Kappauf, Raven Rebb, Greg Antrim, and Joshua Socha
     
 4.  At the root folder, copy .htaccess.orig to .htaccess, bonfire/application/config/database.php.orig to database.php, and the same with config.php.orig.
     * In the newly created .htaccess, modify RewriteBase to suit your installation - if you put everything in the root, leave it alone!
-    * bonfire/application/config/config.php should not need to be modified.
+    * bonfire/application/config/config.php should not need to be modified, unless you've changed your root or need to use your own Google Maps API Key (see config.php for details about the latter).
     * bonfire/application/config/database.php should be edited to pertain to your local database setup.
 	
 
