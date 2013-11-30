@@ -37,7 +37,10 @@
 					'observation_anonymous', 'deleted'
 				);
 				if (!in_array($field,$toRemove)): ?>
-					<td><?php echo convert_display($field, $value); ?></td>
+					<td>
+						<?php if($field == 'observation_observation_date') echo '<a href="'.site_url().'admin/content/observation/view/'.$record['id'].'">' . convert_display($field, $value) . '</a>';
+							  else echo convert_display($field, $value); ?>
+					</td>
 				<?php endif; ?>
 
 			<?php endforeach; ?>

@@ -5,7 +5,7 @@
 		// Normally, relative URLs would work, but CodeIgniter doctors relative URLs incorrectly.
 		// This attempts to correct that.
 		$root = current_url();
-		if(preg_match('/(.*)\/(\d+)/i', $root)) $root = '';
+		if(preg_match('/(.*)\/(\d+)$/i', $root)) $root = '';
 		else $root .= '/';
 
 		// Previous

@@ -23,6 +23,7 @@ $lang['observation_cancel']			= 'Cancel';
 $lang['observation_delete_record']			= 'Delete this Observation';
 $lang['observation_delete_confirm']			= 'Are you sure you want to delete this observation?';
 $lang['observation_edit_heading']			= 'Edit Observation';
+$lang['observation_view_heading']			= 'View Observation';
 
 // Activities
 $lang['observation_act_create_record']			= 'Created record with ID';
