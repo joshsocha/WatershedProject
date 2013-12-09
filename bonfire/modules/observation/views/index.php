@@ -5,11 +5,11 @@
 <br />
 
 <?php if (isset($records) && is_array($records) && count($records)) : ?>
-				
+
 	<table class="table table-striped table-bordered">
 		<thead>
-		
-			
+
+
 		<th>Observation Date</th>
 		<th>Waterbody</th>
 		<th>Watershed</th>
@@ -17,16 +17,17 @@
 		<th>Comments</th>
 		<th>Created</th>
 		<th>Modified</th>
-		
+        <th>User ID</th>
+        <th>Approved</th>
 		</thead>
 		<tbody>
-		
+
 		<?php foreach ($records as $record) : ?>
 			<?php $record = (array)$record;?>
 			<tr>
 			<?php foreach($record as $field => $value) : ?>
-				
-				<?php 
+
+				<?php
 				$toRemove = array(
 					'id', 'observation_location_long', 'observation_location_lat',
 					'observation_trash', 'observation_water_speed', 'observation_water_movement',
@@ -36,9 +37,12 @@
 					'observation_anonymous', 'deleted'
 				);
 				if (!in_array($field,$toRemove)): ?>
-					<td><?php echo convert_display($field, $value); ?></td>
+					<td>
+						<?php if($field == 'observation_observation_date') echo '<a href="'.site_url().'admin/content/observation/view/'.$record['id'].'">' . convert_display($field, $value) . '</a>';
+							  else echo convert_display($field, $value); ?>
+					</td>
 				<?php endif; ?>
-				
+
 			<?php endforeach; ?>
 
 			</tr>
@@ -51,26 +55,7 @@
 	<?php endif; ?>
 
 	<br/>
-	<div class="pagination" style="width:100%;text-align:center;">
-		<ul>
-			<?php
-			// Previous
-			echo '<li'.($curpage == 1? ' class="disabled"' : '').'>';
-			echo '  <a href="'.($curpage-1).'"">&laquo;</a></li>';
-
-			// Show no more than 7 page links
-			$initial = max(1, $curpage-3);
-			$limit   = min($numpages+1, $initial+7);
-			for($i = $initial; $i < $limit; $i++) {
-				echo '<li'.($i==$curpage?' class="active"':'').'><a href="'.$i.'">'.$i.'</a></li>';
-			}
-
-			// Next
-			echo '<li'.($curpage == $numpages? ' class="disabled"' : '').'>';
-			echo '  <a href="'.($curpage+1).'"">&raquo;</a></li>';
-			?>
-		</ul>
-	</div>
+	<?php echo theme_view('parts/pagination'); ?>
 <?php else:
 	echo '<h3>' . lang('observation_no_reports') . '</h3>';
 	if($this->auth->has_permission('Observation.Reports.Create')) {
@@ -80,36 +65,15 @@ endif; ?>
 
 <?php
 // Function to display different value formats nicely
-function convert_display($field, $value) {
+function convert_display($field, $value, $nullDate='Unknown') {
 	// Date fields
 	if(strpos($field, 'date') !== false || $field == 'modified_on' || $field == 'created_on') {
 		// TODO: Localization!
 		if($value == "0000-00-00" || $value == "0000-00-00 00:00:00")
-			return "Never";
+			return $field == 'modified_on'? 'Never' : $nullDate;
 		else
 			return strftime("%B %e, %Y at %l:%M%P", strtotime($value));
 	}
 	else return $value;
-}
-// TODO: Move this into an autoloaded Bonfire helper (CI helper)
-// TODO: Use PHP's builtin bbcode_create, bbcode_addelement, and bbcode_parse instead!
-function bbcode($s) {
-	// Complex replacements, such as parameterized codes
-	$patterns = array(
-		'/\[url=([^\s]*)\](.*)\[\/url\]/i', // [url=someurl]link text[/url]
-	);
-	$replacements = array(
-		function($matches) {
-			return '<a href="' . str_replace('%2F', '/', urlencode($matches[1])) . '">' . $matches[2] . '</a>';
-		}
-	);
-	foreach($patterns as $i => $p) {
-		$s = preg_replace_callback($p, $replacements[$i], $s, -1);
-	}
-
-	// Simpler searches, such as [b]
-	$s = str_replace('[b]', '<b>', $s);
-	$s = str_replace('[/b]', '</b>', $s);
-	return $s;
 }
 ?>

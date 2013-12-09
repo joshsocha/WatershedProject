@@ -361,6 +361,18 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 
+/*
+|--------------------------------------------------------------------------
+| Google Maps API Key
+|--------------------------------------------------------------------------
+|
+| API Key for access to the non-business Google Maps API, version 3.
+| To obtain a key, see:
+|   https://developers.google.com/maps/documentation/javascript/tutorial
+|
+*/
+$config['maps_api_key']	= 'AIzaSyAYc21SYDf9IwaXGFS9SDJapplaHkIF6XQ';
+
 
 /* End of file config.php */
 /* Location: ./application/config/config.php */

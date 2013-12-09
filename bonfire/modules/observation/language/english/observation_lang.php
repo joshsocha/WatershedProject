@@ -23,6 +23,7 @@ $lang['observation_cancel']			= 'Cancel';
 $lang['observation_delete_record']			= 'Delete this Observation';
 $lang['observation_delete_confirm']			= 'Are you sure you want to delete this observation?';
 $lang['observation_edit_heading']			= 'Edit Observation';
+$lang['observation_view_heading']			= 'View Observation';
 
 // Activities
 $lang['observation_act_create_record']			= 'Created record with ID';
@@ -35,9 +36,17 @@ $lang['observation_no_reports']			= 'There are no watershed health reports to se
 $lang['observation_ask_create']			= 'Would you like to [b][url=/admin/content/observation/create]create one[/url][/b]?';
 $lang['observation_new_button']			= '[b][url=/admin/content/observation/create]New observation[/url][/b]';
 
+<<<<<<< local
+// Accordian create/edit
+$lang['collapse']	= 'collapse';
+$lang['observation_details']	= 'Observation Details';
+$lang['stream_details'] = 'Stream Details';
+$lang['f_f_details'] = 'Flora and Fauna Details';
+$lang['land_use_details'] = 'Land Use Details';
+=======
 // Accordion strings
 $lang['observation_essentials']			= 'Observation Essentials';
 $lang['stream_characteristics']			= 'Stream Characteristics';
 $lang['stream_biology']					= 'Stream Biology';
 $lang['stream_surroundings']			= 'Stream Surroundings';
-$lang['stream_concerns']				= 'Stream Concerns';
+$lang['stream_concerns']				= 'Stream Concerns';>>>>>>> other

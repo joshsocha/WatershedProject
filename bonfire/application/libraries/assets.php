@@ -729,7 +729,8 @@ class Assets
 
 			foreach ($scripts as $script)
 			{
-				if (TRUE === $add_ext && substr($script, -3) != '.js')
+				// Modified: Prevented automatic add of '.js' when the URI domain is specified
+				if (TRUE === $add_ext && substr($script, -3) != '.js' && !preg_match('/^http(s?):\/\//i', $script))
 				{
 					$script .= '.js';
 				}
