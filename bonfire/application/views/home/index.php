@@ -20,5 +20,5 @@
     </div>
 </div>
 <script type="text/javascript">
-    $('.carousel').carousel()
+    //$('.carousel').carousel()
 </script>
