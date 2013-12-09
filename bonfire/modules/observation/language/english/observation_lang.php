@@ -35,3 +35,10 @@ $lang['observation_no_results']			= 'No watershed health reports match your sear
 $lang['observation_no_reports']			= 'There are no watershed health reports to see at this time.';
 $lang['observation_ask_create']			= 'Would you like to [b][url=/admin/content/observation/create]create one[/url][/b]?';
 $lang['observation_new_button']			= '[b][url=/admin/content/observation/create]New observation[/url][/b]';
+
+// Accordian create/edit
+$lang['collapse']	= 'collapse';
+$lang['observation_details']	= 'Observation Details';
+$lang['stream_details'] = 'Stream Details';
+$lang['f_f_details'] = 'Flora and Fauna Details';
+$lang['land_use_details'] = 'Land Use Details';

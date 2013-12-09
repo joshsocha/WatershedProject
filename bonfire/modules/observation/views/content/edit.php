@@ -16,6 +16,17 @@ $id = isset($observation['id']) ? $observation['id'] : '';
     <h3>Observation</h3>
 <?php echo form_open($this->uri->uri_string(), 'class="form-horizontal"'); ?>
     <fieldset>
+
+    <div class="accordion" id="accordion2">
+    <div class="accordion-group">
+    <div class="accordion-heading">
+    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+    <?php echo lang('observation_details') ?>
+    </a>
+    </div>
+    <div id="collapseOne" class="accordion-body collapse in">
+    <div class="accordion-inner">
+
         <div class="control-group <?php echo form_error('observation_observation_date') ? 'error' : ''; ?>">
             <?php echo form_label('Observation Date'. lang('bf_form_label_required'), 'observation_observation_date', array('class' => "control-label") ); ?>
             <div class='controls'>
@@ -77,6 +88,22 @@ $id = isset($observation['id']) ? $observation['id'] : '';
                 <div style="height:300px; width:500px;" id="map-canvas"></div>
             </div>
         </div>
+
+    </div>
+    <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapseOne">
+    <?php echo lang('collapse') ?>
+    </button>
+    </div>
+
+
+    <div class="accordion-group">
+    <div class="accordion-heading">
+    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+    <?php echo lang('stream_details') ?>
+    </a>
+    </div>
+    <div id="collapseTwo" class="accordion-body collapse in">
+    <div class="accordion-inner">
 
          <div class="control-group <?php echo form_error('observation_water_color') ? 'error' : ''; ?>">
             <?php echo form_label('What color is the water? (Check all that apply)', 'color_clear', array('class' => "control-label") ); ?>
@@ -276,6 +303,24 @@ $id = isset($observation['id']) ? $observation['id'] : '';
         </div>
 
         </div>
+
+    </div>
+    <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapseTwo">
+    <?php echo lang('collapse') ?>
+    </button>
+    </div>
+    </div>
+
+    <div class="accordion-group">
+    <div class="accordion-heading">
+    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+    <?php echo lang('f_f_details') ?>
+    </a>
+    </div>
+    <div id="collapseThree" class="accordion-body collapse in">
+    <div class="accordion-inner">
+        
+        </div>
 		
 				<div class="control-group <?php echo form_error('observation_algae') ? 'error' : ''; ?>">
             <?php echo form_label('Are algae present?(Algae: variety of aquatic photosynthetic organisms, Check all that you see)', 'observation_algae', array('class' => "control-label") ); ?>
@@ -450,7 +495,22 @@ $id = isset($observation['id']) ? $observation['id'] : '';
             </label>
         </div>
 
-</div>
+
+    </div>
+    <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapseThree">
+    <?php echo lang('collapse') ?>
+    </button>
+    </div>
+    </div>
+
+    <div class="accordion-group">
+    <div class="accordion-heading">
+    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
+    <?php echo lang('land_use_details') ?>
+    </a>
+    </div>
+    <div id="collapseFour" class="accordion-body collapse in">
+    <div class="accordion-inner">
 		
 		<div class="control-group <?php echo form_error('observation_land_use') ? 'error' : ''; ?>">
             <?php echo form_label('How is the land along the stream being used? Look at the areas on both sides of the stream and immediately upstream from you sampling site (check all uses observed)', 'observation_land_use', array('class' => "control-label") ); ?>
@@ -624,6 +684,13 @@ $id = isset($observation['id']) ? $observation['id'] : '';
         </div>
 
         </div>
+
+            </div>
+    <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapseFour">
+    <?php echo lang('collapse') ?>
+    </button>
+    </div>
+    </div>
 
         <div class="control-group <?php echo form_error('observation_anonymous') ? 'error' : ''; ?>">
             <?php echo form_label('Remain anonymous?', 'observation_anonymous', array('class' => "control-label") ); ?>
