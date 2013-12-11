@@ -691,3 +691,4 @@ prodbackup/bonfire/themes/default/parts/_header.php
 prodbackup/bonfire/themes/default/parts/head.php
 prodbackup/bonfire/themes/default/parts/modal_login.php
 prodbackup/bonfire/themes/default/parts/topbar.php
+.htaccess
