@@ -1,3 +1,10 @@
+<script type="text/javascript">
+    $(function() {
+        $( "#observation_observation_date" ).datepicker({ dateFormat: 'yy-mm-dd' });
+    });
+
+</script>
+
 <?php if (validation_errors()) : ?>
 <div class="alert alert-block alert-error fade in ">
   <a class="close" data-dismiss="alert">&times;</a>
@@ -56,7 +63,7 @@ $id = isset($observation['id']) ? $observation['id'] : '';
 
         </div>
         <div class="control-group <?php echo form_error('observation_sate_muni') ? 'error' : ''; ?>">
-            <?php echo form_label('Sate and Municipality'. lang('bf_form_label_required'), 'observation_sate_muni', array('class' => "control-label") ); ?>
+            <?php echo form_label('State and Municipality'. lang('bf_form_label_required'), 'observation_sate_muni', array('class' => "control-label") ); ?>
             <div class='controls'>
         <input id="observation_sate_muni" type="text" name="observation_sate_muni" maxlength="50" value="<?php echo set_value('observation_sate_muni', isset($observation['observation_sate_muni']) ? $observation['observation_sate_muni'] : ''); ?>"  />
         <span class="help-inline"><?php echo form_error('observation_sate_muni'); ?></span>

@@ -75,6 +75,7 @@ $lang['bf_track_hits']			= 'Track Page Hits?';
 
 $lang['bf_action_save']			= 'Save';
 $lang['bf_action_delete']		= 'Delete';
+$lang['bf_action_approve']		= 'Approve';
 $lang['bf_action_cancel']		= 'Cancel';
 $lang['bf_action_download']		= 'Download';
 $lang['bf_action_preview']		= 'Preview';

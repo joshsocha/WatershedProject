@@ -48,11 +48,11 @@ class content extends Admin_Controller
 	*/
 	public function index($page = 1)
 	{
-		//Set permissions for Intermediate user:
+		//Set permissions for Novice user:
 		$role_id = $this->auth->role_id();
 		$role_name = $this->auth->role_name_by_id($role_id);
 
-		if($role_name=='Intermediate'||empty($role_name))
+		if($role_name=='Novice'||empty($role_name))
 		{
 			paginate_approved($page, $this->observation_model, 5);
 		}
@@ -106,9 +106,13 @@ class content extends Admin_Controller
 	*/
 	public function edit()
 	{
-		$id = $this->uri->segment(5);
+        $id = $this->uri->segment(5);
+        $role_id = $this->auth->role_id();
+        $role_name = $this->auth->role_name_by_id($role_id);
+        var_dump($role_name);
+        $records['role_name'] = $role_name;
 
-		if (empty($id))
+        if (empty($id))
 		{
 			Template::set_message(lang('observation_invalid_id'), 'error');
 			redirect(SITE_AREA . '/content/observation');
@@ -180,7 +184,7 @@ class content extends Admin_Controller
 
 		$barriers = $this->barrier_model->where('observation_id', $id)->find_all();
 		Template::set('barriers', $barriers);
-
+        Template::set('role_name',$role_name);
 		Template::set('toolbar_title', lang('observation_edit_heading'));
 		Template::render();
 	}
@@ -302,11 +306,11 @@ class content extends Admin_Controller
 		$data['observation_anonymous'] = $this->input->post('observation_anonymous');
 		$data['user_id'] = $this->auth->user_id();
 
-		//Set permissions for Intermediate user:
+		//Set permissions for Novice user:
 		$role_id = $this->auth->role_id();
 		$role_name = $this->auth->role_name_by_id($role_id);
 
-		if ($role_name=='Intermediate')
+		if ($role_name=='Novice')
 		{
 			$data['approved'] = 0;
 		}

@@ -1,3 +1,9 @@
+<script type="text/javascript">
+    $(function() {
+        $( "#observation_observation_date" ).datepicker({ dateFormat: 'yy-mm-dd' });
+    });
+
+</script>
 <?php if (validation_errors()) : ?>
 <div class="alert alert-block alert-error fade in ">
   <a class="close" data-dismiss="alert">&times;</a>
@@ -709,6 +715,22 @@ $id = isset($observation['id']) ? $observation['id'] : '';
             <?php echo form_textarea( array( 'name' => 'observation_comments', 'id' => 'observation_comments', 'rows' => '5', 'cols' => '80', 'value' => set_value('observation_comments', isset($observation['observation_comments']) ? $observation['observation_comments'] : '') ) )?>
             <span class="help-inline"><?php echo form_error('observation_comments'); ?></span>
         </div>
+
+
+            <?php if($role_name!='Novice'):?>
+                <div class="control-group <?php echo form_error('observation_approved') ? 'error' : ''; ?>">
+                    <?php echo form_label('Approved', 'observation_approved', array('class' => "control-label")); ?>
+                    <div class='controls'>
+                        <input type="checkbox" id="observation_approved"
+                            <?php  if($observation['approved']==1)echo(' checked');?>
+                               name="observation_approved"  >
+                        <span class="help-inline"><?php echo form_error('observation_approved'); ?></span>
+                        </label>
+
+                    </div>
+
+                </div>
+            <?php endif?>
 
         </div>
 

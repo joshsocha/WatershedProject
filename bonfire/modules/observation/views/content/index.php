@@ -17,6 +17,7 @@
 					<th>Comments</th>
 					<th>Created</th>
 					<th>Modified</th>
+                    <th>Approved</th>
 				</tr>
 			</thead>
 			<?php if (isset($records) && is_array($records) && count($records)) : ?>
@@ -53,6 +54,12 @@
 				<td><?php echo $record->observation_comments?></td>
 				<td><?php echo $record->created_on?></td>
 				<td><?php echo $record->modified_on?></td>
+                    <!--Map bits to human words and display checkbox-->
+                    <?php if ($record->approved==1) : ?>
+                        <td>Yes</td>
+                    <?php else: ?>
+                        <td>No</td>
+                    <?php endif; ?>
 				</tr>
 			<?php endforeach; ?>
 			<?php else: ?>
