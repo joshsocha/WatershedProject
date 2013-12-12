@@ -884,6 +884,32 @@ class BF_Model extends CI_Model
 
 	}//end where()
 
+	/**
+	 * Sets the like portion of the query in a chainable format.
+	 *
+	 * @param mixed  $field The field to search the db on. Can be either a string with the field name to search, or an associative array of key/value pairs.
+	 * @param string $value The value to match the field against. If $field is an array, this value is ignored.
+	 *
+	 * @return BF_Model An instance of this class.
+	 */
+	public function like($field=NULL, $value=NULL)
+	{
+		if (!empty($field))
+		{
+			if (is_string($field))
+			{
+				$this->db->like($field, $value);
+			}
+			else if (is_array($field))
+			{
+				$this->db->or_like($field, $value);
+			}
+		}
+
+		return $this;
+
+	}//end where()
+
 	//--------------------------------------------------------------------
 
 	/**

@@ -1,5 +1,8 @@
 <div>
-	<h1 class="page-header">Observation</h1>
+	<h1 class="page-header">
+		Observation
+		<?php $this->load->view('observation/partials/search'); ?>
+	</h1>
 </div>
 
 <br />
@@ -9,7 +12,7 @@
 	<table class="table table-striped table-bordered">
 		<thead>
 
-
+		<!-- TODO: Lang file. -->
 		<th>Observation Date</th>
 		<th>Waterbody</th>
 		<th>Watershed</th>
@@ -50,12 +53,19 @@
 		</tbody>
 	</table>
 
-	<?php if($this->auth->has_permission("Observation.Content.Create")): ?>
-		<p><?php echo bbcode(lang('observation_new_button')); ?></p>
-	<?php endif; ?>
-	<?php if($this->auth->has_permission("Observation.Content.View")): ?>
-		<p><a href="<?php echo SITE_AREA . '/content/observation/'; ?>"><?php echo lang('observation_manage'); ?></a></p>
-	<?php endif; ?>
+	<p>
+	<?php
+		$canCreate = $this->auth->has_permission("Observation.Content.Create");
+		$canView   = $this->auth->has_permission("Observation.Content.View");
+		if($canCreate) {
+			echo '<a href="' . SITE_AREA . '/content/observation/create">' . lang('observation_new_button') . '</a>';
+		}
+		if($canCreate && $canView) echo '<span class="muted">&nbsp;|&nbsp;</span>';
+		if($canView) {
+			echo '<a href="' . SITE_AREA . '/content/observation/">' . lang('observation_manage') . '</a>';
+		}
+	?>
+	</p>
 
 	<br/>
 	<?php echo theme_view('parts/pagination'); ?>

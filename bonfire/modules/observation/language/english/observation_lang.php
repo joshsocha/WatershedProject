@@ -34,7 +34,7 @@ $lang['observation_act_delete_record']			= 'Deleted record with ID';
 $lang['observation_no_results']			= 'No watershed health reports match your search.';
 $lang['observation_no_reports']			= 'There are no watershed health reports to see at this time.';
 $lang['observation_ask_create']			= 'Would you like to [b][url=/admin/content/observation/create]create one[/url][/b]?';
-$lang['observation_new_button']			= '[b][url=/admin/content/observation/create]New observation[/url][/b]';
+$lang['observation_new_button']			= 'New observation';
 
 // Accordion create/edit
 $lang['collapse']	= 'collapse';

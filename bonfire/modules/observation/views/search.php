@@ -1,8 +1,10 @@
 <div>
-	<h1 class="page-header">Observation Search</h1>
+	<h1 class="page-header">
+		Observation Search
+		<?php $this->load->view('observation/partials/search'); ?>
+	</h1>
 </div>
 
-<?php $this->load->view('observation/partials/search'); ?>
 <h3><?php
 if(isset($query) && !empty($query))
 	echo 'Search results for "'.$query.'"';
@@ -13,7 +15,7 @@ else
 
 <?php
 if(!isset($query) || empty($query)) { echo '<p>Please enter a search term.</p>'; die(); }
-if(!isset($records) || count($records) == 0) { echo '<p>No results.</p>'; die(); }
+if(!isset($records) || !is_array($records) || count($records) == 0) { echo '<p>No results.</p>'; die(); }
 ?>
 <table class="table table-striped table-bordered">
 <thead>
