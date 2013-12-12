@@ -1,5 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-$lang['observation_manage']			= 'Manage Observation';
+$lang['observation_manage']			= 'Manage Observations';
 $lang['observation_edit']				= 'Edit';
 $lang['observation_true']				= 'True';
 $lang['observation_false']				= 'False';
@@ -36,7 +36,7 @@ $lang['observation_no_reports']			= 'There are no watershed health reports to se
 $lang['observation_ask_create']			= 'Would you like to [b][url=/admin/content/observation/create]create one[/url][/b]?';
 $lang['observation_new_button']			= '[b][url=/admin/content/observation/create]New observation[/url][/b]';
 
-// Accordian create/edit
+// Accordion create/edit
 $lang['collapse']	= 'collapse';
 $lang['observation_details']	= 'Observation Details';
 $lang['stream_details'] = 'Stream Details';

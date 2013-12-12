@@ -35,6 +35,7 @@ class content extends Admin_Controller
 		// TODO: Switch language parameter for maps API localization (Google handles this for us)
 		Assets::add_js('https://maps.googleapis.com/maps/api/js?key=' . $this->config->item('maps_api_key') . '&sensor=true&language=en');
 		Assets::add_module_js('observation', 'map.js');
+		Template::set("toolbar_title", "Observations");
 		Template::set_block('sub_nav', 'content/_sub_nav');
 	}
 
@@ -60,6 +61,7 @@ class content extends Admin_Controller
 		{
 			paginate($page, $this->observation_model, 5);
 		}
+		$data["toolbar_title"] = "Observation";
 		Template::render();
 	}
 

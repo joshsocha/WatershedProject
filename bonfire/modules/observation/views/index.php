@@ -50,8 +50,11 @@
 		</tbody>
 	</table>
 
-	<?php if($this->auth->has_permission("Observation.Reports.Create")): ?>
+	<?php if($this->auth->has_permission("Observation.Content.Create")): ?>
 		<p><?php echo bbcode(lang('observation_new_button')); ?></p>
+	<?php endif; ?>
+	<?php if($this->auth->has_permission("Observation.Content.View")): ?>
+		<p><a href="<?php echo SITE_AREA . '/content/observation/'; ?>"><?php echo lang('observation_manage'); ?></a></p>
 	<?php endif; ?>
 
 	<br/>
