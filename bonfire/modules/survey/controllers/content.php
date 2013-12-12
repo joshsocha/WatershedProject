@@ -216,6 +216,20 @@ class content extends Admin_Controller
             $survey_answer['survey_answer_number'] = $index;
             $this->survey_answers_model->insert($survey_answer);
         }
+
+        //create default results
+        $survey_result=array();
+        $survey_result['survey_id'] =$id;
+        $survey_result['survey_votes'] =0;
+        $answers_qry = $this->db->get_where('survey_answers', array('survey_id' => $id));
+        $answers = $answers_qry->result_array();
+
+        for($index = 0; $index<$_POST['numAnswers']; $index++)
+        {
+            $survey_result['survey_answer_id'] = $answers[$index]['id'];
+            $this->survey_results_model->insert($survey_result);
+        }
+
         return $return;
     }
 
