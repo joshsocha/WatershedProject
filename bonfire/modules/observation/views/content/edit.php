@@ -721,7 +721,7 @@ $id = isset($observation['id']) ? $observation['id'] : '';
                 <div class="control-group <?php echo form_error('observation_approved') ? 'error' : ''; ?>">
                     <?php echo form_label('Approved', 'observation_approved', array('class' => "control-label")); ?>
                     <div class='controls'>
-                        <input type="checkbox" id="observation_approved"
+                        <input type="checkbox" id="observation_approved" value = "1"
                             <?php  if($observation['approved']==1)echo(' checked');?>
                                name="observation_approved"  >
                         <span class="help-inline"><?php echo form_error('observation_approved'); ?></span>
