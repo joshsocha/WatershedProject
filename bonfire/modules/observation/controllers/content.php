@@ -303,8 +303,11 @@ class content extends Admin_Controller
 		$data['observation_pipes'] = $this->input->post('observation_pipes');
 		$data['observation_pipe_secretion'] = $this->input->post('observation_pipe_secretion');
 		$data['observation_trash'] = $this->input->post('observation_trash');
+		$data['approved'] = $this->input->post('observation_approved');
 		$data['observation_comments'] = $this->input->post('observation_comments');
 		$data['observation_anonymous'] = $this->input->post('observation_anonymous');
+		
+		
 		$data['user_id'] = $this->auth->user_id();
 
 		//Set permissions for Novice user:
