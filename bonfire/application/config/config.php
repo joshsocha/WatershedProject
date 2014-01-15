@@ -371,7 +371,7 @@ $config['proxy_ips'] = '';
 |   https://developers.google.com/maps/documentation/javascript/tutorial
 |
 */
-$config['maps_api_key']	= 'AIzaSyAYc21SYDf9IwaXGFS9SDJapplaHkIF6XQ';
+$config['maps_api_key']	= 'AIzaSyC6HPEVfrGoU2dbJSmfRi4bjIath2dI1Ro';
 
 
 /* End of file config.php */

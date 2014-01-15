@@ -1,13 +1,12 @@
 <div class="container">
 
     <div class="row">
-
         <div class="span-8">
             <h1>Welcome to the Watershed Web App.</h1>
 
             <p>Community based water monitoring</p>
         </div>
-
+		
         <div class="span-3 survey">
             <div class="surveyHeader">
                 Survey
@@ -45,6 +44,11 @@
             </div>
         </div>
     </div>
+	<div class="row">
+		<div class="span-8">
+				 <?php echo lang('language_key')?>
+		</div>
+	</div>
 </div>
 <script type="text/javascript">
     //$('.carousel').carousel()

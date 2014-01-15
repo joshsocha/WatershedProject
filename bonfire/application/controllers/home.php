@@ -31,6 +31,16 @@
 class Home extends Front_Controller
 {
 
+ public function __construct()
+    {
+        parent::__construct();
+
+        
+        $this->lang->load('application');
+
+       
+    }
+
     /**
      * Displays the homepage of the Bonfire app
      *
@@ -38,9 +48,11 @@ class Home extends Front_Controller
      */
     public function index()
     {
+	
+	
         if ($this->session->flashdata('results'))
         {
-
+			
             $this->session->set_flashdata('results', 'false');
             $survey_qry = $this->db->get_where('survey', array('survey_active' => 1));
 
@@ -87,6 +99,7 @@ class Home extends Front_Controller
             $records['display_results'] = false;
             Template::set('records', $records);
         }
+		
         Template::render();
     }
 

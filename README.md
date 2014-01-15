@@ -1,10 +1,10 @@
-# CS4791 (Senior Design), Fall 2013
+# CS4791 (Senior Design), Spring 2014
 
 ## Introduction
 ---------------
-Senior Design project, Fall 2013.  
+Senior Design project, Spring 2014  
 Advisor: Dr. Robert Pastel  
-Students: Nick Lanam, Collin Kappauf, Raven Rebb, Greg Antrim, and Joshua Socha  
+Students: Wesley Jacobson, Collin Kappauf, Raven Rebb, Jerry Christin, and Joshua Socha  
 
 ## Installation
 ---------------
@@ -35,7 +35,7 @@ Students: Nick Lanam, Collin Kappauf, Raven Rebb, Greg Antrim, and Joshua Socha
 
 4.  Visit the INSTALLATION folder, contained in this root.  
     * Run base.sql to create the 'watershed' database and user. Alternatively, do this yourself.
-    * Run installation_Oct7.sql on the new watershed database to get Bonfire setup.    
+    * Run installation_Jan14.sql on the new watershed database to get Bonfire setup.    
 	
 
 5.  Visit the server you've started. If you're using a basic installation,
@@ -58,4 +58,4 @@ be followed (subject to change at meetings):
     change any code.  
     
     
-2.  (To be discussed at next meeting)  
+2.  In the google docs senior design folder there is a pdf called SD_F13_Coding_standards_v1.9.20.13.pdf, take a look at this more more coding standards info

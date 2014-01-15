@@ -66,6 +66,16 @@ $lang['bf_display_name']		= 'Display Name';
 //--------------------------------------------------------------------
 
 $lang['bf_home_page']			= 'Home Page';
+$lang['language_key'] 			= "Welcome to the ¨RíoMío¨ stream visual monitoring website, a site promoted by IMCAS-X (imcas-x.org). 
+									The purpose of this website is to allow users to record and examine observations of river health 
+									in the watersheds in and nearby the Zona Metropolitana de Xalapa. Users can 
+									download a smartphone app from website which can be used to record observations in the 
+									field and upload to the website. Observations of river health are critical to our community and 
+									IMCAS-X, because they tell us where problems are occurring in our watersheds and help us 
+									to prioritize in the ones we need to focus our attention to look for solutions. The website also 
+									features surveys where participants can answer questions about general and local issues related 
+									to water and watersheds. The surveys inform us what is most important to our community, so 
+that we can focus our efforts in the right place.";
 $lang['bf_pages']				= 'Pages';
 $lang['bf_enable_rte']			= 'Enable RTE for pages?';
 $lang['bf_rte_type']			= 'RTE Type';
